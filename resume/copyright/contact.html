@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html lang='zh-cn'>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no" />
+		<link name='shortcut icon' href='../favi.png' />
+		<title>联系我们 - </title>
+		<link rel="stylesheet" href="../css/base.css" />
+		<style>
+			.main{ height: 400px; margin-bottom: 20px; }
+			.textBox-title{ font-size: 30px; }
+			.textBox-ta{ display: none; width: 100%; margin-top: 12px; }
+			.textBox-btn{
+				width: 50%;
+				margin-top: 12px;
+				background: green;
+				color: #fff;
+				border: none;
+			}
+			.link-group{
+				padding: 0 5% 72px;
+			}
+			.text-link{
+				color: #006cd8;
+			}
+			.text-link:hover{
+				color: #666;
+			}
+			.text-body{
+				margin: 20px 0;
+			}
+			@media only screen and (max-width: 767px){
+				.textBox{
+					position: absolute;
+					top: 30%;
+					left: 40%;
+					max-width: 350px;
+				}
+			}
+			@media only screen and (min-width: 768px){
+				.textBox{
+					position: absolute;
+					top: 30%;
+					left: 50%;
+					max-width: 350px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>header</header>
+		<div class="main">
+			<section class="textBox">
+				<h1 class="textBox-title">联系我们</h1>
+				<p class="text-body">你有什么问题？ 我们将尽力为你提供所需的帮助。</p>
+				<textarea class="textBox-ta" rows="5" maxlength="512" placeholder="输入你的描述"></textarea>
+				<button class="textBox-btn">开始使用</button>
+			</section>
+		</div>
+		<section role="more-support">
+			<div class="title-group">
+				<h2 class="text-title">更多支持选项</h2>
+				<hr />
+			</div>
+			<ul class="link-group cf">
+				<li class="col-xs-12 col-md-4 col-lg-4">
+					<a href="" class="text-link">举报支持欺诈</a>
+					<p class="text-body">如果某个声称是xxx员工的人或声称来自信誉良好的公司或 xxx 的合作伙伴联系了您，您觉得这是诈骗，可以向我们报告有关您与他们互动的所有信息，从而帮助我们阻止骗子继续行骗。</p>
+				</li>
+				<li class="col-xs-12 col-md-4 col-lg-4">
+					<a class="text-link">联系支持人员</a>
+					<p class="text-body"></p>
+				</li>
+				<li class="col-xs-12 col-md-4 col-lg-4">
+					<a href="" class="text-link">查找全球办公地点</a>
+					<p class="text-body">你可以查看世界各地xxx办公地点。</p>
+				</li>
+			</ul>
+		</section>
+		<footer>
+			<div class="footer-menugroups"></div>
+			<div class="footer-lang">
+				<i>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewbox="0 0 240 160">
+						<rect x="0" y="0" width="240" height="160" fill="red"></rect>
+						<polyline class="flag-star" points="" fill="yellow"></polyline>
+						<polyline class="flag-star" points="" fill="yellow"></polyline>
+						<polyline class="flag-star" points="" fill="yellow"></polyline>
+						<polyline class="flag-star" points="" fill="yellow"></polyline>
+						<polyline class="flag-star" points="" fill="yellow"></polyline>
+					</svg>
+				</i>
+				<a href="#">中文(简体中文)</a>
+			</div>
+			<div class="footer-copyright">
+				<ul>
+					<li><a>联系我们</a></li>
+					<li><a href="">隐私与Cookit</a></li>
+					<li><a href="">使用条款</a></li>
+					<li><a title="京ICP备09000000号-6">京ICP备09000000号-6</a></li>
+					<li><a title="京公网安备 11010802000000">京公网安备 11010802000000</a></li>
+					<li>© 2017 Yuan</li>
+				</ul>
+			</div>
+		</footer>
+		<script src='../scripts/base.js'></script>
+		<script>
+			window.onload = function(){
+				drawFlag();
+				addClick();
+			}
+
+			function addClick(){
+				var section = document.getElementsByClassName('textBox')[0],
+					btn = section.children[section.childElementCount-1];
+				btn.onclick = function(){
+					if(this.innerText==='开始使用'){
+						btn.previousElementSibling.style.display = 'block';
+						btn.previousElementSibling.previousElementSibling.innerText = '请告知我们你遇到的问题以及所使用的产品。';
+						btn.innerText = '提交';
+					}else if(this.innerText==='提交'){
+						ajax('contact','feedback='+this.previousElementSibling.value,function(data){
+							alert(data);
+						});
+					}
+				}
+			}
+
+		</script>
+	</body>
+</html>

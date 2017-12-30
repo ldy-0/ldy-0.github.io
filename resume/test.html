@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type='text/css'>
+  figure{
+		width: 450px;
+		text-align: center;
+}
+#wrapper{
+	float: left;
+	position: relative;
+	top: 120px;
+	left: 25px;
+	width: 200px;
+	height: 100px;
+	overflow: hidden;
+}
+  #blur{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 450px;
+		height: 225px;
+		background: url('./images/沙漠xs.jpg') no-repeat 0px -20px;
+		filter: blur(12px);
+		-webkit-filter: blur(12px);
+
+  }
+  #mask{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100px;
+		background-color: rgba(150, 150, 150, 0.35);
+  }
+
+
+/*
+	transform : romote()|scale()|translate()|
+	transition : transition-property|transition-duration|transition-time-function|transition-delay
+*/
+.f{
+	background: #2f3238;
+	opacity: 0.8;
+}
+.f:hover img{
+	overflow: hidden;
+	filter: alpha(opacity=80);
+	transform: scale3D(1.1, 1.1, 1.1);
+}
+.f img{
+	transition: opacity .3s, transform .5s ease ;
+}
+
+figure{
+	box-sizing: border-box;
+}
+.demo1{
+	position: relative;
+	width: 242px;
+	height: 177px;
+	margin: 0px;
+	padding: 20px 0px;
+	border: 1px solid gray;
+	overflow: hidden;
+}
+.demo1 figcaption{
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	width: 180px;
+	text-align: center;
+	color: #fff;
+}
+/*边框从中间向两边展开*/
+.demo1 figcaption:before{
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(47.5% - 5px);
+  width: 18px;
+  height: 100%;
+  border-top: 4px solid gray;
+  border-bottom: 4px solid gray;
+  opacity: 0;
+  transition: opacity 0.3s, transform 2s ease 0s;
+}
+.demo1 figcaption:hover:before{
+  opacity: 1;
+  transform: scaleX(10);
+}
+.demo1 figcaption:after{
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: calc(47.5% - 3px);
+  left: 0;
+  width: 100%;
+  height: 9px;
+  border-left: 2px solid gray;
+  border-right: 2px solid gray;
+  opacity: 0;
+  transition: opacity 0.3s, transform 2s ease 0s;
+}
+.demo1 figcaption:hover:after{
+  opacity: 1;
+  transform: scaleY(10);
+}
+/*字体流光动画*/
+.demo1:hover figcaption p{
+	background: linear-gradient(90deg, red 0%, green 50%, blue 100%);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	animation: a 6s cubic-bezier(0.2, 0.1, 0.8, 1) 0s infinite;
+}
+@keyframes a{
+	0% {
+		background-position: 0px 0px;
+	}
+	100% {
+		background-position: 180px 0;
+	}
+}
+/**/
+.blur{
+	position: absolute;
+	width: 100%;
+	height: 135px;
+}
+.demo1:hover .blur{
+	background: url('images/thumbnail/star-thumbnail-xs.jpg');
+	filter: blur(12px);
+}
+input[type='radio']{
+  display: none;
+}
+input[type='radio'] + label{
+  display: inline-block;
+  position: relative;
+  margin: 0px 20px;
+}
+input[type='radio'] + label:before{
+  content: '';
+  position: absolute;
+  left: 15px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid green;
+  border-radius: 7px;
+}
+input[type='radio']:checked + label:after{
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 20px;
+  border: 4px solid green;
+  border-radius: 10px;
+}
+  </style>
+ </head>
+ <body>
+  <div id="app">
+    <p>{{user.name}}</p>
+    <p>{{user.age}}</p>
+  </div>
+	<figure>
+		<div id='wrapper'>
+			<div id='blur'></div>
+			<div id='mask'></div>
+		</div>
+		<img src='./images/沙漠xs.jpg' alt='no found' />
+		<figcaption>11</figcaption>
+	</figure>
+	<figure class='f'>
+		<div class='mask'></div>
+		<img src='./images/沙漠xs.jpg' alt='no found' />
+		<figcaption>22</figcaption>
+	</figure>
+	<figure class='demo1'>
+		<div class='blur'></div>
+		<img src='images/thumbnail/star-thumbnail-xs.jpg' alt='bear' />
+		<figcaption>
+			<p>欢迎参加前端</p>
+			<p>点击报名</p>
+		</figcaption>
+	</figure>
+  <picture>
+		<source media='(max-width: 767px)' srcset='./images/thumbnail/simple-thumbnail-xs.jpg'></source>
+		<source media='(min-width: 1200px)' srcset='./images/thumbnail/simple-thumbnail-sm.jpg'></source>
+		<img src='./images/thumbnail/simple-thumbnail-xs.jpg' />
+	</picture>
+  <form action="index.html" method="post">
+    <label for="m">m</label>
+    <input type="radio" id="m" name="sex" value="man" />
+    <input type="radio" id="w" name="sex" value="woman" />
+    <label for="w">w</label>
+    <label for="a">a</label>
+    <input type="checkbox" id="a" name="love" value="a" />
+    <label for="b">b</label>
+    <input type="checkbox" id="b" name="love" value="v" />
+  </form>
+  <script type="text/javascript">
+    replace(document.getElementById('app'));
+    function replace(app){
+
+      for(let i = 0; i<app.children.length; i++){
+        if(app.children[i].children.length!==0){
+          replace(app.children[i]);
+        }
+        app.children[i].innerText = app.children[i].innerText;
+      }
+
+    }
+  </script>
+ </body>
+</html>

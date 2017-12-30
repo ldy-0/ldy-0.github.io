@@ -1,0 +1,315 @@
+header{
+  background: rgb(52, 53, 44);
+}
+main{
+  /*background: rgb(170, 184, 163);*/
+  background: rgb(239, 240, 220);
+  overflow: hidden;
+}
+
+/**
+  *面板容器
+*/
+.penel-wrapper{
+  position: relative;
+  height: 400px;
+  background: rgb(201, 202, 187);
+  /**/
+  /*background: rgb(221, 240, 237);*/
+}
+.penel{
+  position: absolute;
+  left: 10%;
+  width: 100%;
+  height: inherit;
+}
+/*大字内容*/
+.penel p{
+  width: 24px;
+  color: #333;
+  font:italic 24px sans-serif;
+}
+.penel p:first-of-type{
+  position: absolute;
+  top: 5%;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+}
+.penel p:nth-of-type(2){
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  transition: opacity 1s 1s;
+  -webkit-transition: opacity 1s 1s;
+  -moz-transition: opacity 1s 1s;
+  -ms-transition: opacity 1s 1s;
+  -o-transition: opacity 1s 1s;
+}
+.penel p:last-of-type{
+  position: absolute;
+  top: 15%;
+  left: 12%;
+  transition: opacity 1s 2s;
+  -webkit-transition: opacity 1s 2s;
+  -moz-transition: opacity 1s 2s;
+  -ms-transition: opacity 1s 2s;
+  -o-transition: opacity 1s 2s;
+}
+/*小字内容*/
+.penel ol{
+  position: absolute;
+  top: 38%;
+  left: 38%;
+  transition: opacity 1s 3s;
+}
+.penel ol li{
+  font-size: 14px;
+  color: #444;
+  text-align: left;
+}
+/*起始状态*/
+.opacity{
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+@media only screen and (max-width: 768px) {
+  .penel p:first-of-type{
+    position: absolute;
+    top: 5%;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+  }
+  .penel p:nth-of-type(2){
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transition: opacity 1s 1s;
+    -webkit-transition: opacity 1s 1s;
+    -moz-transition: opacity 1s 1s;
+    -ms-transition: opacity 1s 1s;
+    -o-transition: opacity 1s 1s;
+  }
+  .penel p:last-of-type{
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    transition: opacity 1s 2s;
+    -webkit-transition: opacity 1s 2s;
+    -moz-transition: opacity 1s 2s;
+    -ms-transition: opacity 1s 2s;
+    -o-transition: opacity 1s 2s;
+  }
+  /*小字内容*/
+  .penel ol{
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transition: opacity 1s 3s;
+  }
+}
+
+/**
+	*thumbnail
+*/
+.thumbnail-container{
+	margin: 10px 0;
+}
+.img-wrapper{
+	display: inline-block;
+	position: relative;
+	text-align: center;
+}
+.img-caption{
+	position: absolute;
+	color: #fff;
+}
+.img-wrapper div:hover, .img-caption:hover{
+  cursor: pointer;
+}
+@media only screen and (max-width: 920px){
+	/*figure*/
+	.imgWrapper{
+		height: 132px;
+		margin: 5px 20px;
+	}
+	/*caption*/
+	.imgCaption{
+		top: 60px;
+		left: 90px;
+	}
+	/*blur*/
+	.blur-wrapper{
+		position: absolute;
+		top: 22px;
+		left: 40px;
+		width: 160px;
+		height: 88px;
+		overflow: hidden;
+	}
+	.hean-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/河岸-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+  .simple-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/thumbnail/simple-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+  .skill-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/thumbnail/skill-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+	.star-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/thumbnail/star-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+	.building-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/thumbnail/building-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+}
+@media only screen and (min-width: 921px) and (max-width: 1200px){
+	.imgWrapper{
+		height: 202px;
+		margin: 10px 20px;
+	}
+	.imgCaption{
+		top: 100px;
+		left: 140px;
+	}
+	/*blur*/
+	.blur-wrapper{
+		position: absolute;
+		top: 25px;
+		left: 60px;
+		width: 240px;
+		height: 150px;
+		overflow: hidden;
+	}
+	.hean-blur{
+		position: absolute;
+		width: 360px;
+		height: 202px;
+		background: url('../images/河岸-thumbnail-sm.jpg') no-repeat -60px -25px;
+		filter: blur(18px);
+	}
+  .simple-blur{
+		position: absolute;
+		width: 360px;
+		height: 202px;
+		background: url('../images/thumbnail/simple-thumbnail-sm.jpg') no-repeat -60px -25px;
+		filter: blur(18px);
+	}
+  .skill-blur{
+		position: absolute;
+		width: 360px;
+		height: 202px;
+		background: url('../images/thumbnail/skill-thumbnail-sm.jpg') no-repeat -60px -25px;
+		filter: blur(18px);
+	}
+	.star-blur{
+		position: absolute;
+		width: 360px;
+		height: 202px;
+		background: url('../images/thumbnail/star-thumbnail-sm.jpg') no-repeat -60px -25px;
+		filter: blur(18px);
+	}
+	.building-blur{
+		position: absolute;
+		width: 360px;
+		height: 202px;
+		background: url('../images/thumbnail/building-thumbnail-sm.jpg') no-repeat -60px -25px;
+		filter: blur(18px);
+	}
+}
+@media only screen and (min-width: 1201px) {
+	.imgWrapper{
+		height: 132px;
+		margin: 5px 10px;
+	}
+	.imgCaption{
+		top: 60px;
+		left: 90px;
+	}
+	/*blur*/
+	.blur-wrapper{
+		position: absolute;
+		top: 22px;
+		left: 40px;
+		width: 160px;
+		height: 88px;
+		overflow: hidden;
+	}
+	.hean-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/河岸-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+  .simple-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/simple-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+  .skill-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/thumbnail/skill-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+	.star-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/thumbnail/star-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+	.building-blur{
+		position: absolute;
+		width: 240px;
+		height: 132px;
+		background: url('../images/thumbnail/building-thumbnail-xs.jpg') no-repeat -40px -22px;
+		filter: blur(12px);
+	}
+}
+
+/*blur*/
+/*.blur-wrapper{
+	position: absolute;
+	top: 22px;
+	left: 40px;
+	width: 160px;
+	height: 88px;
+	overflow: hidden;
+}
+.hean-blur{
+	position: absolute;
+	width: 240px;
+	height: 132px;
+	background: url('../images/河岸-thumbnail-xs.jpg') no-repeat -40px -22px;
+	filter: blur(12px);
+}*/
