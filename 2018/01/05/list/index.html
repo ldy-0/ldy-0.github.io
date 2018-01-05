@@ -5,14 +5,19 @@
   
 
   
-  <title>Archiv | Hexo</title>
+  <title>数据结构-表 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="关于表的一些知识">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构-表">
+<meta property="og:url" content="http://yoursite.com/2018/01/05/list/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于表的一些知识">
+<meta property="og:updated_time" content="2018-01-05T04:10:57.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="数据结构-表">
+<meta name="twitter:description" content="关于表的一些知识">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,107 +64,74 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/05/list/" class="archive-article-date">
-  <time datetime="2018-01-05T03:06:05.000Z" itemprop="datePublished">Jan 5</time>
+        <section id="main"><article id="post-list" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/05/list/" class="article-date">
+  <time datetime="2018-01-05T03:06:05.000Z" itemprop="datePublished">2018-01-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/list/">数据结构-表</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构-表
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/02/文章属性/" class="archive-article-date">
-  <time datetime="2018-01-02T13:42:00.000Z" itemprop="datePublished">Jan 2</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/02/文章属性/">文章属性设置</a>
-    </h1>
-  
+        <p>关于表的一些知识<br><a id="more"></a></p>
+<h1 id="基本理论"><a href="#基本理论" class="headerlink" title="基本理论"></a>基本理论</h1><ul>
+<li>线性表<br>除首节点和尾节点外，每个节点只有一个前驱，一个后继的n(n&gt;=0)个节点的序列。</li>
+<li>顺序存储<br>使用一组地址连续的存储单元进行存储。</li>
+<li>链式存储<br>结点的逻辑次序与物理次序不必一致。</li>
+<li>顺序表<br>采用顺序存储的线性表。</li>
+<li>链表<br>采用链式存储的线性表。</li>
+<li>查找<br>完成值v到存储地址d的映射f。f为散列函数。</li>
+<li>散列表<br>上述映射用到的散列存储空间。</li>
+<li>常用散列函数<ul>
+<li>取余法<br>d = v % p;<br>0&lt;模数p - 1&lt;散列表长度m - 1</li>
+<li>提取数位法<br>从v中取若干位拼成整数作为d</li>
+</ul>
+</li>
+<li>散列冲突<br>链接法<br>开放地址法<br>d = (d0(第一次冲突地址) + hi) % p(i=1,2…冲突次数) <ul>
+<li>线性探测<br>hi = i</li>
+<li>平方探测<br>hi = i**2</li>
+<li>随机探测<br>hi为伪随机序列第i位</li>
+</ul>
+</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/05/list/" data-id="cjc1eg6ze00006sp3vuzycswl" class="article-share-link">Teilen</a>
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/12/31/Hexo写博客/" class="archive-article-date">
-  <time datetime="2017-12-31T11:44:00.000Z" itemprop="datePublished">Dec 31</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/31/Hexo写博客/">Hexo中编写博客</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/12/29/Hexo使用/" class="archive-article-date">
-  <time datetime="2017-12-29T05:24:00.000Z" itemprop="datePublished">Dec 29</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/29/Hexo使用/">Hexo基础用法</a>
-    </h1>
   
+    <a href="/2018/01/02/文章属性/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">文章属性设置</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-  
-    </div></section>
-  
-
 
 </section>
         
