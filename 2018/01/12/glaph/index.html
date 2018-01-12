@@ -5,14 +5,19 @@
   
 
   
-  <title>Archiv: 2018 | Hexo</title>
+  <title>数据结构-图 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="关于图的一些知识。">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构-图">
+<meta property="og:url" content="http://yoursite.com/2018/01/12/glaph/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="关于图的一些知识。">
+<meta property="og:updated_time" content="2018-01-12T04:57:06.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="数据结构-图">
+<meta name="twitter:description" content="关于图的一些知识。">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,97 +64,73 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/12/glaph/" class="archive-article-date">
-  <time datetime="2018-01-12T03:33:47.000Z" itemprop="datePublished">Jan 12</time>
+        <section id="main"><article id="post-glaph" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/12/glaph/" class="article-date">
+  <time datetime="2018-01-12T03:33:47.000Z" itemprop="datePublished">2018-01-12</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/数据结构/">数据结构</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/12/glaph/">数据结构-图</a>
+    <h1 class="article-title" itemprop="name">
+      数据结构-图
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/07/tree/" class="archive-article-date">
-  <time datetime="2018-01-07T06:11:42.000Z" itemprop="datePublished">Jan 7</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/07/tree/">数据结构-树</a>
-    </h1>
-  
+        <p>关于图的一些知识。<br><a id="more"></a></p>
+<h3 id="理论知识"><a href="#理论知识" class="headerlink" title="理论知识"></a>理论知识</h3><h4 id="图"><a href="#图" class="headerlink" title="图"></a>图</h4><p>顶点集合v和v中各顶点关系组成的边集合e组成的数据结构。</p>
+<h5 id="孤立点"><a href="#孤立点" class="headerlink" title="孤立点"></a>孤立点</h5><h5 id="有向边"><a href="#有向边" class="headerlink" title="有向边"></a>有向边</h5><p>有方向的边。</p>
+<h5 id="无向边"><a href="#无向边" class="headerlink" title="无向边"></a>无向边</h5><p>无方向的边。</p>
+<h5 id="平凡图"><a href="#平凡图" class="headerlink" title="平凡图"></a>平凡图</h5><p>只有一个顶点的图。</p>
+<h5 id="孤立图"><a href="#孤立图" class="headerlink" title="孤立图"></a>孤立图</h5><p>没有边的图。</p>
+<h5 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h5><p>边都为有向边的图。G = (V，E)</p>
+<h5 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h5><p>边都为无向边的图。G =  &lt;V, E&gt;</p>
+<h5 id="简单图"><a href="#简单图" class="headerlink" title="简单图"></a>简单图</h5><p>无重复边，无到自身的边的图。</p>
+<h5 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h5><p>图G = (V,E), v<sub>1</sub>∈ V,E<sub>1</sub>∈ E, 有v<sub>1</sub>，E<sub>1</sub>组成的图。</p>
+<h5 id="连通图"><a href="#连通图" class="headerlink" title="连通图"></a>连通图</h5><p>任意二个顶点都是连通的图。</p>
+<h5 id="度"><a href="#度" class="headerlink" title="度"></a>度</h5><p>和顶点关联的边的个数。</p>
+<ul>
+<li>出度：以顶点为尾的边的个数。</li>
+<li>入度：以顶点为首的边的个数。<h5 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h5>一个顶点序列v<sub>1</sub>v<sub>2</sub>…v<sub>n</sub>。<h5 id="路径长度"><a href="#路径长度" class="headerlink" title="路径长度"></a>路径长度</h5>路径中边的个数。<h5 id="简单路径"><a href="#简单路径" class="headerlink" title="简单路径"></a>简单路径</h5>路径中的顶点不重复。(除首尾点)</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/05/list/" class="archive-article-date">
-  <time datetime="2018-01-05T03:06:05.000Z" itemprop="datePublished">Jan 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/list/">数据结构-表</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/01/02/文章属性/" class="archive-article-date">
-  <time datetime="2018-01-02T13:42:00.000Z" itemprop="datePublished">Jan 2</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/12/glaph/" data-id="cjcbe9ee80001swp36bguudtu" class="article-share-link">Teilen</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/02/文章属性/">文章属性设置</a>
-    </h1>
-  
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/01/07/tree/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">数据结构-树</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
