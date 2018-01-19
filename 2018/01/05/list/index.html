@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="关于表的一些知识">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-19T06:45:18.187Z">
+<meta property="og:updated_time" content="2018-01-19T07:03:29.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-表">
 <meta name="twitter:description" content="关于表的一些知识">
@@ -338,9 +338,13 @@
 <h4 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h4><p>采用顺序存储的线性表。<br><code>顺序存储:使用一组地址连续的存储单元进行存储。</code></p>
 <h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><p>采用链式存储的线性表。<br><code>链式存储:结点的逻辑次序与物理次序不必一致。</code></p>
 <h4 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h4><p><code>查找:完成值v到存储地址d的映射f。f为散列函数。</code><br>根据哈希函数和处理冲突的方法将一组key集合映射到有限连续地址集上，并将key在地址集上的‘像’作为记录在表中的存储位置，这样的表为哈希表。</p>
+<blockquote>
+<p>key可以为任意类型。非数字需转换为数字。<br>key在地址集上的‘像’为H(key)或H<sub>i</sub></p>
+</blockquote>
 <ul>
 <li>常用散列函数<ul>
-<li>取余法<br>H = key % p;（key需先转换为整数）<br>0&lt;模数p - 1&lt;散列表长度m - 1</li>
+<li>直接定界法<br><code>H = a*key + b;</code></li>
+<li>取余法<br><code>H = key % p</code><br>0&lt;模数p - 1&lt;散列表长度m - 1</li>
 <li>提取数位法<br>从key中取若干位拼成整数作为d</li>
 </ul>
 </li>
