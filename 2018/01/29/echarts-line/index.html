@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="使用echarts画基本图表。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-09T14:00:07.002Z">
+<meta property="og:updated_time" content="2018-03-11T11:50:33.423Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="echarts-基本图表(折线图，直方图)">
 <meta name="twitter:description" content="使用echarts画基本图表。">
@@ -333,17 +333,28 @@
 
       
         <p>使用echarts画基本图表。<br><a id="more"></a></p>
-<p>##</p>
-<h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> chart = echarts.init(<span class="built_in">document</span>.getElemetById(<span class="string">'canvas'</span>));</span><br><span class="line">chart.setOption(option);</span><br></pre></td></tr></table></figure>
-<h3 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h3><h4 id="单折线图"><a href="#单折线图" class="headerlink" title="单折线图"></a>单折线图</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">  xAxis: &#123;</span><br><span class="line">    type: <span class="string">'category'</span>,<span class="comment">//值为离散值</span></span><br><span class="line">    data: [<span class="string">'苹果'</span>, <span class="string">'香蕉'</span>, <span class="string">'柠檬'</span>],<span class="comment">//x坐标轴刻度</span></span><br><span class="line">  &#125;,</span><br><span class="line">  yAxis: &#123;</span><br><span class="line">    type: <span class="string">'value'</span>,<span class="comment">//值为连续值</span></span><br><span class="line">  &#125;,</span><br><span class="line">  series: &#123;</span><br><span class="line">    type: <span class="string">'line'</span>,<span class="comment">//图的类型为折线图</span></span><br><span class="line">    data: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="comment">//数据</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="基础图表"><a href="#基础图表" class="headerlink" title="基础图表"></a>基础图表</h2><h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置图表显示载体</span></span><br><span class="line"><span class="keyword">let</span> chart = echarts.init(<span class="built_in">document</span>.getElemetById(<span class="string">'canvas'</span>));</span><br><span class="line"><span class="comment">//配置图表信息</span></span><br><span class="line">chart.setOption(option);</span><br></pre></td></tr></table></figure>
+<h3 id="折线图"><a href="#折线图" class="headerlink" title="折线图"></a>折线图</h3><h4 id="单折线图"><a href="#单折线图" class="headerlink" title="单折线图"></a>单折线图</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">  xAxis: &#123;</span><br><span class="line">    type: <span class="string">'category'</span>,<span class="comment">//值为离散值</span></span><br><span class="line">    data: [<span class="string">'苹果'</span>, <span class="string">'香蕉'</span>, <span class="string">'柠檬'</span>],<span class="comment">//x坐标轴刻度</span></span><br><span class="line">  &#125;,</span><br><span class="line">  yAxis: &#123; <span class="attr">type</span>: <span class="string">'value'</span>,<span class="comment">//值为连续值&#125;,</span></span><br><span class="line">  series: &#123;</span><br><span class="line">    type: <span class="string">'line'</span>,<span class="comment">//图的类型为折线图</span></span><br><span class="line">    data: [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="comment">//数据</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>效果：</p>
-<p><canvas id="single-line" width="400" height="300">浏览器不支持</canvas></p>
-<h4 id="多折线图"><a href="#多折线图" class="headerlink" title="多折线图"></a>多折线图</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">  dataset: &#123;</span><br><span class="line">    source: [<span class="comment">//每个数组的第一列为x轴刻度。之后的每列和series中每个线对象的数据。</span></span><br><span class="line">      [],</span><br><span class="line">      [],</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  xAxis: &#123;</span><br><span class="line">    type: <span class="string">'category'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  yAxis: &#123; <span class="attr">type</span>: <span class="string">'value'</span> &#125;,</span><br><span class="line">  series: [</span><br><span class="line">    &#123; <span class="attr">type</span>: <span class="string">'line'</span> &#125;,<span class="comment">//每个对象代表一条折线。</span></span><br><span class="line">    &#123; <span class="attr">type</span>: <span class="string">'line'</span> &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><h4 id="单直方图"><a href="#单直方图" class="headerlink" title="单直方图"></a>单直方图</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bar = &#123;</span><br><span class="line">  xAxis: &#123; <span class="attr">type</span>: <span class="string">'category'</span> &#125;,</span><br><span class="line">  yAxis: &#123; <span class="attr">type</span>: <span class="string">'value'</span> &#125;,</span><br><span class="line">  series: [</span><br><span class="line">    &#123; <span class="attr">type</span>: <span class="string">'bar'</span>, <span class="attr">data</span>: [], &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<script src="https://cdn.bootcss.com/echarts/4.0.0/echarts.min.js"></script>
+<p><canvas id="single-line" width="300" height="200">浏览器不支持</canvas></p>
+<h4 id="多折线图"><a href="#多折线图" class="headerlink" title="多折线图"></a>多折线图</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">  dataset: &#123;</span><br><span class="line">    source: [<span class="comment">//每个数组的第一列为x轴刻度。之后的每列和series中每个线对象的数据。</span></span><br><span class="line">      [],</span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line">  xAxis: &#123;</span><br><span class="line">    type: <span class="string">'category'</span>,</span><br><span class="line">    data: [<span class="string">'男'</span>, <span class="string">'女'</span>],</span><br><span class="line">  &#125;,</span><br><span class="line">  yAxis: &#123; <span class="attr">type</span>: <span class="string">'value'</span> &#125;,</span><br><span class="line">  series: [</span><br><span class="line">    &#123; <span class="attr">type</span>: <span class="string">'line'</span>, <span class="attr">name</span>: <span class="number">2017</span>, <span class="attr">data</span>: [<span class="number">12</span>, <span class="number">6</span>], &#125;,<span class="comment">//每个对象代表一条折线。</span></span><br><span class="line">    &#123; <span class="attr">type</span>: <span class="string">'line'</span>, <span class="attr">name</span>: <span class="number">2018</span>, <span class="attr">data</span>: [<span class="number">6</span>, <span class="number">12</span>], &#125;,</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><canvas id="multi-line" width="300" height="200">浏览器不支持</canvas></p>
+<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><h4 id="单直方图"><a href="#单直方图" class="headerlink" title="单直方图"></a>单直方图</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> bar = &#123;</span><br><span class="line">  xAxis: &#123; <span class="attr">type</span>: <span class="string">'category'</span>, <span class="attr">data</span>: [<span class="string">'男'</span>, <span class="string">'女'</span>], &#125;,</span><br><span class="line">  yAxis: &#123; <span class="attr">type</span>: <span class="string">'value'</span> &#125;,</span><br><span class="line">  series: &#123; <span class="attr">type</span>: <span class="string">'bar'</span>, <span class="attr">data</span>: [<span class="number">6</span>, <span class="number">8</span>], &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><canvas id="single-bar" width="300" height="200">浏览器不支持</canvas></p>
+<h4 id="多柱状图"><a href="#多柱状图" class="headerlink" title="多柱状图"></a>多柱状图</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">	xAxis: &#123; <span class="attr">type</span>: <span class="string">'category'</span>, <span class="attr">data</span>: [<span class="string">'男'</span>, <span class="string">'女'</span>], &#125;,</span><br><span class="line">	yAxis: &#123; <span class="attr">type</span>: <span class="string">'value'</span>, &#125;,</span><br><span class="line">	series: [</span><br><span class="line">		&#123; <span class="attr">type</span>: <span class="string">'bar'</span>, <span class="attr">name</span>: <span class="string">'2017'</span>, <span class="attr">data</span>: [<span class="number">6</span>,<span class="number">12</span>], &#125;,</span><br><span class="line">		&#123; <span class="attr">type</span>: <span class="string">'bar'</span>, <span class="attr">name</span>: <span class="string">'2018'</span>, <span class="attr">data</span>: [<span class="number">12</span>,<span class="number">6</span>], &#125;,</span><br><span class="line">	],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><canvas id="multi-bar" width="300" height="200">浏览器不支持</canvas></p>
+<h4 id="堆叠图"><a href="#堆叠图" class="headerlink" title="堆叠图"></a>堆叠图</h4><script src="https://cdn.bootcss.com/echarts/4.0.0/echarts.min.js"></script>
 <script type="text/JavaScript">
     window.onload = function(){
 
+        singleLine();
+        multiLine();
+        singleBar();
+        multiBar();
+    }
+
+    //单折线图
+    function singleLine(){
         let singleLine = {
             xAxis: { type: 'category', data: ['苹果', '香蕉', '柠檬'], },
             yAxis: { type: 'value' },
@@ -354,6 +365,51 @@
         };
 
         show(document.getElementById('single-line'), singleLine);
+
+    }
+
+    //多折线图    
+    function multiLine(){
+        let multiLine = {
+            legend: {},
+            xAxis: {type: 'category', data: ['男', '女']},
+            yAxis: {type: 'value'},
+            series: [
+                {type: 'line', name: '2017', data: [6, 12],},
+                {type: 'line', name: '2018', data: [12, 6]},
+            ],
+
+        };
+
+        show(document.getElementById('multi-line'), multiLine);
+    }
+
+
+    //单柱状图
+    function singleBar(){
+        let singleBar = {
+            xAxis: {type: 'category', data: ['男', '女'],},
+            yAxis: {type: 'value',},
+            series: {type: 'bar', data: [6, 8],},
+        };
+
+        show(document.getElementById('single-bar'), singleBar);
+    }
+
+
+    //多柱状图
+    function multiBar(){
+        let multiBar = {
+            legend: {},
+            xAxis: { type: 'category', data: ['男', '女'], },
+            yAxis: { type: 'value', },
+            series: [
+                { type: 'bar', name: '2017', data: [6,12], },
+                { type: 'bar', name: '2018', data: [12,6], },
+            ],
+        };
+
+        show(document.getElementById('multi-bar'), multiBar);
     }
 
     function show(element, option){
@@ -535,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础设置"><span class="nav-number">1.</span> <span class="nav-text">基础设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折线图"><span class="nav-number">2.</span> <span class="nav-text">折线图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单折线图"><span class="nav-number">2.1.</span> <span class="nav-text">单折线图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多折线图"><span class="nav-number">2.2.</span> <span class="nav-text">多折线图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直方图"><span class="nav-number">3.</span> <span class="nav-text">直方图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单直方图"><span class="nav-number">3.1.</span> <span class="nav-text">单直方图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础图表"><span class="nav-number">1.</span> <span class="nav-text">基础图表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础设置"><span class="nav-number">1.1.</span> <span class="nav-text">基础设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折线图"><span class="nav-number">1.2.</span> <span class="nav-text">折线图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单折线图"><span class="nav-number">1.2.1.</span> <span class="nav-text">单折线图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多折线图"><span class="nav-number">1.2.2.</span> <span class="nav-text">多折线图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直方图"><span class="nav-number">1.3.</span> <span class="nav-text">直方图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单直方图"><span class="nav-number">1.3.1.</span> <span class="nav-text">单直方图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多柱状图"><span class="nav-number">1.3.2.</span> <span class="nav-text">多柱状图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#堆叠图"><span class="nav-number">1.3.3.</span> <span class="nav-text">堆叠图</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
