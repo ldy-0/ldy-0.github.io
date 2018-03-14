@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="几种常见的排序算法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T03:33:18.204Z">
+<meta property="og:updated_time" content="2018-03-14T02:44:55.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-排序">
 <meta name="twitter:description" content="几种常见的排序算法。">
@@ -349,7 +349,11 @@
 <p id="insert_sort"></p>
 
 <ol>
-<li><h5 id="二分插入排序"><a href="#二分插入排序" class="headerlink" title="二分插入排序"></a>二分插入排序</h5><strong>二分定位</strong>插入位置。</li>
+<li><h5 id="二分插入排序"><a href="#二分插入排序" class="headerlink" title="二分插入排序"></a>二分插入排序</h5><strong>二分定位</strong>插入位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function dichotomy_insert_sort(arr)&#123;</span><br><span class="line">	let len = arr.length;</span><br><span class="line">	for(let i = 1; i&lt;len; i++)&#123;</span><br><span class="line">		let x = arr[i];</span><br><span class="line"></span><br><span class="line">		let index = dichotomy_search(x, arr, 0, i-1);</span><br><span class="line">		for(let j = i-1; j&gt;=index; j--)&#123;</span><br><span class="line">			arr[j+1] = arr[j];</span><br><span class="line">		&#125;</span><br><span class="line">		arr[index] = x;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p></p><p id="dichotomy_insert_sort"></p><p></p>
+<ol>
 <li><h5 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h5><ul>
 <li>基本思想<br>先将整个待排序列分为几个子序列进行直接插入排序，等到待排序列基本有序，再将整个待排序列进行直接插入排序。<blockquote>
 <p>增量序列最后一个值必须为1，一般为[9, 5, 3, 1]。<br>子序列：待排序列中相隔增量n的记录组成的序列。</p>
@@ -372,9 +376,15 @@
         p.innerText = '排序后：'+insert_sort(toNumber(ar));
         inputs[0].oninput = function(){
             let ar = inputs[0].value.split(',');
-            p.innerText = '排序后：'+insert_sort(toNumber(ar));
+            p.innerText = '排序后:'+insert_sort(toNumber(ar));
 
         }
+
+        //二分插入排序
+        let p_b_sort = document.getElementById('dichotomy_insert_sort');
+        let a = [11, 3, 45, 23, 0, 11];
+        p_b_sort.innerText = '排序后:'+dichotomy_insert_sort(a);
+
     }
 
     //直接插入排序
@@ -394,6 +404,55 @@
 
         return arr;
     }
+
+
+    //二分插入排序
+    function dichotomy_insert_sort(arr){
+        let len = arr.length;
+        for(let i = 1; i<len; i++){
+            let x = arr[i];
+
+            let index = search(x, arr, 0, i-1);
+
+            for(let j = i-1; j>=index; j--){
+                arr[j+1] = arr[j];
+            }
+            arr[index] = x;
+        }
+
+        return arr;
+    }
+
+
+    //二分查找
+    function search(digit, arr, start, end){
+        let middle = Math.floor((start+end)/2);
+
+
+        if(arr[middle] > digit){
+            if(start === end){
+                return end;
+            }
+
+            return search(digit, arr, start, middle-1);
+        }
+
+        if(arr[middle] < digit){
+            if(start === end){
+                return end+1;
+            }
+
+            return search(digit, arr, middle+1, end);
+        }
+
+        if(arr[middle] === digit){
+            return middle+1;
+        }
+
+
+
+    }
+
 
     //
     function toNumber(arr){
