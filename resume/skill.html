@@ -16,7 +16,7 @@
 	  @media only screen and (max-width: 768px){
 		.center{ padding: 0; }
 	  }
-	  @media only screen and (min-width: 769px) and (max-width: 992px){
+	  @media only screen and (min-width: 769px) and (max-width: 992px){ 
 		.center{ padding: 0 20%; }
 	  }
     </style>
@@ -73,29 +73,36 @@
 			</div>
 		</footer>
 		<script src='./scripts/base.js'></script>
-    <script type="text/javascript" src="https://cdn.bootcss.com/echarts/3.8.5/echarts.min.js"></script>
+		<script src='./scripts/graph.js'></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
 		<script>
 
 			window.onload = function(){
 				drawFlag();
 
-        get('skill.json', function(data){
+        /* get('skill.json', function(data){
           drawGraph(data);
-        });
-
+				}); */
+				
+				get('graph.json', function(data){
+					//let list = graph.createNodes(data);
+					//alert(JSON.stringify(list));
+					//let links = graph.createLinks(list);
+					//alert(links);
+					let g = graph.parse(data);
+					graph.toChart(document.getElementById('main-skill'), g.nodes, g.links, g.category);
+				});
 			}
 
       /**
-      *技能图绘制
-      * @param {Object} data
-      */
+       * 技能图绘制
+       * @param {Object} data
+       */
       function drawGraph(data){
         var mainChart = echarts.init(document.getElementById('main-skill')),
             viceChart = echarts.init(document.getElementById('vice-skill'));
             mainOption = {
-                title: {
-                  text: '主技能',
-                },
+                title: { text: '主技能',},
                 series: [{
                   name: 't',
                   type: 'tree',
@@ -122,9 +129,7 @@
                 }],
             },
             viceOption = {
-              title: {
-                text: '副技能',
-              },
+              title: {text: '副技能',},
               series: [{
                 name: '',
                 type: 'tree',

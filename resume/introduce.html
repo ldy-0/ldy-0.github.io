@@ -4,15 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <link rel="shortcut icon" href="./favi.png">
-    <title>个人介绍</title>
+    <title>个人介绍-简历</title>
     <link rel="stylesheet" href="./css/base.css" />
     <style media="screen">
       main{
-        padding: 0 10%;
+				overflow: hidden;
+        padding: 30px 15.1%;
+				background: rgb(38, 38, 38);
+				opacity: .8;
+				filter: alpha(opacity=80);
       }
-      table{
-        margin: 30px 0px 60px;
-      }
+			a:link, a:visited{
+				color: #333;
+			}
+			a:hover, a:active{
+				color: #111;
+			}
+			.table-wrapper{
+				padding: 30px 4% 60px;
+				background: #eee;
+				box-shadow: 2px 2px 4px 4px #111;
+			}
       .cls-btm{
         border-bottom: none;
       }
@@ -26,8 +38,8 @@
 			<div class="col-xs-3">
 				<button type="button" class="nav-button nav-trigger">菜单</button>
 			</div>
-			<div class="col-xs-9 col-sm-3 col-md-3 col-lg-3 logo">
-				<img src="favi.png" alt="icon" />
+			<div class="col-xs-9 col-sm-3 col-md-3 col-lg-3 logo-wrapper">
+				<img src="favi.png" width='40' height='40' alt="logo" />
 			</div>
 			<nav class="col-xs-12 hide col-sm-9 col-md-9 col-lg-9">
 				<ul class='nav-wrapper'>
@@ -37,57 +49,59 @@
 			</nav>
 		</header>
     <main>
-      <table border='0'>
-        <caption align='top'>个人信息表</caption>
-        <tbody>
-          <tr>
-            <td>姓名</td>
-            <td>aaa</td>
-            <td>年龄</td>
-            <td>21</td>
-            <td rowspan="5"><img src='./favi.png' alt='照片' /></td>
-          </tr>
-          <tr>
-            <td>性别</td>
-            <td>男</td>
-            <td>民族</td>
-            <td>汉族</td>
-          </tr>
-          <tr>
-            <td>学历</td>
-            <td>本科（2018届）</td>
-            <td>毕业院校</td>
-            <td>信阳师范学院</td>
-          </tr>
-          <tr>
-            <td>联系方式</td>
-            <td colspan="3">1321389</td>
-          </tr>
-          <tr>
-            <td>邮箱</td>
-            <td colspan="3">1321389@163.com</td>
-          </tr>
-          <tr>
-            <td>GitHub</td>
-            <td colspan="4">https://github.com/person-0</td>
-          </tr>
-          <tr>
-            <td>兴趣爱好</td>
-            <td colspan="4">编程,打拳,看历史资料</td>
-          </tr>
-          <tr>
-            <td rowspan="2">优点</td>
-            <td class="cls-btm">有耐性</td>
-            <td rowspan="2">缺点</td>
-            <td class="cls-btm">不喝酒</td>
-            <td rowspan="2"></td>
-          </tr>
-          <tr>
-            <td class="cls-top">踏实</td>
-            <td class="cls-top">不爱说话</td>
-          </tr>
-        </tbody>
-      </table>
+			<section class='table-wrapper'>
+				<table border='0'>
+					<caption align='top'>个人基本信息表</caption>
+					<tbody>
+						<tr>
+							<td>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名</td>
+							<td>aaa</td>
+							<td>年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</td>
+							<td>21</td>
+							<td rowspan="5"><img src='./favi.png' alt='照片' /></td>
+						</tr>
+						<tr>
+							<td>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</td>
+							<td>男</td>
+							<td>民&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;族</td>
+							<td>汉族</td>
+						</tr>
+						<tr>
+							<td>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历</td>
+							<td>本科（2018届）</td>
+							<td>毕业院校</td>
+							<td>信阳师范学院</td>
+						</tr>
+						<tr>
+							<td>联系方式</td>
+							<td colspan="3">1321389</td>
+						</tr>
+						<tr>
+							<td>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱</td>
+							<td colspan="3"><a href='mailto:1321389@163.com'>1321389@163.com</a></td>
+						</tr>
+						<tr>
+							<td>GitHub</td>
+							<td colspan="4"><a href='https://github.com/person-0'>https://github.com/person-0</a></td>
+						</tr>
+						<tr>
+							<td>兴趣爱好</td>
+							<td colspan="4" class='cls-btm'>敲代码,截拳道,了解知识</td>
+						</tr>
+						<tr>
+							<td rowspan="2">优&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点</td>
+							<td class="cls-btm">耐心</td>
+							<td rowspan="2">缺&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点</td>
+							<td class="cls-btm">比较沉默</td>
+							<td rowspan="2"></td>
+						</tr>
+						<tr>
+							<td class="cls-top">踏实</td>
+							<td class="cls-top">不爱热闹</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
     </main>
     <footer>
 			<div class='footer-menugroup'></div>

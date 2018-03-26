@@ -2,19 +2,18 @@ header{
   background: rgb(52, 53, 44);
 }
 main{
-  /*background: rgb(170, 184, 163);*/
-  background: rgb(239, 240, 220);
+	background: rgb(201, 202, 187);
   overflow: hidden;
+	/*background: rgb(170, 184, 163);*/
 }
 
 /**
-  *面板容器
-*/
+ * 面板容器
+ */
 .penel-wrapper{
   position: relative;
   height: 400px;
-  background: rgb(201, 202, 187);
-  /**/
+	background: rgb(239, 240, 220);
   /*background: rgb(221, 240, 237);*/
 }
 .penel{
@@ -115,8 +114,9 @@ main{
 }
 
 /**
-	*thumbnail
-*/
+ * thumbnail
+ * 缩略图
+ */
 .thumbnail-container{
 	margin: 10px 0;
 }

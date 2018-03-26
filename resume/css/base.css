@@ -1,13 +1,24 @@
-/*clear default*/
+/*@clear default*/
 body{ margin: 0; padding: 0; }
 p{ margin: 0; }
-ul, ol{ margin: 0; padding: 0; list-style: none; }
+ul, ol{ 
+	margin: 0; 
+	padding: 0; 
+	list-style: none; 
+}
 a{ text-decoration: none; }
 button{ outline: none; }
-textarea{ resize: none; background: none; }
-table{ border-collapse: collapse; text-align: center; }
+textarea{ 
+	resize: none; 
+	background: none; 
+}
+table{ 
+	border-collapse: collapse; 
+	text-align: center; 
+}
 
-/*global setting*/
+
+/*@global style*/
 header, main, footer, article, section, aside, nav{ display: block; }
 body{
 	box-sizing: border-box;
@@ -15,13 +26,17 @@ body{
 }
 li{ text-align: center; }
 a, button{ cursor: pointer; }
+a:hover, a:active{
+	text-decoration: underline;
+}
 td{ width: 200px; height: 36px; border: 1px solid black; }
 hr{ border: none; border-top: 1px solid #d2d2d2; margin: 25px 0; }
 table caption{
+	margin: 0 0 10px;
 	font: normal bold 20px/3 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/*grid*/
+/*@grid layout*/
 @media only screen and (max-width: 767px){
 	.col-xs-12{ float: left; width: 100%; }
 	.col-xs-9{ float: left; width: 75%; }
@@ -99,15 +114,19 @@ main{
 	.show{ display: block; }
 	.hide{ display: none; }
 }
-/**logo
-	*img的父标签高度默认为img高度+4px;
+/**
+ * logo
+ * img的父标签高度默认为img高度+5px;
 */
-.logo{
-	height: 44px;
-	margin: 3px 0px;
+.logo-wrapper{
+	padding-top: 5px;
 	text-align: center;
+	/*height: 44px;*/
 }
-/*nav*/
+/**
+ * nav 
+ * 水平导航栏
+ */
 .nav-wrapper li{
 	float: left;
 }
@@ -125,7 +144,6 @@ main{
 .nav-wrapper a:hover{
 	background: gray;
 	color: #333;
-	text-decoration: underline;
 }
 
 
@@ -178,8 +196,9 @@ main{
 footer{
 	padding: 0 5%;
 	font-size: 15px;
-	/*background: #F2F2F2;*/
-	background: rgb(245, 246, 235);
+	/*background: #F2F2F2;
+	background: rgb(245, 246, 235);*/
+	background: #ddd;
 	overflow: hidden;
 }
 footer li, footer a{

@@ -1,5 +1,7 @@
 
 const fs = require('fs');
+const data = require('./graph.json');
+console.log(data.name);
 
 function Vue(obj){
   let regexp1 = new RegExp(`<(\\w+) id=(?:"${obj.el}"|'${obj.el}')>[\\S\\s]*</\\1>`, 'g');
@@ -33,7 +35,7 @@ Vue.prototype = {
 };
 
 //
-let v = new Vue({
+/* let v = new Vue({
   el: 'app',
   data: {
     user: {
@@ -42,3 +44,4 @@ let v = new Vue({
     },
   },
 });
+ */
