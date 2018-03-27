@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-compaible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-    <title>技能</title>
+    <title>技能-简历</title>
     <link rel="shortcut icon" href="favi.png">
     <link rel="stylesheet" href="./css/base.css" />
+		
     <style media="screen">
     /*main{ padding: 0; }*/
     .chart-wrapper{
       overflow: hidden;
     }
+		.nav-wrapper .checked{ color: #111; }
 	  @media only screen and (max-width: 768px){
-		.center{ padding: 0; }
+			.center{ padding: 0; }
 	  }
 	  @media only screen and (min-width: 769px) and (max-width: 992px){ 
-		.center{ padding: 0 20%; }
+			.center{ padding: 0 20%; }
 	  }
     </style>
   </head>
@@ -31,19 +33,23 @@
 			</div>
 			<nav class="col-xs-12 hide col-sm-9 col-md-9 col-lg-9">
 				<ul class='nav-wrapper'>
-					<li><a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-					<li><a href="">关&nbsp;&nbsp;&nbsp;&nbsp;于</a></li>
+					<li><a href="./index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+					<li><a href='./introduce.html'>个人信息</a></li>
+					<li><a class='checked' href='#'>个人技能</a></li>
+					<li><a href='./works.html'>个人作品</a></li>
+					<li><a href='./future.html'>个人规划</a></li>
+          <li><a href='./about.html'>关&nbsp;&nbsp;&nbsp;&nbsp;于</a></li>
 				</ul>
 			</nav>
     </header>
     <main>
       <section class="chart-wrapper">
         <div class="col-sm-12 center col-md-6 col-lg-6">
-          <canvas id="main-skill" width="350" height="500"></canvas>
+          <canvas id="main-skill" width="400" height="300"></canvas>
         </div>
-        <div class="col-sm-12 center col-md-6 col-lg-6">
+        <!-- <div class="col-sm-12 center col-md-6 col-lg-6">
           <canvas id="vice-skill" width="350" height="500"></canvas>
-        </div>
+        </div> -->
       </section>
     </main>
     <footer>
@@ -79,10 +85,6 @@
 
 			window.onload = function(){
 				drawFlag();
-
-        /* get('skill.json', function(data){
-          drawGraph(data);
-				}); */
 				
 				get('graph.json', function(data){
 					//let list = graph.createNodes(data);
@@ -93,71 +95,6 @@
 					graph.toChart(document.getElementById('main-skill'), g.nodes, g.links, g.category);
 				});
 			}
-
-      /**
-       * 技能图绘制
-       * @param {Object} data
-       */
-      function drawGraph(data){
-        var mainChart = echarts.init(document.getElementById('main-skill')),
-            viceChart = echarts.init(document.getElementById('vice-skill'));
-            mainOption = {
-                title: { text: '主技能',},
-                series: [{
-                  name: 't',
-                  type: 'tree',
-                  data: [data.main],
-        				  left: '1%',
-        				  label: {
-          					normal: {
-          					  position: 'right',
-          					  verticalAlign: 'top',
-          					  align: 'left',
-          					},
-        				  },
-        				  leaves: {
-          					label: {
-          					  normal: {
-          						position: 'left',
-          						verticalAlign: 'top',
-          						align: 'left',
-          					  },
-          					},
-        				  },
-                  // layout: 'radial',
-                  initialTreeDepth: 3,
-                }],
-            },
-            viceOption = {
-              title: {text: '副技能',},
-              series: [{
-                name: '',
-                type: 'tree',
-                data: [data.vice],
-                left: '1%',
-        				label: {
-        				  normal: {
-          					position: 'right',
-          					verticalAlign: 'top',
-          					align: 'left',
-        				  },
-        				},
-        				leaves: {
-        				  label: {
-        					normal: {
-        					  position: 'left',
-        					  verticalAlign: 'top',
-        					  align: 'left',
-        					},
-        				  },
-        				},
-                initialTreeDepth: 3,
-              }],
-            };
-
-        mainChart.setOption(mainOption);
-        viceChart.setOption(viceOption);
-      }
 
     </script>
   </body>

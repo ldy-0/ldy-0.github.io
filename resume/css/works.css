@@ -7,9 +7,12 @@ main{
   padding: 0 2%;
 }
 
-/*导航栏*/
+/* header style */
 .nav-wrapper a{
   color: #969595;
+}
+.nav-wrapper .checked{
+	color: #111;
 }
 
 /*作品集容器*/

@@ -47,25 +47,24 @@ function thumbnail(){
 }
 
 /**
-*发起get请求
-*@param {String} path
-*@param {Function} callback
-*/
+ * 发起get请求
+ * @param {String} path
+ * @param {Function} callback
+ */
 function get(path, callback){
-
 		if(window.XMLHttpRequest){
 			var xhr = new XMLHttpRequest();
 		}else{
 			xhr = new ActiveXObject('MicroSoft.XMLHTTP');
 		}
-
-		xhr.open('GET', path, true);
+		
 		xhr.onreadystatechange = function(e){
 			if(xhr.readyState === 4 && xhr.status === 200){
-				// resolve(JSON.parse(xhr.responseText));
 				callback(JSON.parse(xhr.responseText));
 			}
 		}
+		
+		xhr.open('GET', path, true);
 		xhr.send();
 
 }
@@ -84,16 +83,17 @@ function drawFlag(){
 }
 
 /**
-*单个五角星绘制
-*@param {Number} x
-*@param {Number} y
-*@param {Number} r
-*@param {String} points
-*/
+ * 单个五角星绘制
+ * @param {Number} x
+ * @param {Number} y
+ * @param {Number} r
+ * @return {String} points
+ */
 function draw(x,y,r){
 	var points = x+' '+(y-r), t = 0.38,
 		cos18 = Math.cos(Math.PI/10), sin18 = Math.sin(Math.PI/10),
 		cos54 = Math.cos(Math.PI*54/180), sin54 = Math.sin(Math.PI*54/180);
+
 	points += ' '+(x+r*t*cos54)+' '+(y-r*t*sin54);
 	points += ' '+(x+r*cos18)+' '+(y-r*sin18);
 	points += ' '+(x+r*t*cos18)+' '+(y+r*t*sin18);
@@ -103,5 +103,6 @@ function draw(x,y,r){
 	points += ' '+(x-r*t*cos18)+' '+(y+r*t*sin18);
 	points += ' '+(x-r*cos18)+' '+(y-r*sin18)
 	points += ' '+(x-r*t*cos54)+' '+(y-r*t*sin54);
+	
 	return points;
 }

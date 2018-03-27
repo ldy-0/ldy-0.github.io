@@ -7,6 +7,12 @@
     <title>个人介绍-简历</title>
     <link rel="stylesheet" href="./css/base.css" />
     <style media="screen">
+			.nav-wrapper .checked{ 
+				color: #aaa; 
+				background: rgb(38,38,38);
+				opacity: .8;
+				filter: alpha(opacity=80);
+			}
       main{
 				overflow: hidden;
         padding: 30px 15.1%;
@@ -14,23 +20,15 @@
 				opacity: .8;
 				filter: alpha(opacity=80);
       }
-			a:link, a:visited{
-				color: #333;
-			}
-			a:hover, a:active{
-				color: #111;
-			}
+			a:link, a:visited{ color: #333; }
+			a:hover, a:active{ color: #111; }
 			.table-wrapper{
 				padding: 30px 4% 60px;
 				background: #eee;
 				box-shadow: 2px 2px 4px 4px #111;
 			}
-      .cls-btm{
-        border-bottom: none;
-      }
-      .cls-top{
-        border-top: none;
-      }
+      .cls-btm{ border-bottom: none; }
+      .cls-top{ border-top: none; }
     </style>
   </head>
   <body>
@@ -43,8 +41,12 @@
 			</div>
 			<nav class="col-xs-12 hide col-sm-9 col-md-9 col-lg-9">
 				<ul class='nav-wrapper'>
-					<li><a href="index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-					<li><a href="">关&nbsp;&nbsp;&nbsp;&nbsp;于</a></li>
+					<li><a href="./index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+					<li><a class='checked' href='#'>个人信息</a></li>
+					<li><a href='./skill.html'>个人技能</a></li>
+					<li><a href='./works.html'>个人作品</a></li>
+					<li><a href='./future.html'>个人规划</a></li>
+          <li><a href='./about.html'>关&nbsp;&nbsp;&nbsp;&nbsp;于</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -85,8 +87,12 @@
 							<td colspan="4"><a href='https://github.com/person-0'>https://github.com/person-0</a></td>
 						</tr>
 						<tr>
+							<td>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格</td>
+							<td colspan='4'>沉默内敛</td>
+						</tr>
+						<tr>
 							<td>兴趣爱好</td>
-							<td colspan="4" class='cls-btm'>敲代码,截拳道,了解知识</td>
+							<td colspan="4" class='cls-btm'>敲代码,截拳道,了解各方面知识</td>
 						</tr>
 						<tr>
 							<td rowspan="2">优&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点</td>

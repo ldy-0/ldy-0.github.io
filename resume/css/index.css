@@ -1,15 +1,19 @@
+/* @header style */
 header{
   background: rgb(52, 53, 44);
 }
+.nav-wrapper .checked{ 
+	color: #111;
+	background: gray; 
+}
+/* @main style */
 main{
 	background: rgb(201, 202, 187);
   overflow: hidden;
 	/*background: rgb(170, 184, 163);*/
 }
 
-/**
- * 面板容器
- */
+/* penel */
 .penel-wrapper{
   position: relative;
   height: 400px;

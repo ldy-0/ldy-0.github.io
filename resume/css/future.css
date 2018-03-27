@@ -1,30 +1,67 @@
-.nav-wrapper a{
-  color: #eee;
-}
 body{
-  background: url('../images/bg/sea.jpg') no-repeat 0px -950px;/*道路或走向远方的图片*/
+  /*background: url('../images/bg/sea.jpg') no-repeat 0px -950px;*/
+	background: url('../images/bg/road.jpg') no-repeat;
+	background-size: 100% 100%;
 }
-/*规划容器*/
-.planning{
+/* header style */
+.nav-wrapper a{ color: #eee; }
+.nav-wrapper a:hover{
+	color: #333;
+	background: transparent;
+}
+.nav-wrapper .checked{ color: #333; }
+
+/* penel */
+.penel-wrapper{
   position: relative;
   height: 600px;
 }
-.planning li{
-  width: 100%;
-  font-size: 18px;
-  color: #ccc;
-  opacity: 0.8;
-  filter: alpha(opacity=80px);
+.penel ul{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+  color: #fff;
 }
-.short-plan{
-  position: absolute;
-  bottom: 240px;
+.penel ul:hover{
+	color: #666;
+	background: #ccc;
+	opacity: .6;
+	filter: alpha(opacity=60);
 }
-.middle-plan{
-  position: absolute;
-  top: 120px;
+.mesh{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url('../images/bg/road.jpg') no-repeat -635px -840px;
+	filter: blur(8px);
 }
-.long-plan{
+.mesh + div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	opacity: .3;
+	filter: alpha(opacity=30);
+}
+.short{
   position: absolute;
-  top: 60px;
+	left: 32%;
+	top: 80%;
+	width: 30%;
+	height: 20%;
+}
+.middle{
+  position: absolute;
+	left: 40%;
+	top: 70%;
+	width: 20%;
+	height: 10%;
+}
+.long{
+  position: absolute;
+	left: 48%;
+	top: 62%;
+	width: 10%;
+	height: 8%;
 }
