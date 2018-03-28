@@ -9,8 +9,6 @@ function s(req, res){
 			if(err){ return console.log(err); }
 			res.end(result);
 		});
-	}else if(req.url === '/register.js'){
-		sendJS(res, req.url);
 	}else if(req.url === '/scripts/test.js'){
 		sendJS(res, req.url);
 	}else if(req.url === '/test.html'){
@@ -25,6 +23,11 @@ function s(req, res){
 
 		fs.readFile(__dirname+url, function(err, result){
 			if(err){return console.log(err);}
+			
+			if(url.match('.svg')){
+				res.writeHeader(200, {'Content-Type': 'image/svg+xml'});
+			}
+			
 			res.end(result);
 		});
 	}

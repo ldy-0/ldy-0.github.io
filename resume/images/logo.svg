@@ -1,0 +1,13 @@
+<svg verson='1.1' width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+
+	<defs>
+		<linearGradient id='lg' x1='0' y1='1' x2='0' y2='0'>
+			<stop offset='0' stop-color='#b7b7c8' stop-opacity='1'></stop>
+			<stop offset='1' stop-color='#b7b7c8' stop-opacity='0'></stop>
+		</linearGradient>
+	</defs>
+	<rect x='0' y='0' width='100' height='100' fill='url(#lg)' fill-opacity='0.2'/>
+	<polygon points='0 0, 38 38, 38 100, 62 100, 62 38, 100 0, 88 0, 50 38, 12 0' fill='#87aade' fill-opacity='0.2'></polygon>
+	<path d='M 0 0 L 38 38 L 38 100 H 62 L 62 38 L 100 0 L 88 0 L 50 38 L 12 0z' stroke='#87aade' stroke-width='2' stroke-opacity='0.4' fill='none'></path>
+	
+</svg>

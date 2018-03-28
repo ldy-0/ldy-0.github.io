@@ -6,7 +6,10 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <title>技能-简历</title>
-    <link rel="shortcut icon" href="favi.png">
+    <link rel="shortcut icon" href="favicon.ico" type='image/x-icon' />
+		<!--[if lt IE 9]>
+			<script src='./script/ie.js'></script>
+		<[endif]-->
     <link rel="stylesheet" href="./css/base.css" />
 		
     <style media="screen">
@@ -29,7 +32,7 @@
 				<button type="button" class="nav-button nav-trigger">菜单</button>
 			</div>
 			<div class="col-xs-9 col-sm-3 col-md-3 col-lg-3 logo">
-				<img src="favi.png" alt="icon" />
+				<img src="./images/logo.svg" width='40' height='40' alt="Logo" />
 			</div>
 			<nav class="col-xs-12 hide col-sm-9 col-md-9 col-lg-9">
 				<ul class='nav-wrapper'>
@@ -44,8 +47,11 @@
     </header>
     <main>
       <section class="chart-wrapper">
+				<div class='col-sm-12 center col-md-12 col-lg-12'>
+					<canvas id='pictorialBar' width='800' height='300'></canvas>
+				</div>
         <div class="col-sm-12 center col-md-6 col-lg-6">
-          <canvas id="main-skill" width="400" height="300"></canvas>
+          <canvas id="graph" width="400" height="300"></canvas>
         </div>
         <!-- <div class="col-sm-12 center col-md-6 col-lg-6">
           <canvas id="vice-skill" width="350" height="500"></canvas>
@@ -79,21 +85,28 @@
 			</div>
 		</footer>
 		<script src='./scripts/base.js'></script>
-		<script src='./scripts/graph.js'></script>
+		<script src='./scripts/chart.js'></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
 		<script>
 
 			window.onload = function(){
 				drawFlag();
 				
+				chart.createSingleScatter(document.getElementById('pictorialBar'), [
+					[{value: 1, symbol: 'path://M 0,0 l 10,0 l 0,10 l -10,0z',}],
+					[{value: 'HTML5', symbol: 'path://M 0,0 l 10,0 l 0,10 l -10,0z',}],
+				]);
+				
 				get('graph.json', function(data){
-					//let list = graph.createNodes(data);
-					//alert(JSON.stringify(list));
-					//let links = graph.createLinks(list);
-					//alert(links);
-					let g = graph.parse(data);
-					graph.toChart(document.getElementById('main-skill'), g.nodes, g.links, g.category);
+					let g = chart.parseGraph(data);
+					chart.createGraph(document.getElementById('graph'), {
+						title: '个人主技能图',
+						data: g.nodes, 
+						links: g.links, 
+						category: g.category
+					});
 				});
+				
 			}
 
     </script>
