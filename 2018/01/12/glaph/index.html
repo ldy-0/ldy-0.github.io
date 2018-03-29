@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="关于图的一些知识。">
+<meta name="description" content="关于图的一些笔记。">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构-图">
 <meta property="og:url" content="http://yoursite.com/2018/01/12/glaph/index.html">
 <meta property="og:site_name" content="测试博客">
-<meta property="og:description" content="关于图的一些知识。">
+<meta property="og:description" content="关于图的一些笔记。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-14T06:45:17.172Z">
+<meta property="og:updated_time" content="2018-03-29T04:20:20.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-图">
-<meta name="twitter:description" content="关于图的一些知识。">
+<meta name="twitter:description" content="关于图的一些笔记。">
 
 
 
@@ -332,36 +332,128 @@
       
 
       
-        <p>关于图的一些知识。<br><a id="more"></a></p>
-<h3 id="理论知识"><a href="#理论知识" class="headerlink" title="理论知识"></a>理论知识</h3><h4 id="点"><a href="#点" class="headerlink" title="点"></a>点</h4><h5 id="孤立点"><a href="#孤立点" class="headerlink" title="孤立点"></a>孤立点</h5><h5 id="度"><a href="#度" class="headerlink" title="度"></a>度</h5><p>和顶点关联的边的个数。</p>
+        <p>关于图的一些笔记。<br><a id="more"></a></p>
+<h2 id="基础理论知识"><a href="#基础理论知识" class="headerlink" title="基础理论知识"></a>基础理论知识</h2><h3 id="点"><a href="#点" class="headerlink" title="点"></a>点</h3><h5 id="孤立点"><a href="#孤立点" class="headerlink" title="孤立点"></a>孤立点</h5><h5 id="度"><a href="#度" class="headerlink" title="度"></a>度</h5><p>和顶点关联的边的个数。</p>
 <ul>
 <li>出度：以顶点为尾的边的个数。</li>
 <li>入度：以顶点为首的边的个数。</li>
 </ul>
 <hr>
-<h4 id="边"><a href="#边" class="headerlink" title="边"></a>边</h4><h5 id="有向边"><a href="#有向边" class="headerlink" title="有向边"></a>有向边</h5><p>有方向的边。</p>
+<h3 id="边"><a href="#边" class="headerlink" title="边"></a>边</h3><h5 id="有向边"><a href="#有向边" class="headerlink" title="有向边"></a>有向边</h5><p>有方向的边。</p>
 <h5 id="无向边"><a href="#无向边" class="headerlink" title="无向边"></a>无向边</h5><p>无方向的边。</p>
-<h4 id="图"><a href="#图" class="headerlink" title="图"></a>图</h4><p>顶点集合v和v中各顶点关系组成的边集合e组成的数据结构。</p>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>顶点集合V和V中各顶点关系组成的边集合E组成的数据结构。</p>
 <h5 id="平凡图"><a href="#平凡图" class="headerlink" title="平凡图"></a>平凡图</h5><p>只有一个顶点的图。</p>
-<h5 id="孤立图"><a href="#孤立图" class="headerlink" title="孤立图"></a>孤立图</h5><p>没有边的图。</p>
-<h5 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h5><p>边都为有向边的图。G = (V，E)</p>
+<h5 id="孤立图"><a href="#孤立图" class="headerlink" title="孤立图"></a>孤立图</h5><p>只有顶点、没有边的图。</p>
+<canvas id="no_eage_graph" width="800" height="200">浏览器不支持</canvas>
+
 <h5 id="无向图"><a href="#无向图" class="headerlink" title="无向图"></a>无向图</h5><p>边都为无向边的图。G =  &lt;V, E&gt;</p>
+<canvas id="no_direction_graph" width="800" height="200">浏览器不支持</canvas>
+
+<h5 id="有向图"><a href="#有向图" class="headerlink" title="有向图"></a>有向图</h5><p>边都为有向边的图。G = (V，E)</p>
+<canvas id="direction_graph" width="800" height="200">浏览器不支持</canvas>
+
 <h5 id="简单图"><a href="#简单图" class="headerlink" title="简单图"></a>简单图</h5><p>无重复边，无到自身的边的图。</p>
+<canvas id="simple_graph" width="800" height="200">浏览器不支持</canvas>
+
+<h5 id="完全图"><a href="#完全图" class="headerlink" title="完全图"></a>完全图</h5><p>每二个顶点恰有一条边相连的简单图,表示为K<sub>n</sub>。（n个顶点有n(n-1)/2条边）</p>
+<canvas id="complete_graph" width="800" height="200">浏览器不支持</canvas>
+
 <h5 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h5><p>图G = (V,E), v<sub>1</sub>∈ V,E<sub>1</sub>∈ E, 有v<sub>1</sub>，E<sub>1</sub>组成的图。</p>
-<h5 id="连通图"><a href="#连通图" class="headerlink" title="连通图"></a>连通图</h5><p>任意二个顶点都是连通的无向图。</p>
-<h5 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a>强连通图</h5><p>任意二个顶点都存在路径的有向图。</p>
+<h5 id="连通图"><a href="#连通图" class="headerlink" title="连通图"></a>连通图</h5><p>任意二个顶点都是连通的无向图。<br>图2、4、5都为连通图。</p>
+<h5 id="强连通图"><a href="#强连通图" class="headerlink" title="强连通图"></a>强连通图</h5><p>任意二个顶点都存在路径的有向图。<br>图3不是强连通图，顶点3与顶点1、2、4都不连通，顶点4与顶点1、2, 3都不连通。</p>
 <h5 id="基图"><a href="#基图" class="headerlink" title="基图"></a>基图</h5><p>将有向图中所有有向边换为无向边后的图。</p>
-<h5 id="弱连通图"><a href="#弱连通图" class="headerlink" title="弱连通图"></a>弱连通图</h5><p>基图为连通图的有向图。</p>
-<h5 id="极大连通子图"><a href="#极大连通子图" class="headerlink" title="极大连通子图"></a>极大连通子图</h5><p>又称图的连通分量。<br>是图的连通子图但不是图的另一个连通子图的子图。</p>
-<h4 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h4><p>一个顶点序列v<sub>1</sub>v<sub>2</sub>…v<sub>n</sub>。</p>
+<h5 id="弱连通图"><a href="#弱连通图" class="headerlink" title="弱连通图"></a>弱连通图</h5><p>基图为连通图的有向图。<br>图3为弱连通图。</p>
+<h5 id="极大连通子图"><a href="#极大连通子图" class="headerlink" title="极大连通子图"></a>极大连通子图</h5><p>又称图的连通分量。是图的连通子图但不是图的另一个连通子图的子图。<br>连通图只有一个连通分量（自身），非连通图有多个连通分量。</p>
+<p><canvas id="connected_graph" width="800" height="200">浏览器不支持</canvas><br>图6中有二个连通分量。一个为V(1,2,3,4)及其E，一个为V(11,12,13,14)及其E。</p>
+<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><p>一个顶点序列v<sub>1</sub>v<sub>2</sub>…v<sub>n</sub>。</p>
 <h5 id="路径长度"><a href="#路径长度" class="headerlink" title="路径长度"></a>路径长度</h5><p>路径中边的个数。</p>
 <h5 id="简单路径"><a href="#简单路径" class="headerlink" title="简单路径"></a>简单路径</h5><p>路径中的顶点不重复。(除首尾点)</p>
-<h4 id="存储方式"><a href="#存储方式" class="headerlink" title="存储方式"></a>存储方式</h4><ul>
+<h3 id="存储方式"><a href="#存储方式" class="headerlink" title="存储方式"></a>存储方式</h3><ul>
 <li>邻接矩阵</li>
-<li>邻接表<h4 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h4></li>
-<li>深度优先搜索(DFS)<br>从某一结点开始，</li>
+<li>邻接表</li>
+</ul>
+<h3 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h3><ul>
+<li>深度优先搜索(DFS)<br>从某一结点v<sub>i</sub>开始，找到与其相连的未遍历结点v<sub>1</sub>，然后再找与v<sub>1</sub>相连的未遍历结点，如此递归直至无相连未遍历结点。</li>
 <li>广度优先搜索(BFS)<br>维持一个队列，从某一结点开始，将结点相连的未遍历的结点入队，然后队列首出队，并将与首结点相连的未遍历的结点入队，直至队列未空。</li>
 </ul>
+<script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
+<script>
+    window.onload = function(){
+        let data = [
+            {name: '1', x: 0, y: 5, },
+            {name: '2', x: 10, y: 10, },
+            {name: '3', x: 10, y: 0, },
+            {name: '4', x: 20, y: 12, },
+        ],links = [
+            {source: '1', target: '2'},
+            {source: '1', target: '3'},
+            {source: '1', target: '4'},
+            {source: '2', target: '1'},
+            {source: '2', target: '4'},
+        ];
+        createGraph(document.getElementById('no_eage_graph'), {data,title:1});
+        createGraph(document.getElementById('no_direction_graph'), {
+            data, links, title: 2});
+        createGraph(document.getElementById('direction_graph'), {
+            title: '3',
+            data, 
+            links, 
+            edgeSymbol: ['', 'arrow'],
+        });
+        //simple_graph
+        let simple_links = links.map(v => v.source === '2' && v.target === '1' ? {source: '2', target: '3'} : v);
+        createGraph(document.getElementById('simple_graph'), {
+            title: '4',
+            data, 
+            links: simple_links,
+        });
+        //complete_graph
+        simple_links.push({source: '3', target: '4'});
+        createGraph(document.getElementById('complete_graph'), {
+            title: '5',
+            data,
+            links: simple_links,
+        });
+        //connected_graph
+        let data1 = [
+            {name: '11', x: 10, y: 5, },
+            {name: '12', x: 20, y: 10, },
+            {name: '13', x: 30, y: 0, },
+            {name: '14', x: 40, y: 12, },
+        ], links1 = [
+            {source: '11', target: '12',},
+            {source: '12', target: '13',},
+            {source: '13', target: '14',},
+            {source: '14', target: '12',},
+        ];
+        createGraph(document.getElementById('connected_graph'), {
+            title: 6,
+            data: data1.concat(data),
+            links: links1.concat(links),
+        });
+    }
+
+    /**
+     * 创建图
+     * @param {HTMLCanvasElement} element
+     * @param {Object} obj
+     */
+    function createGraph(element, obj){
+        let option = {
+            title: { text: obj.title || '' },
+            series: {
+                type: 'graph',
+                data: obj.data,
+                label: { show: true, offset: [20, 0] },
+                links: obj.links || [],
+                lineStyle: { color: 'source', },
+                edgeSymbol: obj.edgeSymbol || '',
+            },
+        };
+
+        echarts.init(element).setOption(option);
+    }
+</script>
 
       
     </div>
@@ -536,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#理论知识"><span class="nav-number">1.</span> <span class="nav-text">理论知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#点"><span class="nav-number">1.1.</span> <span class="nav-text">点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#孤立点"><span class="nav-number">1.1.1.</span> <span class="nav-text">孤立点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#度"><span class="nav-number">1.1.2.</span> <span class="nav-text">度</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#边"><span class="nav-number">1.2.</span> <span class="nav-text">边</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#有向边"><span class="nav-number">1.2.1.</span> <span class="nav-text">有向边</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无向边"><span class="nav-number">1.2.2.</span> <span class="nav-text">无向边</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#图"><span class="nav-number">1.3.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#平凡图"><span class="nav-number">1.3.1.</span> <span class="nav-text">平凡图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#孤立图"><span class="nav-number">1.3.2.</span> <span class="nav-text">孤立图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有向图"><span class="nav-number">1.3.3.</span> <span class="nav-text">有向图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无向图"><span class="nav-number">1.3.4.</span> <span class="nav-text">无向图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单图"><span class="nav-number">1.3.5.</span> <span class="nav-text">简单图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#子图"><span class="nav-number">1.3.6.</span> <span class="nav-text">子图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连通图"><span class="nav-number">1.3.7.</span> <span class="nav-text">连通图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#强连通图"><span class="nav-number">1.3.8.</span> <span class="nav-text">强连通图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基图"><span class="nav-number">1.3.9.</span> <span class="nav-text">基图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#弱连通图"><span class="nav-number">1.3.10.</span> <span class="nav-text">弱连通图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#极大连通子图"><span class="nav-number">1.3.11.</span> <span class="nav-text">极大连通子图</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路径"><span class="nav-number">1.4.</span> <span class="nav-text">路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#路径长度"><span class="nav-number">1.4.1.</span> <span class="nav-text">路径长度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单路径"><span class="nav-number">1.4.2.</span> <span class="nav-text">简单路径</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储方式"><span class="nav-number">1.5.</span> <span class="nav-text">存储方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历方式"><span class="nav-number">1.6.</span> <span class="nav-text">遍历方式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础理论知识"><span class="nav-number">1.</span> <span class="nav-text">基础理论知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#点"><span class="nav-number">1.1.</span> <span class="nav-text">点</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#孤立点"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">孤立点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#度"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边"><span class="nav-number">1.2.</span> <span class="nav-text">边</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#有向边"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">有向边</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无向边"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">无向边</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图"><span class="nav-number">1.3.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#平凡图"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">平凡图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#孤立图"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">孤立图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无向图"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">无向图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#有向图"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">有向图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单图"><span class="nav-number">1.3.0.5.</span> <span class="nav-text">简单图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完全图"><span class="nav-number">1.3.0.6.</span> <span class="nav-text">完全图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#子图"><span class="nav-number">1.3.0.7.</span> <span class="nav-text">子图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连通图"><span class="nav-number">1.3.0.8.</span> <span class="nav-text">连通图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#强连通图"><span class="nav-number">1.3.0.9.</span> <span class="nav-text">强连通图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基图"><span class="nav-number">1.3.0.10.</span> <span class="nav-text">基图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#弱连通图"><span class="nav-number">1.3.0.11.</span> <span class="nav-text">弱连通图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#极大连通子图"><span class="nav-number">1.3.0.12.</span> <span class="nav-text">极大连通子图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径"><span class="nav-number">1.4.</span> <span class="nav-text">路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#路径长度"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">路径长度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#简单路径"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">简单路径</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#存储方式"><span class="nav-number">1.5.</span> <span class="nav-text">存储方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历方式"><span class="nav-number">1.6.</span> <span class="nav-text">遍历方式</span></a></li></ol></li></ol></div>
             
 
           </div>
