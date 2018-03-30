@@ -67,10 +67,17 @@ a{ cursor: pointer; }
 	zoom: 0;/*IE*/
 }
 
-/*
-
-*/
+/* @main style */
 main li{ border: 1px solid green; }/**/
+/**
+ * logo
+ * img的父标签高度默认为img高度+5px;
+*/
+.logo-wrapper{
+	padding-top: 5px;
+	text-align: center;
+	/*height: 44px;*/
+}
 .img-wrapper{ 
 	display: inline-block; 
 	margin: 5px 10px; 

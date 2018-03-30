@@ -135,7 +135,7 @@
 		};
 		
 		for(let i = 0, arr = option.series.categories; i<opt.category; i++){
-			arr.push({name: i,});
+			arr.push({name: i.toString(),});
 		}
 		
 		echarts.init(element).setOption(option);
@@ -143,43 +143,33 @@
 	
 	
 	/**
-	 * 
+	 * 创建单轴散点图
+	 * @param {HTMLCanvasElement} element
+	 * @param {Object} obj
 	 */
-	 function createSingleScatter(element, data){
+	 function createSingleScatter(element, obj){
 		 let none = {show: false},
+				 len = obj.axis.length,
+				 handle = function(data){ return data; },
 				 option = {
-					 title: [
-						{ top: '16%', text: 'HTML' },
-						{ top: '49%', text: 'CSS' },
-						{ top: '82%', text: 'JavaScript' },
-					 ],
-					 singleAxis: [{
-						 type: 'category', top: '0%', left: 100, height: '30%',
-						 data: ['html4.01', 'html5', 'svg', 'html模板'],
-					 },{
-						 type: 'category', top: '30%', left: 100, height: '30%',
-						 data: ['定位体系', 'css2.1', '布局', 'css3', '兼容性'],
-					 },{
-						 type: 'category', top: '60%', left: 100, height: '30%',
-						 data: ['面向对象', 'ES 5', 'DOM API', 'ES 6', '函数式'],
-					 }],
-					 series: [{
-						 type: 'scatter', coordinateSystem: 'singleAxis',
-						 singleAxisIndex: 0,
-						 data: [20, 10, 20, 10],
-						 symbolSize: function(data){ return data; }
-					 },{
-						 type: 'scatter', coordinateSystem: 'singleAxis',
-						 singleAxisIndex: 1,
-						 data: [20, 20, 10, 10, 5],
-						 symbolSize: function(data){ return data; }
-					 },{
-						 type: 'scatter', coordinateSystem: 'singleAxis',
-						 singleAxisIndex: 2,
-						 data: [20, 20, 15, 15, 5],
-						 symbolSize: function(data){ return data; }
-					 }],
+					 title: [],
+					 singleAxis: [],
+					 series: [],
 				 };
+		 
+		 for(let i = 0; i<len; i++){
+			 option.title.push({ top: (i*100+50)/len+'%', text: obj.title[i] || '' },);
+			 option.singleAxis.push({
+						 type: 'category', top: i*90/len+'%', left: 100, height: 100/len+'%',
+						 data: obj.axis[i],
+					 });
+			 option.series.push({
+						 type: 'scatter', coordinateSystem: 'singleAxis',
+						 singleAxisIndex: i,
+						 data: obj.data[i],
+						 symbolSize: handle,
+					 });
+		 }
 		 
 		 echarts.init(element).setOption(option);
 	 }
