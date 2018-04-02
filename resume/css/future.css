@@ -4,12 +4,12 @@ body{
 	background-size: 100% 100%;
 }
 /* header style */
-.nav-wrapper a{ color: #eee; }
-.nav-wrapper a:hover{
+.s-fc3{ color: #eee; }
+.s-fc3:hover{
 	color: #333;
 	background: transparent;
 }
-.nav-wrapper .checked{ color: #333; }
+.z-sel1{ color: #333; }
 
 /* penel */
 .penel-wrapper{

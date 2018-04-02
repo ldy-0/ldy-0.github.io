@@ -1,19 +1,16 @@
 body{
-  /*  background: rgb(191, 191, 191);*/
-  /*  background: rgb(236, 236, 236);*/
+  /*  background: rgb(191, 191, 191)||rgb(236, 236, 236);*/
   background: rgb(220, 220, 220);
 }
-main{
-  padding: 0 2%;
-}
+main{ padding: 0 2%; }
 
 /* header style */
-.nav-wrapper a{
-  color: #969595;
+.s-fc3{ color: #969595; }
+.s-fc3:hover{
+	background: gray;
+	color: #333;
 }
-.nav-wrapper .checked{
-	color: #111;
-}
+.z-sel1{ color: #111; }
 
 /*作品集容器*/
 .works-container{
@@ -29,12 +26,8 @@ main{
   list-style: none;
 }
 /*作品容器*/
-.works-list li{
-  overflow: hidden;
-}
-.works-list li:hover{
-  background: #ddd;
-}
+.works-list li{ overflow: hidden; }
+.works-list li:hover{ background: #ddd; }
 /*作品图标*/
 .works-list i{
   display: inline-block;

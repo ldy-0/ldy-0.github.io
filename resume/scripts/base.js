@@ -11,22 +11,24 @@ function penel(){
 }
 
 /**
-*菜单点击事件
-*/
+ * 设置菜单点击事件
+ */
 function menuTrigger(){
-	document.getElementsByClassName('nav-trigger')[0].addEventListener('click', trigger, false);
+	trigger();
+	document.getElementsByClassName('nav-btn')[0].addEventListener('click', trigger, false);
 
 	function trigger(e){
 		var nav = document.getElementsByTagName('header')[0].getElementsByTagName('nav')[0];
-
-		if(nav.classList.contains('show')){
-			nav.classList.remove('show');
-			return nav.classList.add('hide');
+		//TODO: IE9 no suport contains
+		if(nav.classList.contains('j-hide')){
+			nav.classList.remove('j-hide');
+			return nav.classList.add('j-show');
 		};
 
-		nav.classList.remove('hide');
-		nav.classList.add('show');
-	};
+		nav.classList.remove('j-show');
+		nav.classList.add('j-hide');
+	}
+	
 }
 
 /**
@@ -45,6 +47,17 @@ function thumbnail(){
 		};
 	}
 }
+
+
+/**
+ * To determine whether the mobile terminal
+ * 判断是否为移动端
+ * @return {Boolean}
+ */
+function isMob(){
+	return /(Android|iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent);
+}
+
 
 /**
  * 发起get请求

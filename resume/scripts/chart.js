@@ -14,12 +14,12 @@
 	 * @return {Object}
 	 */
 	function parseGraph(obj){
-		let nodes = createNodes(obj),
+		var nodes = createNodes(obj),
 				links = createLinks(nodes);
 		
 		return {
-			nodes,
-			links,
+			nodes: nodes,
+			links: links,
 			category: getCategory(nodes),
 		};
 	}
@@ -30,18 +30,17 @@
 	 * @param {Object} obj
 	 */
 	function createNodes(obj){
-		let list = [];
-		
+		var list = [];
 		return create(obj, list);
 		
 		function create(obj, list){
-			let len = obj.children.length;
+			var len = obj.children.length;
 			
 			if(len !== 0){
-				for(let i = len-1; i >= 0; create(obj.children[i--], list)){/*empty*/}
+				for(var i = len-1; i >= 0; create(obj.children[i--], list)){/*empty*/}
 			}
 			
-			let node = JSON.parse(JSON.stringify(obj));
+			var node = JSON.parse(JSON.stringify(obj));
 			delete node.children;
 			list.push(node);
 			
@@ -74,13 +73,13 @@
 	 * @return {Array} 路径集合
 	 */
 	function createLinks(list){
-		let arr = [],
+		var arr = [],
 				cursor = [],
 				links = [];
 		
 		arr[list[0].category] = [ {target: list[0].name} ];
-		for(let i = 1, len = list.length; i<len; i++){
-			let obj = list[i],
+		for(var i = 1, len = list.length; i<len; i++){
+			var obj = list[i],
 					lv = obj.category;
 			
 			if(lv < list[i-1].category){
@@ -112,7 +111,7 @@
 	
 	
 	/**
-	 * 生成图表
+	 * create Graph chart 创建图
 	 * @param {HTMLCanvasElement} element
 	 * @param {Object} opt
 	 */
@@ -121,7 +120,7 @@
 			throw new RangeError('缺少属性');
 		}
 		
-		let option = {
+		var option = {
 			title: { text: opt.title || '', padding: [12, 0], },
 			legend: {},
 			series: {
@@ -134,7 +133,7 @@
 			},
 		};
 		
-		for(let i = 0, arr = option.series.categories; i<opt.category; i++){
+		for(var i = 0, arr = option.series.categories; i<opt.category; i++){
 			arr.push({name: i.toString(),});
 		}
 		
@@ -148,7 +147,8 @@
 	 * @param {Object} obj
 	 */
 	 function createSingleScatter(element, obj){
-		 let none = {show: false},
+		 var none = {show: false},
+				 color = { color: '#ccc' },
 				 len = obj.axis.length,
 				 handle = function(data){ return data; },
 				 option = {
@@ -157,14 +157,24 @@
 					 series: [],
 				 };
 		 
-		 for(let i = 0; i<len; i++){
-			 option.title.push({ top: (i*100+50)/len+'%', text: obj.title[i] || '' },);
+		 for(var i = 0; i<len; i++){
+			 option.title.push({ 
+						 textStyle: color,
+						 top: (i*100+30)/len+'%', 
+						 text: obj.title[i] || '', 
+					 });
 			 option.singleAxis.push({
-						 type: 'category', top: i*90/len+'%', left: 100, height: 100/len+'%',
+						 type: 'category', 
+						 axisLabel: color,
+						 axisLine: { lineStyle: color, },
+						 top: i*90/len+'%', 
+						 left: 100, 
+						 height: 100/len+'%',
 						 data: obj.axis[i],
 					 });
 			 option.series.push({
-						 type: 'scatter', coordinateSystem: 'singleAxis',
+						 type: 'scatter', 
+						 coordinateSystem: 'singleAxis',
 						 singleAxisIndex: i,
 						 data: obj.data[i],
 						 symbolSize: handle,
@@ -180,12 +190,12 @@
 	 * @type Object
 	 */
 	var chart = {
-		createNodes,
-		createLinks,
-		getCategory,
-		parseGraph,
-		createGraph,
-		createSingleScatter,
+		createNodes: createNodes,
+		createLinks: createLinks,
+		getCategory: getCategory,
+		parseGraph: parseGraph,
+		createGraph: createGraph,
+		createSingleScatter: createSingleScatter,
 	};
 	
 	/* @export */

@@ -9,56 +9,55 @@
     <link rel="shortcut icon" href="favicon.ico" type='image/x-icon' />
 		<!--[if lt IE 9]>
 			<script src='./script/ie.js'></script>
-		<[endif]-->
-    <link rel="stylesheet" href="./css/global.css" />
+		<![endif]-->
+    <link rel="stylesheet" type='text/css' href="./css/global.css" />
 		
     <style media="screen">
-    /*main{ padding: 0; }*/
-    .chart-wrapper{
-      overflow: hidden;
-    }
-		.nav-wrapper .checked{ color: #111; }
-	  @media only screen and (max-width: 768px){
-			.center{ padding: 0; }
-	  }
-	  @media only screen and (min-width: 769px) and (max-width: 992px){ 
-			.center{ padding: 0 20%; }
-	  }
+    .chart-wrap{ margin-top: 80px; }
+		.z-sel1{ color: #111; }
+		.center{ 
+			display: -webkit-flex;
+			display: flex;
+			justify-content: center;
+		}
     </style>
   </head>
   <body>
-    <header class="cf">
+    <header class="f-cb">
       <div class="col-xs-3">
-				<button type="button" class="nav-btn nav-trigger">菜单</button>
+				<button type="button" class="f-dn nav-btn">菜单</button>
 			</div>
-			<div class="col-xs-9 col-sm-3 col-md-3 col-lg-3 logo">
+			<div class="logo-wrap col-xs-9 col-sm-12 col-md-3 col-lg-3">
 				<img src="./images/logo.svg" width='40' height='40' alt="Logo" />
 			</div>
-			<nav class="col-xs-12 hide col-sm-9 col-md-9 col-lg-9">
-				<ul class='nav-wrapper'>
-					<li><a href="./index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
-					<li><a href='./introduce.html'>个人信息</a></li>
-					<li><a class='checked' href='#'>个人技能</a></li>
-					<li><a href='./works.html'>个人作品</a></li>
-					<li><a href='./future.html'>个人规划</a></li>
-          <li><a href='./about.html'>关&nbsp;&nbsp;&nbsp;&nbsp;于</a></li>
+			<nav class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+				<ul class='m-nav'>
+					<li><a class='s-fc2' href="./index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+					<li><a class='s-fc2' href='./introduce.html'>个人信息</a></li>
+					<li><a class='s-fc2 z-sel z-sel1' href='#'>个人技能</a></li>
+					<li><a class='s-fc2' href='./works.html'>个人作品</a></li>
+					<li><a class='s-fc2' href='./future.html'>个人规划</a></li>
+          <li><a class='s-fc2' href='./about.html'>关&nbsp;&nbsp;&nbsp;&nbsp;于</a></li>
 				</ul>
 			</nav>
     </header>
     <main>
-      <section class="chart-wrapper">
-				<div class='col-sm-12 center col-md-12 col-lg-12'>
-					<canvas id='singleScatter' width='800' height='300'></canvas>
+			<ul id="goTop">
+				<li><a class='goTop' href="">置顶</a></li>
+			</ul>
+      <section>
+				<div class='center chart-wrap' style='background: #404a59;'>
+					<canvas id='singleScatter' width='800' height='300'>浏览器不支持</canvas>
 				</div>
-        <div class="col-sm-12 center col-md-6 col-lg-6">
-          <canvas id="graph" width="800" height="300"></canvas>
+        <div class="center chart-wrap" style='background: #2c343c;'>
+          <canvas id="graph" width="800" height="300">浏览器不支持</canvas>
         </div>
       </section>
     </main>
 		<!-- footer -->
     <footer class='m-ft'>
 			<div class='ft-menugroup'></div>
-			<div class='u-ft-lang col-xs-12 col-lg-4'>
+			<div class='u-ft-lang col-xs-12 col-md-4 col-lg-4'>
 				<svg class='f-vam' xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewbox="0 0 240 160">
 					<rect x="0" y="0" width="240" height="160" fill="red"></rect>
 					<polyline class="flag-star" points="" fill="yellow"></polyline>
@@ -69,7 +68,7 @@
 				</svg>
 				<a class='f-fs1 s-fc1' href='#'>中文(简体中文)</a>
 			</div>
-			<ul class='u-ft-copy f-fs1 col-xs-12 col-lg-8'>
+			<ul class='u-ft-copy f-fs1 col-xs-12 col-md-8 col-lg-8'>
 				<li><a class='s-fc1' href='./copyright/contact.html'>联系我们</a></li>
 				<li><a class='s-fc1' href='./copyright/privacy.html'>隐私与cookie</a></li>
 				<li><a class='s-fc1' href='./copyright/legal.html'>使用条款</a></li>
@@ -78,12 +77,15 @@
 				<li class='s-fc1'>© 2017 Yuan</li>
 			</ul>
 		</footer>
-		<script src='./scripts/base.js'></script>
-		<script src='./scripts/chart.js'></script>
+		<script type='text/javascript' src='./scripts/base.js'></script>
+		<script type='text/javascript' src='./scripts/chart.js'></script>
     <script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
 		<script>
 
 			window.onload = function(){
+				
+				menuTrigger();
+				
 				drawFlag();
 				
 				chart.createSingleScatter(document.getElementById('singleScatter'), {
@@ -101,7 +103,7 @@
 				});
 				
 				get('graph.json', function(data){
-					let g = chart.parseGraph(data);
+					var g = chart.parseGraph(data);
 					chart.createGraph(document.getElementById('graph'), {
 						title: '个人主技能图',
 						data: g.nodes, 

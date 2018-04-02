@@ -13,8 +13,8 @@ table{
 a{ text-decoration: none; }
 button{ outline: none; }
 textarea{ 
-	resize: none; 
-	background: none; 
+	background: none;
+	resize: none;
 }
 
 
@@ -32,8 +32,17 @@ table caption{
 	margin: 0 0 10px;
 	font: normal bold 20px/3 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-td{ width: 200px; height: 36px; border: 1px solid black; }
-hr{ border: none; border-top: 1px solid #d2d2d2; margin: 25px 0; }
+td{ 
+	width: 200px; 
+	height: 36px; 
+	border: 1px solid black; 
+}
+hr{ 
+	margin: 25px 0; 
+	border: none; 
+	border-top: 1px solid #d2d2d2; 
+}
+
 
 /* @grid layout style */
 @media only screen and (max-width: 767px){
@@ -69,72 +78,70 @@ hr{ border: none; border-top: 1px solid #d2d2d2; margin: 25px 0; }
 	.col-lg-3{ float: left; width: 25%; }
 }
 
-.cf:after{
+.f-cb:after{
 	content: '';
 	display: block;
 	clear: both;
 	zoom: 0;/*IE*/
 }
-
+.f-dn{ display: none; }
+.f-fs1{ font-size: 0.8rem; }
+.f-vam{ vertical-align: middle; }
+.s-fc1{ color: #626262; }
+.s-fc1:hover{ color: rgba(0, 0, 0, 0.9); }
+.s-fc2{ color: #aaa; }
+.s-fc2:hover{
+	background: gray;
+	color: #333;
+}
+.z-sel{ text-decoration: underline; }
 
 
 /* @header style */
-/*button*/
-.nav-btn{
-	display: none;
-}
-@media only screen and (max-width: 768px){
-	.nav-trigger{
-		display: block;
-		float: left;
-		height: 50px;
-		padding: 0 15px;
-		font-size: 18px;
-		color: #ccc;
-		background: #111;
-		border: none;
-	}
-	ul.nav-wrapper li{
-		float: none;
-		border-bottom: 1px solid gray;
-	}
-	/*a占满li*/
-	.nav-wrapper li a{
-		width: 100%;
-		padding: 0px;
-	}
-	.show{ display: block; }
-	.hide{ display: none; }
-}
 /* logo */
-.logo-wrapper{
+.logo-wrap{
 	padding-top: 5px;
 	text-align: center;
 }
-/* nav style */
-.nav-wrapper li{ float: left; }
-.nav-wrapper a{
+/* nav */
+.m-nav li{ float: left; }
+.m-nav a{
 	display: inline-block;
 	line-height: 50px;
-	padding: 0px 30px;
-	color: #aaa;
+	padding: 0 30px;
 	transition: background 1s, color 1s;
 	-webkit-transition: background 1s, color 1s;
 	-moz-transition: background 1s, color 1s;
 	-ms-transition: background 1s, color 1s;
 	-o-transition: background 1s, color 1s;
 }
-.nav-wrapper a:hover{
-	background: gray;
-	color: #333;
+@media only screen and (max-width: 768px){
+	.nav-btn{
+		float: left;
+		display: block;
+		height: 50px;
+		padding: 0 15px;
+		border: none;
+		font-size: 18px;
+		color: #ccc;
+		background: #111;
+	}
+	.m-nav li{
+		float: none;
+		border-bottom: 1px solid gray;
+	}
+	.m-nav a{
+		width: 100%;
+		padding: 0;
+	}
+	.j-show{ display: block; }
+	.j-hide{ display: none; }
 }
-.nav-wrapper .checked{ text-decoration: underline; }
+
 
 
 /* @main style */
-main{
-	padding: 0 5%;
-}
+main{ padding: 0 5%; }
 .fill{ padding: 0; }
 /* goTop nav */
 #goTop{
@@ -189,9 +196,6 @@ main{
 	display: inline-block;
 	padding-right: 24px; 
 }
-.f-fs1{ font-size: 0.8rem; }
-.f-vam{ vertical-align: middle; }
-.s-fc1{ color: #626262; }
-.s-fc1:hover{ color: rgba(0, 0, 0, 0.9); }
+
 
 
