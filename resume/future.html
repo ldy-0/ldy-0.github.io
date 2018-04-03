@@ -36,30 +36,27 @@
       <section>
         <ul class="penel-wrapper">
           <li class="long penel">
-						<div class='mesh'></div>
-						<div></div>
-            <ul>
-							<li>长期</li>
-              <li>深入V8引擎</li>
+						<div class='mask'></div>
+            <ul class='blur'>
+							<li class='penel-title'>长期</li>
+							<li class='f-dn'>深入V8引擎</li>
             </ul>
           </li>
           <li class="middle penel">
-						<div class='mesh'></div>
-						<div></div>
-            <ul>
-							<li>中期</li>
-              <li>学习threejs及相关webGL标准</li>
+						<div class='mask'></div>
+            <ul class='blur'>
+							<li class='penel-title'>中期</li>
+							<li class='f-dn'>学习threejs及相关webGL标准</li>
             </ul>
           </li>
           <li class="short penel">
-						<div class='mesh'></div>
-						<div></div>
-            <ul>
-							<li>短期</li>
-              <li>熟练使用Less</li>
-              <li>阅读JQuery源码</li>
-              <li>阅读《JavaScript权威指南》</li>
-							<li>阅读《精通css：高级Web标准解决方案》</li>
+						<div class='mask'></div>
+            <ul class='blur'>
+							<li class='penel-title'>短期</li>
+              <li class='f-dn'>熟练使用Less</li>
+              <li class='f-dn'>阅读JQuery源码</li>
+              <li class='f-dn'>阅读《JavaScript权威指南》</li>
+							<li class='f-dn'>阅读《精通css：高级Web标准解决方案》</li>
             </ul>
           </li>
         </ul>
@@ -96,6 +93,45 @@
 				drawFlag();
 				
 				menuTrigger();
+				trigger();
+			}
+			
+			function trigger(){
+				var proxy = document.getElementsByClassName('penel-wrapper')[0];
+				proxy.addEventListener('mouseenter', handle, true);
+				proxy.addEventListener('mouseleave', leave_handle, true);
+				
+				function handle(e){
+					var target = e.target || e.srcElement;
+					
+					if(target.tagName === 'DIV'){
+						var list = target.nextElementSibling.children,
+								parent = target.parentElement,
+								len = list.length;
+						
+						while(parent.nextElementSibling){
+							parent = parent.nextElementSibling;
+							parent.classList.add('j-opacity');
+						}
+						for(var i = 1; i<len; list[i++].classList.remove('f-dn')){/*empty*/}
+					}
+				}
+				
+				function leave_handle(e){
+					var target = e.target || e.srcElement;
+					
+					if(target.tagName === 'DIV'){
+						var list = target.nextElementSibling.children,
+								parent = target.parentElement,
+								len = list.length;
+						
+						while(parent.nextElementSibling){
+							parent = parent.nextElementSibling;
+							parent.classList.remove('j-opacity');
+						}
+						for(var i = 1; i<len; list[i++].classList.add('f-dn')){/*empty*/}
+					}
+				}
 			}
 		</script>
   </body>

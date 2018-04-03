@@ -35,7 +35,7 @@ function menuTrigger(){
 *缩列图点击事件
 */
 function thumbnail(){
-	document.getElementsByClassName('thumbnail-container')[0].addEventListener('click', callback, true);
+	document.getElementsByClassName('thumbnail-wrap')[0].addEventListener('click', callback, true);
 
 	function callback(e){
 		var target = e.target || e.srcElement;

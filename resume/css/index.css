@@ -1,24 +1,20 @@
 /* @header style */
-header{
-  background: rgb(52, 53, 44);
-}
+header{ background: rgb(52, 53, 44); }
 .z-sel1{ 
 	color: #111;
 	background: gray; 
 }
 /* @main style */
 main{
-	background: rgb(201, 202, 187);
-  overflow: hidden;
-	/*background: rgb(170, 184, 163);*/
+	background: rgb(201, 202, 187);/*background: rgb(170, 184, 163);*/
+  overflow: hidden
 }
 
 /* penel */
-.penel-wrapper{
+.penel-wrap{
   position: relative;
   height: 400px;
-	background: rgb(239, 240, 220);
-  /*background: rgb(221, 240, 237);*/
+	background: rgb(239, 240, 220);/*background: rgb(221, 240, 237);*/
 }
 .penel{
   position: absolute;
@@ -26,7 +22,7 @@ main{
   width: 100%;
   height: inherit;
 }
-/*大字内容*/
+/*大内容*/
 .penel p{
   width: 24px;
   color: #333;
@@ -117,192 +113,22 @@ main{
   }
 }
 
-/**
- * thumbnail
- * 缩略图
- */
-.thumbnail-container{
-	margin: 10px 0;
-}
-.img-wrapper{
+/* thumbnail */
+figure{ margin: 5px 10px; }
+.thumbnail-wrap{ margin: 10px 0; }
+.img-wrap{
 	display: inline-block;
 	position: relative;
 	text-align: center;
 }
+.img-wrap div:hover, .img-caption:hover{ cursor: pointer; }
 .img-caption{
 	position: absolute;
-	color: #fff;
+	top: 60px;
+	left: 90px;
+	color: #888;
 }
-.img-wrapper div:hover, .img-caption:hover{
-  cursor: pointer;
-}
-@media only screen and (max-width: 920px){
-	/*figure*/
-	.imgWrapper{
-		height: 132px;
-		margin: 5px 20px;
-	}
-	/*caption*/
-	.imgCaption{
-		top: 60px;
-		left: 90px;
-	}
-	/*blur*/
-	.blur-wrapper{
-		position: absolute;
-		top: 22px;
-		left: 40px;
-		width: 160px;
-		height: 88px;
-		overflow: hidden;
-	}
-	.hean-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/河岸-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-  .simple-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/thumbnail/simple-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-  .skill-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/thumbnail/skill-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-	.star-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/thumbnail/star-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-	.building-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/thumbnail/building-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-}
-@media only screen and (min-width: 921px) and (max-width: 1200px){
-	.imgWrapper{
-		height: 202px;
-		margin: 10px 20px;
-	}
-	.imgCaption{
-		top: 100px;
-		left: 140px;
-	}
-	/*blur*/
-	.blur-wrapper{
-		position: absolute;
-		top: 25px;
-		left: 60px;
-		width: 240px;
-		height: 150px;
-		overflow: hidden;
-	}
-	.hean-blur{
-		position: absolute;
-		width: 360px;
-		height: 202px;
-		background: url('../images/河岸-thumbnail-sm.jpg') no-repeat -60px -25px;
-		filter: blur(18px);
-	}
-  .simple-blur{
-		position: absolute;
-		width: 360px;
-		height: 202px;
-		background: url('../images/thumbnail/simple-thumbnail-sm.jpg') no-repeat -60px -25px;
-		filter: blur(18px);
-	}
-  .skill-blur{
-		position: absolute;
-		width: 360px;
-		height: 202px;
-		background: url('../images/thumbnail/skill-thumbnail-sm.jpg') no-repeat -60px -25px;
-		filter: blur(18px);
-	}
-	.star-blur{
-		position: absolute;
-		width: 360px;
-		height: 202px;
-		background: url('../images/thumbnail/star-thumbnail-sm.jpg') no-repeat -60px -25px;
-		filter: blur(18px);
-	}
-	.building-blur{
-		position: absolute;
-		width: 360px;
-		height: 202px;
-		background: url('../images/thumbnail/building-thumbnail-sm.jpg') no-repeat -60px -25px;
-		filter: blur(18px);
-	}
-}
-@media only screen and (min-width: 1201px) {
-	.imgWrapper{
-		height: 132px;
-		margin: 5px 10px;
-	}
-	.imgCaption{
-		top: 60px;
-		left: 90px;
-	}
-	/*blur*/
-	.blur-wrapper{
-		position: absolute;
-		top: 22px;
-		left: 40px;
-		width: 160px;
-		height: 88px;
-		overflow: hidden;
-	}
-	.hean-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/河岸-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-  .simple-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/simple-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-  .skill-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/thumbnail/skill-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-	.star-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/thumbnail/star-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-	.building-blur{
-		position: absolute;
-		width: 240px;
-		height: 132px;
-		background: url('../images/thumbnail/building-thumbnail-xs.jpg') no-repeat -40px -22px;
-		filter: blur(12px);
-	}
-}
-
-/*blur*/
-/*.blur-wrapper{
+.blur-wrap{
 	position: absolute;
 	top: 22px;
 	left: 40px;
@@ -310,10 +136,44 @@ main{
 	height: 88px;
 	overflow: hidden;
 }
-.hean-blur{
+.blur{
 	position: absolute;
 	width: 240px;
 	height: 132px;
-	background: url('../images/河岸-thumbnail-xs.jpg') no-repeat -40px -22px;
 	filter: blur(12px);
-}*/
+}
+.simple-blur{ background: url('../images/thumbnail/simple-xs.jpg') no-repeat -40px -22px; }
+.skill-blur{ background: url('../images/thumbnail/skill-xs.jpg') no-repeat -40px -22px; }
+.star-blur{ background: url('../images/thumbnail/star-xs.jpg') no-repeat -40px -22px; }
+.building-blur{ background: url('../images/thumbnail/building-xs.jpg') no-repeat -40px -22px; }
+@media only screen and (min-width: 768px) and (max-width: 992px){
+	figure{ margin: 10px 20px; };
+}
+@media only screen and (min-width: 921px) and (max-width: 1200px){
+	figure{ margin: 10px 20px; }
+	.img-caption{
+		position: absolute;
+		top: 100px;
+		left: 140px;
+		color: #888;
+	}
+	/*blur*/
+	.blur-wrap{
+		position: absolute;
+		top: 25px;
+		left: 60px;
+		width: 240px;
+		height: 150px;
+		overflow: hidden;
+	}
+	.blur{
+		position: absolute;
+		width: 360px;
+		height: 202px;
+		filter: blur(18px);
+	}
+  .simple-blur{ background: url('../images/thumbnail/simple-sm.jpg') no-repeat -60px -25px; }
+  .skill-blur{ background: url('../images/thumbnail/skill-sm.jpg') no-repeat -60px -25px; }
+	.star-blur{ background: url('../images/thumbnail/star-sm.jpg') no-repeat -60px -25px; }
+	.building-blur{ background: url('../images/thumbnail/building-sm.jpg') no-repeat -60px -25px; }
+}

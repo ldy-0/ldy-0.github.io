@@ -37,7 +37,7 @@
 			<ul id="goTop">
 				<li><a class='goTop' href="">置顶</a></li>
 			</ul>
-			<section class="penel-wrapper">
+			<section class="penel-wrap">
 				<div class="penel">
 					<p class="opacity">不向前走,不知路远</p>
 					<p class="opacity"></p>
@@ -50,74 +50,56 @@
 				</div>
 			</section>
 			<hr />
-			<ul class="thumbnail-container">
-				<li>
-					<figure class='img-wrapper imgWrapper zoomIn'>
-						<img class='img-content'
-								 srcset='./images/thumbnail/simple-thumbnail-xs.jpg 240w,
-											./images/thumbnail/simple-thumbnail-sm.jpg 360w'
-								 sizes='(max-width: 768px ) 240px,
-											(max-width: 920px ) 240px,
-											(max-width: 1200px) 360px,
-											240px'
-								 src='./images/thumbnail/simple-thumbnail-xs.jpg' alt='introduce' />
-						<div class="blur-clip">
-							<div class="blur-wrapper">
-								<div class="simple-blur" value='introduce'></div>
-							</div>
+			<div class="thumbnail-wrap">
+					<figure class='img-wrap zoom-in'>
+						<img class='f-fl'
+								 srcset='./images/thumbnail/simple-xs.jpg 240w,
+											./images/thumbnail/simple-sm.jpg 360w'
+								 sizes='(max-width: 920px ) 240px,
+											(max-width: 1200px) 360px, 240px'
+								 src='./images/thumbnail/simple-xs.jpg' alt='introduce' />
+						<div class="blur-wrap">
+							<div class="blur simple-blur" value='introduce'></div>
 						</div>
-						<figcaption class="img-caption imgCaption" value="introduce">个人信息</figcaption>
+						<figcaption class="img-caption" value="introduce">个人信息</figcaption>
 					</figure>
-					<figure class='img-wrapper imgWrapper zoomIn'>
-						<img class='img-content'
-								 srcset='./images/thumbnail/skill-thumbnail-xs.jpg 240w,
-											./images/thumbnail/skill-thumbnail-sm.jpg 360w'
-								 sizes='(max-width: 768px ) 240px,
-											(max-width: 920px ) 240px,
-											(max-width: 1200px) 360px,
-											240px'
-								 src='./images/thumbnail/skill-thumbnail-xs.jpg' alt='skill' />
-						<div class="blur-clip">
-							<div class="blur-wrapper">
-								<div class="skill-blur" value='skill'></div>
-							</div>
+					<figure class='img-wrap zoom-in'>
+						<img class='f-fl'
+								 srcset='./images/thumbnail/skill-xs.jpg 240w,
+											./images/thumbnail/skill-sm.jpg 360w'
+								 sizes='(max-width: 920px ) 240px,
+											(max-width: 1200px) 360px, 240px'
+								 src='./images/thumbnail/skill-xs.jpg' alt='skill' />
+						<div class="blur-wrap">
+							<div class="blur skill-blur" value='skill'></div>
 						</div>
-						<figcaption class="img-caption imgCaption" value="skill">个人技能</figcaption>
+						<figcaption class="img-caption" value="skill">个人技能</figcaption>
 					</figure>
-					<figure class='img-wrapper imgWrapper zoomIn'>
-						<img class='img-content'
-								 srcset='./images/thumbnail/building-thumbnail-xs.jpg 240w,
-											./images/thumbnail/building-thumbnail-sm.jpg 360w'
-								 sizes='(max-width: 768px ) 240px,
-											(max-width: 920px ) 240px,
-											(max-width: 1200px) 360px,
-											240px'
-								 src='./images/thumbnail/building-thumbnail-xs.jpg' alt='works' />
-						<div class="blur-clip">
-							<div class="blur-wrapper">
-								<div class="building-blur" value='works'></div>
-							</div>
+					<figure class='img-wrap zoom-in'>
+						<img class='f-fl'
+								 srcset='./images/thumbnail/building-xs.jpg 240w,
+											./images/thumbnail/building-sm.jpg 360w'
+								 sizes='(max-width: 920px ) 240px,
+											(max-width: 1200px) 360px, 240px'
+								 src='./images/thumbnail/building-xs.jpg' alt='works' />
+						<div class="blur-wrap">
+							<div class="blur building-blur" value='works'></div>
 						</div>
-						<figcaption class="img-caption imgCaption" value="works">个人作品</figcaption>
+						<figcaption class="img-caption" value="works">个人作品</figcaption>
 					</figure>
-					<figure class='img-wrapper imgWrapper zoomIn'>
-						<img class='img-content'
-								 srcset='./images/thumbnail/star-thumbnail-xs.jpg 240w,
-											./images/thumbnail/star-thumbnail-sm.jpg 360w'
-								 sizes='(max-width: 768px ) 240px,
-											(max-width: 920px ) 240px,
-											(max-width: 1200px) 360px,
-											240px'
-								 src='./images/thumbnail/star-thumbnail-xs.jpg' alt='future' />
-						<div class="blur-clip">
-							<div class="blur-wrapper">
-								<div class="star-blur" value='future'></div>
-							</div>
+					<figure class='img-wrap zoom-in'>
+						<img class='f-fl'
+								 srcset='./images/thumbnail/star-xs.jpg 240w,
+											./images/thumbnail/star-sm.jpg 360w'
+								 sizes='(max-width: 920px ) 240px,
+											(max-width: 1200px) 360px, 240px'
+								 src='./images/thumbnail/star-xs.jpg' alt='future' />
+						<div class="blur-wrap">
+							<div class="blur star-blur" value='future'></div>
 						</div>
-						<figcaption class="img-caption imgCaption" value="future">未来规划</figcaption>
+						<figcaption class="img-caption" value="future">未来规划</figcaption>
 					</figure>
-				</li>
-			</ul>
+			</div>
 
 		</main>
 		<!-- footer -->
@@ -158,13 +140,9 @@
 
 
 			// function register(){
-			// 	if('serviceWorker' in navigator){
-			// 		navigator.serviceWorker.register('./register.js').then(function(serviceWorkerRegistration){
+			// navigator.serviceWorker.register('./register.js').then(function(serviceWorkerRegistration){
 			// 		console.log('register success'+serviceWorkerRegistration.scope);
 			// 		}).catch(err=>alert('register false'));
-			// 	}else{
-			// 		alert('no support');
-			// 	}
 			// }
 		</script>
 	</body>
