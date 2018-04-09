@@ -1,10 +1,7 @@
 body{
-  /*background: url('../images/bg/sea.jpg') no-repeat 0px -950px;*/
-	background: url('../images/bg/road.jpg') no-repeat;
+	background: url('../images/bg/road.jpg') no-repeat;/*url('../images/bg/sea.jpg') no-repeat 0px -950px;*/
 	background-size: 100% 100%;
-	transition: transform 1s ease;
 }
-/* body:hover{ transform: scale3D(1.1, 1.1, 1.1); } */
 
 /* @header */
 .s-fc3{ color: #eee; }
@@ -15,21 +12,22 @@ body{
 .z-sel1{ color: #333; }
 .j-opacity{ 
 	opacity: 0;
-	-webkit-transform: translateY(300px);
+	-webkit-transform: translate3D(10px, 300px, 100px);
 	-moz-transform: translateY(300px);
 	-ms-transform: translateY(300px);
-	transform: translateY(300px);
-	-webkit-transition: opacity .3s, transform .2s ease;
-	-moz-transition: opacity .3s, transform .2s ease;
-	transition: opacity .3s, transform .2s ease;
+	transform: translate3D(10px, 300px, 100px);
+	-webkit-transition: opacity .3s, transform .5s ease;
+	-moz-transition: opacity .3s, transform .5s ease;
+	transition: opacity .3s, transform .5s ease;
 }
 
 /* @main */
 /* penel */
-.penel-wrapper{
+.penel-wrap{
   position: relative;
   height: 600px;
 }
+.penel{ overflow: hidden; }
 .penel li{
 	width: 300px;
 	height: 20px;
@@ -69,17 +67,14 @@ body{
   position: absolute;
 	left: 35%;
 	top: 70%;
-	overflow: hidden;
 }
 .middle{
   position: absolute;
 	left: 38%;
 	top: 63%;
-	overflow: hidden;
 }
 .long{
   position: absolute;
 	left: 40%;
 	top: 56%;
-	overflow: hidden;
 }

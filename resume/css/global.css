@@ -25,6 +25,10 @@ body{
 	box-sizing: content-box;
 	font-family: "Times New Roman", Times, serif;
 }
+ol[type='I']{ 
+	padding: 0 20px;
+	list-style: upper-roman; 
+}
 li{ text-align: center; }
 a, button{ cursor: pointer; }
 a:hover, a:active{ text-decoration: underline; }
@@ -47,35 +51,43 @@ hr{
 /* @grid layout style */
 @media only screen and (max-width: 767px){
 	.col-xs-12{ float: left; width: 100%; }
+	.col-xs-10{ float: left; width: 83.34%; }
 	.col-xs-9{ float: left; width: 75%; }
 	.col-xs-8{ float: left; width: 66.66%; }
 	.col-xs-6{ float: left; width: 50%; }
 	.col-xs-4{ float: left; width: 33.33%; }
 	.col-xs-3{ float: left; width: 25%; }
+	.col-xs-2{ float: left; width: 16.66%; }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px){
 	.col-sm-12{ float: left; width: 100%; }
+	.col-sm-10{ float: left; width: 83.34%; }
 	.col-sm-9{ float: left; width: 75%; }
 	.col-sm-8{ float: left; width: 66.66%; }
 	.col-sm-6{ float: left; width: 50%; }
 	.col-sm-4{ float: left; width: 33.33%; }
 	.col-sm-3{ float: left; width: 25%; }
+	.col-sm-2{ float: left; width: 16.66%; }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px){
 	.col-md-12{ float: left; width: 100%; }
+	.col-md-10{ float: left; width: 83.34%; }
 	.col-md-9{ float: left; width: 75%; }
 	.col-md-8{ float: left; width: 66.66%; }
 	.col-md-6{ float: left; width: 50%; }
 	.col-md-4{ float: left; width: 33.33%; }
 	.col-md-3{ float: left; width: 25%; }
+	.col-md-2{ float: left; width: 16.66%; }
 }
 @media only screen and (min-width: 1200px){
 	.col-lg-12{ float: left; width: 100%; }
+	.col-lg-10{ float: left; width: 83.34%; }
 	.col-lg-9{ float: left; width: 75%; }
 	.col-lg-8{ float: left; width: 66.66%; }
 	.col-lg-6{ float: left; width: 50%; }
 	.col-lg-4{ float: left; width: 33.33%; }
 	.col-lg-3{ float: left; width: 25%; }
+	.col-lg-2{ float: left; width: 16.66%; }
 }
 
 .f-cb:after{

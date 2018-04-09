@@ -1,12 +1,12 @@
 
 /**
-*面板字体渐入渐出动画
+* 面板字体渐入渐出动画
 */
 function penel(){
-	var ps = document.getElementsByClassName('penel')[0].getElementsByClassName('opacity');
+	var elements = document.getElementsByClassName('penel')[0].getElementsByClassName('opacity');
 	// HTMLCollection是动态的
-	while(ps.length){
-		ps[0].classList.remove('opacity');
+	while(elements.length){
+		elements[0].classList.remove('opacity');
 	}
 }
 

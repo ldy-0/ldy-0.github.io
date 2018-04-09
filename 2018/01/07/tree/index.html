@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="测试博客">
 <meta property="og:description" content="关于树的一些基本知识。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-12T04:41:09.964Z">
+<meta property="og:updated_time" content="2018-04-09T14:57:03.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-树">
 <meta name="twitter:description" content="关于树的一些基本知识。">
@@ -333,17 +333,58 @@
 
       
         <p>关于树的一些基本知识。<br><a id="more"></a></p>
-<h3 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h3><h4 id="树"><a href="#树" class="headerlink" title="树"></a>树</h4><p>除根结点外每个结点有一个前驱，多个后继的n(n&gt;=0)个结点的集合。</p>
+<h2 id="理论基础"><a href="#理论基础" class="headerlink" title="理论基础"></a>理论基础</h2><h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><p>除根结点外每个结点有一个前驱，多个后继的n(n&gt;=0)个结点的集合。</p>
 <h5 id="度"><a href="#度" class="headerlink" title="度"></a>度</h5><p>结点子树的个数。</p>
 <h5 id="元"><a href="#元" class="headerlink" title="元"></a>元</h5><p>结点度的最大允许值m。<br><code>m元正则树：非叶结点都有m个子树的树。</code></p>
 <h5 id="高度"><a href="#高度" class="headerlink" title="高度"></a>高度</h5><p>叶结点高度为1,非叶结点高度为子树中高度最大值+1，树的高度为根结点的高度。</p>
 <h4 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h4><p>所有结点的子树个数均不超过2的树。</p>
 <h5 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h5><p>高度为k的具有2<sup>k</sup>-1个结点的二叉树。</p>
+<canvas id="full-binaryTree" width="800" height="200">浏览器不支持</canvas>
+
 <h5 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h5><p>高度为k，有n个结点，且每个结点都和高度为k的满二叉树中编号1-n的结点一一对应的二叉树。</p>
+<canvas id="complete-binaryTree" width="800" height="200">浏览器不支持</canvas>
+
 <h5 id="检索树"><a href="#检索树" class="headerlink" title="检索树"></a>检索树</h5><p>又称二叉搜索树。<br>任意一个结点的左子树值都&lt;=该结点值,右子树值都&gt;该结点值的二叉树。</p>
 <h5 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h5><p>简称AVL树。<br>空树或左右子树高度差绝对值不超过1，且左右子树也是平衡二叉树的二叉树。</p>
 <h6 id="平衡因子"><a href="#平衡因子" class="headerlink" title="平衡因子"></a>平衡因子</h6><p>左右子树高度之差。</p>
 <h5 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h5><p>权为最小值的二叉树。<br><code>二叉树的权:所有叶子的加权路径长度之和。</code><br>给定正实数w<sub>1</sub>-w<sub>n</sub>，分别为n片叶子的权，i<sub>1</sub>-i<sub>n</sub>为对应叶子的叶子长度。w(T) = w<sub>k</sub>i<sub>k</sub>;</p>
+<script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
+<script>
+    //
+    let nodes = [
+        {name: '1', x: 100, y: 0,},
+        {name: '2', x: 50, y: 50,},
+        {name: '3', x: 150, y: 50},
+    ],    links = [
+        {source: '1', target: '2',},
+        {source: '1', target: '3',},
+    ];
+
+    createGraphic(document.getElementById('full-binaryTree'), {
+        nodes: nodes,
+        links: links,
+    });
+    nodes.pop();
+    links.pop();
+    createGraphic(document.getElementById('complete-binaryTree'), {
+        nodes: nodes,
+        links: links,
+    });
+
+
+    function createGraphic(element, obj){
+        let option = {
+            title: { text: obj.title || '', },
+            series: {
+                type: 'graph',
+                data: obj.nodes || [],
+                links: obj.links || [],
+            },
+        };
+
+        echarts.init(element).setOption(option);
+    }
+</script>
 
       
     </div>
@@ -518,7 +559,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#理论基础"><span class="nav-number">1.</span> <span class="nav-text">理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#树"><span class="nav-number">1.1.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#度"><span class="nav-number">1.1.1.</span> <span class="nav-text">度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#元"><span class="nav-number">1.1.2.</span> <span class="nav-text">元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#高度"><span class="nav-number">1.1.3.</span> <span class="nav-text">高度</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树"><span class="nav-number">1.2.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#满二叉树"><span class="nav-number">1.2.1.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完全二叉树"><span class="nav-number">1.2.2.</span> <span class="nav-text">完全二叉树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检索树"><span class="nav-number">1.2.3.</span> <span class="nav-text">检索树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#平衡二叉树"><span class="nav-number">1.2.4.</span> <span class="nav-text">平衡二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#平衡因子"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">平衡因子</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#哈夫曼树"><span class="nav-number">1.2.5.</span> <span class="nav-text">哈夫曼树</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#理论基础"><span class="nav-number">1.</span> <span class="nav-text">理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#树"><span class="nav-number">1.1.</span> <span class="nav-text">树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#度"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#元"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">元</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#高度"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">高度</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二叉树"><span class="nav-number">1.1.1.</span> <span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#满二叉树"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完全二叉树"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">完全二叉树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#检索树"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">检索树</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#平衡二叉树"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">平衡二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#平衡因子"><span class="nav-number">1.1.1.4.1.</span> <span class="nav-text">平衡因子</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#哈夫曼树"><span class="nav-number">1.1.1.5.</span> <span class="nav-text">哈夫曼树</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

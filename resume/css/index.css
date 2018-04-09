@@ -11,63 +11,52 @@ main{
 }
 
 /* penel */
-.penel-wrap{
+.penel{
   position: relative;
   height: 400px;
 	background: rgb(239, 240, 220);/*background: rgb(221, 240, 237);*/
 }
-.penel{
-  position: absolute;
-  left: 10%;
-  width: 100%;
-  height: inherit;
-}
 /*大内容*/
+.penel-title{
+	position: absolute;
+	top: 10%;
+	left: 12%;
+}
 .penel p{
+	float: left;
   width: 24px;
+	margin: 0 24px;
+	font:italic 24px sans-serif;
   color: #333;
-  font:italic 24px sans-serif;
 }
 .penel p:first-of-type{
-  position: absolute;
-  top: 5%;
-  transition: opacity 1s;
-  -webkit-transition: opacity 1s;
+	-webkit-transition: opacity 1s;
   -moz-transition: opacity 1s;
   -ms-transition: opacity 1s;
-  -o-transition: opacity 1s;
+  transition: opacity 1s;
 }
 .penel p:nth-of-type(2){
-  position: absolute;
-  top: 10%;
-  left: 6%;
-  transition: opacity 1s 1s;
   -webkit-transition: opacity 1s 1s;
   -moz-transition: opacity 1s 1s;
   -ms-transition: opacity 1s 1s;
-  -o-transition: opacity 1s 1s;
+	transition: opacity 1s 1s;
 }
 .penel p:last-of-type{
-  position: absolute;
-  top: 15%;
-  left: 12%;
-  transition: opacity 1s 2s;
   -webkit-transition: opacity 1s 2s;
   -moz-transition: opacity 1s 2s;
   -ms-transition: opacity 1s 2s;
-  -o-transition: opacity 1s 2s;
+	transition: opacity 1s 2s;
 }
 /*小字内容*/
 .penel ol{
   position: absolute;
   top: 38%;
   left: 38%;
+	font-size: 14px;
+	-webkit-transition: opacity 1s 3s;
+  -moz-transition: opacity 1s 3s;
+  -ms-transition: opacity 1s 3s;
   transition: opacity 1s 3s;
-}
-.penel ol li{
-  font-size: 14px;
-  color: #444;
-  text-align: left;
 }
 /*起始状态*/
 .opacity{
@@ -75,41 +64,12 @@ main{
   filter: alpha(opacity=0);
 }
 @media only screen and (max-width: 768px) {
-  .penel p:first-of-type{
-    position: absolute;
-    top: 5%;
-    transition: opacity 1s;
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -ms-transition: opacity 1s;
-    -o-transition: opacity 1s;
-  }
-  .penel p:nth-of-type(2){
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    transition: opacity 1s 1s;
-    -webkit-transition: opacity 1s 1s;
-    -moz-transition: opacity 1s 1s;
-    -ms-transition: opacity 1s 1s;
-    -o-transition: opacity 1s 1s;
-  }
-  .penel p:last-of-type{
-    position: absolute;
-    top: 15%;
-    left: 20%;
-    transition: opacity 1s 2s;
-    -webkit-transition: opacity 1s 2s;
-    -moz-transition: opacity 1s 2s;
-    -ms-transition: opacity 1s 2s;
-    -o-transition: opacity 1s 2s;
-  }
-  /*小字内容*/
+  .penel p:nth-of-type(2){ left: 10%; }
+  .penel p:last-of-type{ left: 20%; }
   .penel ol{
     position: absolute;
     top: 40%;
     left: 20%;
-    transition: opacity 1s 3s;
   }
 }
 
