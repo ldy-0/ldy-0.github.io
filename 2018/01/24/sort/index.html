@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="测试博客">
 <meta property="og:description" content="几种常见的排序算法。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-14T12:22:34.694Z">
+<meta property="og:updated_time" content="2018-04-12T05:59:22.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构-排序">
 <meta name="twitter:description" content="几种常见的排序算法。">
@@ -344,21 +344,25 @@
 <li><h5 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h5><strong>顺序定位</strong>插入位置。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>, len = arr.length; i&lt;len; i++)&#123;</span><br><span class="line">		<span class="keyword">let</span> x = arr[i];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">let</span> j = i<span class="number">-1</span>; j&gt;=<span class="number">-1</span>; j--)&#123;</span><br><span class="line">			<span class="keyword">if</span>(j === <span class="number">-1</span> || arr[j]&lt;=x)&#123;</span><br><span class="line">				arr[j+<span class="number">1</span>] = x;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			arr[j+<span class="number">1</span>] = arr[j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><label for="insert_sort">原数组:</label><input type="text" value="11, 3, 45, 23, 0, 11"><span id="direct_insert_sort"></span><span id="date"></span></p>
+<p><label>原数组：<input type="text" value="11, 3, 45, 23, 0, 11"></label></p>
+<p id="insert_sort"></p>
+
 <ol>
 <li><h5 id="二分插入排序"><a href="#二分插入排序" class="headerlink" title="二分插入排序"></a>二分插入排序</h5><strong>二分定位</strong>插入位置。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function dichotomy_insert_sort(arr)&#123;</span><br><span class="line">	let len = arr.length;</span><br><span class="line">	for(let i = 1; i&lt;len; i++)&#123;</span><br><span class="line">		let x = arr[i];</span><br><span class="line"></span><br><span class="line">		let index = dichotomy_search(x, arr, 0, i-1);</span><br><span class="line">		for(let j = i-1; j&gt;=index; j--)&#123;</span><br><span class="line">			arr[j+1] = arr[j];</span><br><span class="line">		&#125;</span><br><span class="line">		arr[index] = x;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><label for="">原数组:</label><input type="text" value="11, 3, 45, 23, 0, 11"><span id="dichotomy_insert_sort"></span><span></span></p>
+<p><label>原数组：<input type="text" value="11, 3, 45, 23, 0, 11"></label></p>
+<p id="dichotomy_insert_sort"></p>
+
 <ol>
 <li><h5 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h5><ul>
-<li>基本思想<br>先将整个待排序列分为几个子序列进行直接插入排序，等到待排序列基本有序，再将整个待排序列进行直接插入排序。<blockquote>
-<p>增量序列最后一个值必须为1，一般为[9, 5, 3, 1]。<br>子序列：待排序列中相隔增量n的记录组成的序列。</p>
-</blockquote>
-</li>
+<li>基本思想<br>先将整个待排序列分为几个子序列进行直接插入排序，等到待排序列基本有序，再将整个待排序列进行直接插入排序。</li>
 </ul>
 </li>
 </ol>
+<blockquote>
+<p>增量序列最后一个值必须为1，一般为[9, 5, 3, 1]。<br>子序列：待排序列中相隔增量n的记录组成的序列。</p>
+</blockquote>
 <h4 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h4><h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><h5 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h5><h3 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h3><blockquote>
 <p>排序记录太大，排序过程中需对外存访问。</p>
 </blockquote>
@@ -369,46 +373,26 @@
         let inputs = document.getElementsByTagName('input');
 
         //直接插入排序
-        let direct = document.getElementById('direct_insert_sort');
-        init(direct, direct_insert_sort);
-
+        let p = document.getElementById('insert_sort');
+        let ar = inputs[0].value.split(',');
+        p.innerText = '排序后：'+insert_sort(toNumber(ar));
         inputs[0].oninput = function(){
-            let arr = this.value.split(',');
-            let startTime = Date.now();
-            direct.innerText = '排序后:    '+direct_insert_sort(toNumber(arr));
-            direct.nextElementSibling.innerText = '  耗时:'+(Date.now()-startTime)+'ms';
+            let ar = inputs[0].value.split(',');
+            p.innerText = '排序后:'+insert_sort(toNumber(ar));
         }
 
         //二分插入排序
-        let dichotomy = document.getElementById('dichotomy_insert_sort');
-        init(dichotomy, dichotomy_insert_sort);
-
+        let p_b_sort = document.getElementById('dichotomy_insert_sort');
+        p_b_sort.innerText = '排序后:'+dichotomy_insert_sort(toNumber(inputs[1].value.split(',')));
         inputs[1].oninput = function(){
-            let arr = this.value.split(',');
-            let startTime = Date.now();
-            dichotomy.innerText = '排序后:    '+dichotomy_insert_sort(toNumber(arr));
-            dichotomy.nextElementSibling.innerText = '  耗时:'+(Date.now()-startTime)+'ms';
+            let values = inputs[1].value.split(',');
+            p_b_sort.innerText = '排序后:'+dichotomy_insert_sort(toNumber(values));
         }
 
     }
 
-    /**
-     * 初始化排序
-     * @param {HTMLSpanElement} element
-     * @param {Function} sort
-     */
-    function init(element, sort){
-        let arr = toNumber(element.previousElementSibling.value.split(','));
-        element.innerText = '排序后:    '+sort(arr);
-    }    
-
-
-    /**
-     * 直接插入排序
-     * @param {Array} arr
-     * @return {Array}
-     */
-    function direct_insert_sort(arr){
+    //直接插入排序
+    function insert_sort(arr){
         for(let i = 1, len = arr.length; i<len; i++){
             let x = arr[i];
             for(let j = i-1; j>=-1; j--){
@@ -426,11 +410,7 @@
     }
 
 
-    /**
-     * 二分插入排序
-     * @param {Array} arr
-     * @return {Array}
-     */
+    //二分插入排序
     function dichotomy_insert_sort(arr){
         let len = arr.length;
         for(let i = 1; i<len; i++){
@@ -448,17 +428,9 @@
     }
 
 
-    /**
-     * 二分查找
-     * @param {Number} digit
-     * @param {Array} arr
-     * @param {Number} start
-     * @param {Number} end
-     * @return {Number}
-     */
+    //二分查找
     function search(digit, arr, start, end){
         let middle = Math.floor((start+end)/2);
-
 
         if(arr[middle] > digit){
             if(start === end){
@@ -480,16 +452,10 @@
             return middle+1;
         }
 
-
-
     }
 
 
-    /**
-     * 数组值转数字
-     * @param {Array} arr
-     * @return {Array}
-     */
+    //
     function toNumber(arr){
         return arr.map(v=>Number(v));
     }
@@ -524,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/17/theme/" rel="next" title="切换主题">
-                <i class="fa fa-chevron-left"></i> 切换主题
+              <a href="/2018/01/17/theme/" rel="next" title="博客主题">
+                <i class="fa fa-chevron-left"></i> 博客主题
               </a>
             
           </div>
@@ -534,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/01/29/echarts-line/" rel="prev" title="echarts-基本图表(折线图，直方图)">
-                echarts-基本图表(折线图，直方图) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/01/29/echarts-line/" rel="prev" title="echarts-基本图表">
+                echarts-基本图表 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

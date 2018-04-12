@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="关于echarts生成图表样式的总结">
+<meta name="description" content="关于echarts图表样式设置的简单笔记">
 <meta name="keywords" content="echarts">
 <meta property="og:type" content="article">
 <meta property="og:title" content="echarts-图表样式">
 <meta property="og:url" content="http://yoursite.com/2018/02/24/echarts-style/index.html">
 <meta property="og:site_name" content="测试博客">
-<meta property="og:description" content="关于echarts生成图表样式的总结">
+<meta property="og:description" content="关于echarts图表样式设置的简单笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-02-24T09:01:57.541Z">
+<meta property="og:updated_time" content="2018-04-12T05:12:06.133Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="echarts-图表样式">
-<meta name="twitter:description" content="关于echarts生成图表样式的总结">
+<meta name="twitter:description" content="关于echarts图表样式设置的简单笔记">
 
 
 
@@ -332,76 +332,135 @@
       
 
       
-        <p>关于echarts生成图表样式的总结<br><a id="more"></a></p>
-<p># </p>
-<h3 id="坐标轴样式"><a href="#坐标轴样式" class="headerlink" title="坐标轴样式"></a>坐标轴样式</h3><p>本文以x轴为例。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">	title: &#123; &#125;,</span><br><span class="line">	xAxis: [</span><br><span class="line">		&#123;</span><br><span class="line">			type: <span class="string">'category'</span>,</span><br><span class="line">			<span class="comment">//设置坐标轴信息</span></span><br><span class="line">			name: <span class="string">'月份/m'</span>,</span><br><span class="line">			<span class="comment">//设置坐标轴信息与坐标轴的间隔距离</span></span><br><span class="line">			nameGap: <span class="number">10</span>,</span><br><span class="line">			<span class="comment">//设置坐标轴上每项的样式</span></span><br><span class="line">			axisLabel: &#123; </span><br><span class="line">				<span class="comment">//设置每项内容的旋转角度</span></span><br><span class="line">				rotate: <span class="number">45</span>, </span><br><span class="line">				<span class="comment">//设置每项与其他项的间隔距离</span></span><br><span class="line">				interval: <span class="number">0</span>,</span><br><span class="line">				<span class="comment">//设置每项的内容，&#123;vlaue&#125;表示data中的内容</span></span><br><span class="line">				formatter: <span class="string">'&#123;value&#125;月'</span>,</span><br><span class="line">			&#125;,</span><br><span class="line">			<span class="comment">//设置坐标轴上刻度</span></span><br><span class="line">			axisTick: &#123; </span><br><span class="line">				<span class="comment">//是否显示刻度</span></span><br><span class="line">				show: <span class="literal">true</span>,</span><br><span class="line">				<span class="comment">//设置坐标轴刻度居中</span></span><br><span class="line">				alignWithLabel: <span class="literal">true</span>, </span><br><span class="line">			&#125;,</span><br><span class="line">			data: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>], </span><br><span class="line">		&#125;,</span><br><span class="line">	],</span><br><span class="line">	yAxis: [ &#123; <span class="attr">type</span>: <span class="string">'value'</span>, &#125;, ],</span><br><span class="line">	series: [</span><br><span class="line">		&#123; <span class="attr">type</span>: <span class="string">'line'</span>, <span class="attr">data</span>: [<span class="number">88</span>,<span class="number">77</span>,<span class="number">88</span>,<span class="number">77</span>,<span class="number">88</span>,<span class="number">77</span>,<span class="number">88</span>,<span class="number">77</span>,<span class="number">88</span>,<span class="number">77</span>,<span class="number">88</span>,<span class="number">77</span>], &#125;,</span><br><span class="line">	],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<script src="https://cdn.bootcss.com/echarts/4.0.2/echarts.min.js"></script>
-<canvas id="c1" width="300" height="200">no suport</canvas>
-<span>带样式：</span>
-<canvas id="c2" width="300" height="200">no suport</canvas>
-<script>
-window.onload = function(){
+        <p>关于echarts图表样式设置的简单笔记<br><a id="more"></a></p>
+<h2 id="图表说明信息样式"><a href="#图表说明信息样式" class="headerlink" title="图表说明信息样式"></a>图表说明信息样式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">	title: &#123; </span><br><span class="line">		text: <span class="string">'带样式图'</span>, <span class="comment">//主标题内容</span></span><br><span class="line">		textStyle: &#123; <span class="attr">color</span>: <span class="string">'#333'</span>, &#125;, <span class="comment">//设置主标题样式</span></span><br><span class="line">		subtext: <span class="string">'子标题'</span>, <span class="comment">//子标题内容</span></span><br><span class="line">	&#125;,</span><br><span class="line">	toolbox: &#123;</span><br><span class="line">		show: <span class="literal">true</span>, <span class="comment">//是否显示工具栏</span></span><br><span class="line">		feature: &#123;</span><br><span class="line">			saveAsImage: &#123;&#125;, <span class="comment">//保存工具</span></span><br><span class="line">			dataZoom: &#123;&#125;, <span class="comment">//缩放工具</span></span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<section style="display: flex;"><canvas id="descript_base_origin" width="400" height="200">浏览器不支持</canvas><canvas id="descript_base" width="400" height="200">浏览器不支持</canvas><br></section>
 
-let opt1 = {
-    title: { text: '2014年PM2.5月均浓度统计图', },
-    xAxis: [
-        {
-            type: 'category',
-            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 
-        },
-    ],
-    yAxis: [ { type: 'value', }, ],
-    series: [
-        { type: 'line', data: [88,77,88,77,88,77,88,77,88,77,88,77], },
-    ],
-};
-//坐标轴添加了样式
-let opt2 = {
-    title: { text: '2014年PM2.5月均浓度统计图', subtext: '数据来自想象', },
-    xAxis: [
-        {
-            type: 'category',
-            //设置坐标轴信息
-            name: '月份/m',
-            //设置坐标轴信息与坐标轴的间隔距离
-            nameGap: 10,
-            //设置坐标轴上每项的样式
-            axisLabel: { 
-                //设置每项内容的旋转角度
-                rotate: 45, 
-                //设置每项与其他项的间隔距离
-                interval: 0,
-                //设置每项的内容，{vlaue}表示data中的内容
-                formatter: '{value}月',
-            },
-            //设置坐标轴上刻度
-            axisTick: { 
-                //是否显示刻度
-                show: true,
-                //设置坐标轴刻度居中
-                alignWithLabel: true, 
-            },
-            data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 
-        },
-    ],
-    yAxis: [ { type: 'value', }, ],
-    series: [
-        { type: 'line', data: [88,77,88,77,88,77,88,77,88,77,88,77], },
-    ],
-};
+<h2 id="坐标轴样式"><a href="#坐标轴样式" class="headerlink" title="坐标轴样式"></a>坐标轴样式</h2><blockquote>
+<p>本文以x轴为例。</p>
+</blockquote>
+<h3 id="坐标轴"><a href="#坐标轴" class="headerlink" title="坐标轴"></a>坐标轴</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">	xAxis: &#123;</span><br><span class="line">		type: <span class="string">'category'</span>||<span class="string">'value'</span>,</span><br><span class="line">		data: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>],</span><br><span class="line">		show: <span class="literal">true</span>||<span class="literal">false</span> <span class="comment">//是否显示坐标轴</span></span><br><span class="line">		name: <span class="string">'月份/m'</span>, <span class="comment">//设置坐标轴信息</span></span><br><span class="line">		nameGap: <span class="number">-10</span>, <span class="comment">//设置坐标轴信息与坐标轴的间隔距离</span></span><br><span class="line">		boundaryGap: <span class="literal">true</span>||<span class="literal">false</span>; <span class="comment">//设置坐标轴项标签位置，默认true，标签位于两刻度之间</span></span><br><span class="line">	&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<section style="display: flex;"><canvas id="axis_base_origin" width="400" height="200">浏览器不支持</canvas><canvas id="axis_base" width="400" height="200">浏览器不支持</canvas><br></section>
 
-let chart1 = echarts.init(document.getElementById('c1'));
-chart1.setOption(opt1);
-let chart2 = echarts.init(document.getElementById('c2'));
-chart2.setOption(opt2);
-}
 
-</script>
+<h3 id="坐标轴线"><a href="#坐标轴线" class="headerlink" title="坐标轴线"></a>坐标轴线</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">	xAxis: &#123;</span><br><span class="line">		<span class="comment">//设置坐标轴轴线的样式</span></span><br><span class="line">		axisLine: &#123; </span><br><span class="line">			show: <span class="literal">true</span>||<span class="literal">false</span>, <span class="comment">//是否显示坐标轴轴线</span></span><br><span class="line">			symbol: [<span class="string">'none'</span>, <span class="string">'arrow'</span>], <span class="comment">//设置坐标轴轴线两端符号</span></span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<section style="display: flex;"><canvas id="axis_line_origin" width="400" height="200">浏览器不支持</canvas><canvas id="axis_line" width="400" height="200">浏览器不支持</canvas><br></section>
+
+<h3 id="坐标轴项"><a href="#坐标轴项" class="headerlink" title="坐标轴项"></a>坐标轴项</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">	xAxis: &#123;</span><br><span class="line">		<span class="comment">//设置坐标轴上每项的样式</span></span><br><span class="line">		axisLabel: &#123; </span><br><span class="line">			show: <span class="literal">true</span>||<span class="literal">false</span>, <span class="comment">//是否显示各项标签</span></span><br><span class="line">			rotate: <span class="number">45</span>, <span class="comment">//设置每项文本的旋转角度（逆时针）</span></span><br><span class="line">			interval: <span class="number">0</span>, <span class="comment">//设置每项与其他项的间隔距离,0表示所有项都显示。</span></span><br><span class="line">			formatter: <span class="string">'&#123;value&#125;月'</span>, <span class="comment">//设置每项的内容，&#123;vlaue&#125;表示data中的内容</span></span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<section style="display: flex;"><canvas id="axis_item_origin" width="400" height="200">浏览器不支持</canvas><canvas id="axis_item" width="400" height="200">浏览器不支持</canvas><br></section>
+
+<h3 id="坐标轴刻度"><a href="#坐标轴刻度" class="headerlink" title="坐标轴刻度"></a>坐标轴刻度</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> option = &#123;</span><br><span class="line">	xAxis: &#123;</span><br><span class="line">		<span class="comment">//设置坐标轴上刻度</span></span><br><span class="line">		axisTick: &#123; </span><br><span class="line">			show: <span class="literal">true</span>, <span class="comment">//是否显示刻度</span></span><br><span class="line">			alignWithLabel: <span class="literal">true</span>, <span class="comment">//设置坐标轴刻度居中</span></span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<section style="display: flex;"><canvas id="axis_tick_origin" width="400" height="200">浏览器不支持</canvas><canvas id="axis_tick" width="400" height="200">浏览器不支持</canvas><br></section>
+
 
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
-<li><a href="">echarts官网</a></li>
+<li><a href="http://echarts.baidu.com" target="_blank" rel="noopener">echarts官网</a></li>
 </ol>
+<script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
+<script>
+    window.onload = function(){
+        let data = [88,77,88,77,88,77,88,77,88,77,88,77],
+            x_data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
+        //
+        createLine(document.getElementById('descript_base_origin'), {
+            title: '原图', xAxis: { data: x_data, }, data,
+        });
+        createLine(document.getElementById('descript_base'), {
+            title: '带样式图',
+            textStyle: { color: '#333', },
+            subtitle: '子标题',
+            toolbox: {
+                show: true,
+                feature: {
+                    saveAsImage: {},
+                    dataZoom: {},
+                }
+            },
+            xAxis: { data: x_data, }, data,
+        });
+
+        //axis_base
+        createLine(document.getElementById('axis_base_origin'), {
+            title: '原图', xAxis: { data: x_data, }, data,
+        });
+        createLine(document.getElementById('axis_base'), {
+            title: '带样式图', data,
+            xAxis: { 
+                type: 'category', data: x_data,  
+                show: true, name: '月份/m', nameGap: 0, boundaryGap: false,
+            },
+        });
+
+        //axis_line
+        createLine(document.getElementById('axis_line_origin'), {
+            title: '原图', xAxis: { data: x_data, }, data,
+        });
+        createLine(document.getElementById('axis_line'), {
+            title: '带样式图', data,
+            xAxis: {
+                data: x_data,
+                axisLine: {
+                    show: true,
+                    symbol: ['none', 'arrow'],
+                },
+            },
+        });
+
+        //axis_item
+        createLine(document.getElementById('axis_item_origin'), {
+            title: '原图', xAxis: { data: x_data, }, data,
+        });
+        createLine(document.getElementById('axis_item'), {
+            title: '带样式图', data,
+            xAxis: {
+                    data: x_data,
+                    axisLabel: { 
+                        show: true,
+                        rotate: 45, 
+                        interval: 0,
+                        formatter: '{value}月',
+                    },
+            },
+        });
+
+        //axis_tick
+        createLine(document.getElementById('axis_tick_origin'), {
+            title: '原图', xAxis: { data: x_data, }, data,
+        });
+        createLine(document.getElementById('axis_tick'), {
+            title: '带样式图', data,
+            xAxis: {
+                data: x_data,
+                axisTick: {
+                    show: true,
+                    alignWithLabel: true, 
+                }, 
+            },
+        });
+    }
+
+    /**
+     * 创建线图
+     * @param {HTMLCanvasElement} element
+     * @param {Object} obj
+     */
+    function createLine(element, obj){
+        let option = {
+            title: { text: obj.title || '', subtext: obj.subtitle || '', },
+            toolbox: obj.toolbox || '',
+            xAxis: obj.xAxis || { type: 'category', },
+            yAxis: obj.yAxis || { type: 'value', },
+            series: {
+                type: 'line',
+                data: obj.data,
+            },
+        };
+
+        echarts.init(element).setOption(option);
+    }
+
+</script>
       
     </div>
     
@@ -431,8 +490,8 @@ chart2.setOption(opt2);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/01/29/echarts-line/" rel="next" title="echarts-基本图表(折线图，直方图)">
-                <i class="fa fa-chevron-left"></i> echarts-基本图表(折线图，直方图)
+              <a href="/2018/01/29/echarts-line/" rel="next" title="echarts-基本图表">
+                <i class="fa fa-chevron-left"></i> echarts-基本图表
               </a>
             
           </div>
@@ -571,7 +630,7 @@ chart2.setOption(opt2);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标轴样式"><span class="nav-number">1.</span> <span class="nav-text">坐标轴样式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number"></span> <span class="nav-text">参考资料</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#图表说明信息样式"><span class="nav-number">1.</span> <span class="nav-text">图表说明信息样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坐标轴样式"><span class="nav-number">2.</span> <span class="nav-text">坐标轴样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标轴"><span class="nav-number">2.1.</span> <span class="nav-text">坐标轴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标轴线"><span class="nav-number">2.2.</span> <span class="nav-text">坐标轴线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标轴项"><span class="nav-number">2.3.</span> <span class="nav-text">坐标轴项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标轴刻度"><span class="nav-number">2.4.</span> <span class="nav-text">坐标轴刻度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
 
           </div>
