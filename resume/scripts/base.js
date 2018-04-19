@@ -20,7 +20,7 @@ function menuTrigger(){
 	function trigger(e){
 		var nav = document.getElementsByTagName('header')[0].getElementsByTagName('nav')[0];
 		//TODO: IE9 no suport contains
-		if(nav.classList.contains('j-hide')){
+		if(/j-hide/.test(nav.className)){
 			nav.classList.remove('j-hide');
 			return nav.classList.add('j-show');
 		};
@@ -50,8 +50,9 @@ function thumbnail(){
 
 
 /**
- * To determine whether the mobile terminal
- * 判断是否为移动端
+ *
+ * To determine whether the mobile terminal/判断是否为移动端
+ *
  * @return {Boolean}
  */
 function isMob(){
@@ -61,6 +62,7 @@ function isMob(){
 
 /**
  * 发起get请求
+ *
  * @param {String} path
  * @param {Function} callback
  */

@@ -10,18 +10,28 @@
 		<!--[if lt IE 9]>
 			<script src='./scripts/ie.js'></script>
 		<![endif]-->
-    <link rel="stylesheet" type='text/css' href="./css/global.css" />
-    <link rel="stylesheet" type='text/css' href="./css/future.css" />
+		<link rel='stylesheet' type='text/css' href='./css/future.css' />
+		<link rel='stylesheet' type='text/css' href='https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css' />
+		<style>
+			body{ background: #9e9e9e; }
+			/* @header */
+			.s-fc3{ color: #eee; }
+			.s-fc3:hover{ 
+				color: #333;
+				background: transparent;
+			}
+			.z-sel1{ color: #333; }
+		</style>
   </head>
   <body>
     <header class="f-cb">
       <div class="col-xs-3">
 				<button type="button" class="f-dn nav-btn">菜单</button>
 			</div>
-      <div class="logo-wrap col-xs-9 col-sm-12 col-md-2 col-lg-2">
+      <div class="logo-wrap col-xs-9 col-sm-12 col-2">
         <img src="./images/logo.svg" width='40' height='40' alt="logo">
       </div>
-      <nav class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+      <nav class="col-xs-12 col-sm-12 col-10">
         <ul class="m-nav">
           <li><a class='s-fc3' href="./index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
 					<li><a class='s-fc3' href='./introduce.html'>个人信息</a></li>
@@ -32,41 +42,110 @@
         </ul>
       </nav>
     </header>
-    <main class='fill'>
-			<ul class="penel-wrap">
-				<li class="long penel">
-					<div class='mask'></div>
-					<ul class='blur'>
-						<li class='penel-title'>长期</li>
-						<li class='f-dn'>深入V8引擎</li>
-						<li class='f-dn'></li>
-					</ul>
-				</li>
-				<li class="middle penel">
-					<div class='mask'></div>
-					<ul class='blur'>
-						<li class='penel-title'>中期</li>
-						<li class='f-dn'>学习threejs及相关webGL标准</li>
-						<li class='f-dn'></li>
-					</ul>
-				</li>
-				<li class="short penel">
-					<div class='mask'></div>
-					<ul class='blur'>
-						<li class='penel-title'>短期</li>
-						<li class='f-dn'>熟练使用Less</li>
-						<li class='f-dn'>阅读JQuery源码</li>
-						<li class='f-dn'>阅读《JavaScript权威指南》</li>
-						<li class='f-dn'>阅读《精通css：高级Web标准解决方案》</li>
-						<li class='f-dn'></li>
-					</ul>
-				</li>
-			</ul>
-    </main>
+    <main>
+			<section class='g-tl'>
+				<ol class='m-tl'>
+					<li class='u-tl' value='0'>
+						<h2>历史</h2>
+						<i class='fa fa-dot-circle-o'></i>
+					</li>
+					<li class='j-active u-tl' value='1'>
+						<h2>近期</h2>
+						<i class='fa fa-dot-circle-o'></i>
+					</li>
+					<li class='u-tl' value='2'>
+						<h2>未来</h2>
+						<i class='fa fa-dot-circle-o'></i>
+					</li>
+				</ol>
+				<ul class='j-tl-hide m-tl2'>
+					<li class='u-tl2'>
+						<h2>2016.7</h2>
+						<ul class='tl2-content'>
+							<li>学习基础HTML5、css3、JavaScript</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2017.3</h2>
+						<ul class='tl2-content'>
+							<li>城市分区系统(负责POI分类、功能分区及可视化)</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2017.7</h2>
+						<ul class='tl2-content'>
+							<li>学习node.js基础</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2017.8</h2>
+						<ul class='tl2-content'>
+							<li>使用Git/Github</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2017.9</h2>
+						<ul class='tl2-content'>
+							<li>学习ES6语法、了解模块化编程思想</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2017.10</h2>
+						<ul class='tl2-content'>
+							<li>使用Hexo搭建博客</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2017.11</h2>
+						<ul class='tl2-content'>
+							<li>设计毕业论文（中途更换一次论文题目）</li>
+							<li>使用node.js实现静态资源服务器</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class='j-tl-show m-tl2'>
+					<li class='u-tl2'>
+						<h2>2018.1</h2>
+						<ul class='tl2-content'>
+							<li>阅读《JavaScript权威指南》</li>
+							<li>使用node.js数据处理，使用echarts制作论文图表</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2018.2</h2>
+						<ul class='tl2-content'>
+							<li>分解之前的数据处理程序为math、csv模块</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2018.3</h2>
+						<ul class='tl2-content'>
+							<li>阅读《three.js入门指南》</li>
+							<li>学习NEC-css命名规范</li>
+						</ul>
+					</li>
+					<li class='u-tl2'>
+						<h2>2018.4</h2>
+						<ul class='tl2-content'>
+							<li>阅读《精通CSS》</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class='j-tl-hide m-tl2'>
+				  <li class='u-tl2'>
+						<h2>2019</h2>
+						<ul class='tl2-content'>
+							<li>深入学习WebGL及GLSL</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			
+		</main>
 		<!-- footer -->
     <footer class='m-ft'>
 			<div class='ft-menugroup'></div>
-			<div class='u-ft-lang col-xs-12 col-md-4 col-lg-4'>
+			<div class='u-ft-lang col-xs-12 col-4'>
 				<svg class='f-vam' xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewbox="0 0 240 160">
 					<rect x="0" y="0" width="240" height="160" fill="red"></rect>
 					<polyline class="flag-star" points="" fill="yellow"></polyline>
@@ -77,7 +156,7 @@
 				</svg>
 				<a class='f-fs1 s-fc1' href='#'>中文(简体中文)</a>
 			</div>
-			<ul class='u-ft-copy f-fs1 col-xs-12 col-md-8 col-lg-8'>
+			<ul class='u-ft-copy f-fs1 col-xs-12 col-8'>
 				<li><a class='s-fc1' href='./copyright/contact.html'>联系我们</a></li>
 				<li><a class='s-fc1' href='./copyright/privacy.html'>隐私与cookie</a></li>
 				<li><a class='s-fc1' href='./copyright/legal.html'>使用条款</a></li>
@@ -94,47 +173,38 @@
 				drawFlag();
 				
 				menuTrigger();
-				
-				hover();
+				active();
 			}
 			
-			function hover(){
-				var proxy = document.getElementsByClassName('penel-wrap')[0];
-				proxy.addEventListener('mouseenter', handle, true);
-				proxy.addEventListener('mouseleave', leave_handle, true);
+			function active(){
+				var parent = document.getElementsByClassName('m-tl')[0];
 				
-				function handle(e){
-					var target = e.target || event.srcElement;
+				parent.addEventListener('click', function(e){
+					var target = e.target || window.event.srcElement;
 					
-					if(target.tagName === 'DIV'){
-						var list = target.nextElementSibling.children,
-								parent = target.parentElement,
-								len = list.length;
-						
-						while(parent.nextElementSibling){
-							parent = parent.nextElementSibling;
-							parent.classList.add('j-opacity');
+					if(target.tagName === 'H2'){
+						var now = target.parentElement,
+								active = document.getElementsByClassName('j-active')[0],
+								active_m = document.getElementsByClassName('j-tl-show')[0],
+								now_m = document.getElementsByClassName('m-tl2')[now.value];
+								
+						if(active === now){
+							return ;
 						}
-						for(var i = 1; i<len; list[i++].classList.remove('f-dn')){/*empty*/}
-					}
-				}
-				
-				function leave_handle(e){
-					var target = e.target || e.srcElement;
-					
-					if(target.tagName === 'DIV'){
-						var list = target.nextElementSibling.children,
-								parent = target.parentElement,
-								len = list.length;
 						
-						while(parent.nextElementSibling){
-							parent = parent.nextElementSibling;
-							parent.classList.remove('j-opacity');
-						}
-						for(var i = 1; i<len; list[i++].classList.add('f-dn')){/*empty*/}
+						active.classList.remove('j-active');
+						now.classList.add('j-active');
+						
+						active_m.classList.remove('j-tl-show');
+						active_m.classList.add('j-tl-hide');
+						
+						now_m.classList.remove('j-tl-hide');
+						now_m.classList.add('j-tl-show');
+						
 					}
-				}
+				});
 			}
+			
 		</script>
   </body>
 </html>

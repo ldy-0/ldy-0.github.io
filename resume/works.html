@@ -10,7 +10,6 @@
 		<!--[if lt IE 9]>
 			<script src='./scripts/ie.js'></script>
 		<![endif]-->
-    <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/works.css" />
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   </head>
@@ -19,10 +18,10 @@
       <div class="col-xs-3">
 				<button type="button" class="f-dn nav-btn">菜单</button>
 			</div>
-      <div class="logo-wrap col-xs-9 col-sm-12 col-md-3 col-lg-3">
+      <div class="logo-wrap col-xs-9 col-sm-12 col-3">
         <img src="./images/logo.svg" width='40' height='40' alt="logo" />
       </div>
-      <nav class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+      <nav class="col-xs-12 col-sm-12 col-9">
         <ul class="m-nav">
           <li><a class='s-fc3' href="./index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
 					<li><a class='s-fc3' href='./introduce.html'>个人信息</a></li>
@@ -39,14 +38,17 @@
           <li value="0">
             <i class="fa fa-server"></i>
             <h3>静态资源服务器</h3>
+						<a class='fa' href=''></a>
           </li>
           <li value="1">
             <i class="fa fa-users"></i>
-            <h3>数学计算库</h3>
+            <h3>math.js</h3>
+						<a class='fa fa-github' href='https://github.com/person-0/math'></a>
           </li>
 					<li value='2'>
-						<i class=''></i>
-						<h3>csv文件处理库</h3>
+						<i class='fa fa-files-o'></i>
+						<h3>csv.js</h3>
+						<a class='fa fa-github' href='https://github.com/person-0/csv'></a>
 					</li>
         </ol>
         <ul class="m-works">
@@ -55,6 +57,7 @@
               <li>主要功能
                 <ol type="I">
                   <li>静态资源分发</li>
+									<li>动态页面渲染</li>
                   <li>记录访问信息</li>
                 </ol>
               </li>
@@ -83,7 +86,9 @@
                   <li>数组/矩阵四则运算</li>
                   <li>克隆数组/矩阵</li>
                   <li>数组/矩阵格式化</li>
-                  <li>求数组/矩阵平均值</li>
+									<li>批量修改数组/矩阵值</li>
+                  <li>计算数组/矩阵平均值</li>
+									<li>查找数值/矩阵指定数量的最值</li>
                 </ol>
               </li>
               <li>使用技术
@@ -101,13 +106,35 @@
               </li>
             </ul>
           </li>
+					<li class='work'>CSV
+						<ul>
+							<li>已实现功能
+								<ol type='I'>
+									<li>按行读取文件</li>
+									<li>文件内容转换为数组</li>
+									<li>文件/文件夹提取含指定关键字的内容至文件/文件夹</li>
+									<li>计算文件行/列平均值</li>
+									<li>批量修改文件内容</li>
+								</ol>
+							</li>
+							<li>使用技术
+								<ol type='I'>
+									<li>Nodejs</li>
+									<li>Mocha</li>
+								</ol>
+							</li>
+							<li>总结
+								<li>学习Mocha的异步测试</li>
+							</li>
+						</ul>
+					</li>
         </ul>
       </section>
     </main>
 		<!-- footer -->
     <footer class='m-ft'>
 			<div class='ft-menugroup'></div>
-			<div class='u-ft-lang col-xs-12 col-md-4 col-lg-4'>
+			<div class='u-ft-lang col-xs-12 col-4'>
 				<svg class='f-vam' xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewbox="0 0 240 160">
 					<rect x="0" y="0" width="240" height="160" fill="red"></rect>
 					<polyline class="flag-star" points="" fill="yellow"></polyline>
@@ -118,7 +145,7 @@
 				</svg>
 				<a class='f-fs1 s-fc1' href='#'>中文(简体中文)</a>
 			</div>
-			<ul class='u-ft-copy f-fs1 col-xs-12 col-md-8 col-lg-8'>
+			<ul class='u-ft-copy f-fs1 col-xs-12 col-8'>
 				<li><a class='s-fc1' href='./copyright/contact.html'>联系我们</a></li>
 				<li><a class='s-fc1' href='./copyright/privacy.html'>隐私与cookie</a></li>
 				<li><a class='s-fc1' href='./copyright/legal.html'>使用条款</a></li>
@@ -144,7 +171,11 @@
         function callback(e){
           var target = e.target || event.srcElement,
               ul = document.getElementsByClassName('m-works')[0];
-
+          
+					if(target === ol){
+					  return ;
+					}
+					
           //clear current active css
           ul.getElementsByClassName('j-active')[0].classList.remove('j-active');
 

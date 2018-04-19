@@ -1,0 +1,71 @@
+@import "global.less";
+
+/* @var */
+@work-fc: #666;
+
+body{ background: rgb(220, 220, 220);/* rgb(191, 191, 191)||rgb(236, 236, 236);*/}
+
+/* @header style */
+.s-fc3{ color: #969595; }
+.s-fc3:hover{
+	color: #333;
+	background: gray;
+}
+.z-sel1{ color: #111; }
+
+/* @main */
+main{ padding: 0 2%; }
+.works-wrap{
+	display: -webkit-flex;
+	display: flex;
+  padding: 20px 0;
+  background: #fff;
+}
+/*作品列表*/
+.works-list{ width: 34.2%; }
+/*作品容器*/
+.works-list li{ 
+	position: relative;
+	display: inline-block; 
+	overflow: hidden;
+	width: 49%;
+}
+.works-list li:hover{ background: #ddd; }
+/* 镜面效果 */
+.works-list li:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.6);
+	.transition(transform 0.6s);
+	.transform(scale3d(2.8, 2.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -100%, 0) );
+}
+.works-list li:hover:before{
+	.transform(scale3d(2.8, 2.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 100%, 0) );
+}
+.works-list i{
+  margin: 20px 0;
+  font-size: 36px;
+  color: @work-fc;
+}
+.works-list h3{ font-family: proxima-nova-sc,"Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif; }
+.works-list a{ color: @work-fc; }
+/*所有作品的详细信息*/
+.m-works{
+  width: 60%;
+  height: 500px;
+	padding: 0 20px;
+  background: url('../images/bg/simple-md.png') no-repeat;/* rgb(114, 114,114)*/
+}
+.m-works li{ text-align: left; }
+.work{
+  display: none;
+  font-size: 12px;
+  color: @work-fc;
+}
+.work ul{ list-style: circle; }
+.work li ul{ list-style: inside; }
+.j-active{ display: block; }
