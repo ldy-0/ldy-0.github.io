@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang='zh-cn'>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv='X-UA-compatible' content='IE=edge,chrome=1' />
+    <meta name='renderer' content='webkit' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0' />
+    <title>slider</title>
+    <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
+    <style>
+      /* @reset style */
+      html, body {
+        width: 100%;
+        height: 100%;
+      }
+      body { 
+        margin: 0; 
+        padding: 0; 
+      }
+      ol { 
+        margin: 0; 
+        padding: 0; 
+        list-style: none; 
+      }
+      /* 幻灯片 */
+      .g-sld{ 
+        position: relative; 
+        height: 100%;
+        overflow: hidden; 
+      }
+      .m-sld{ 
+        width: 100%; 
+        height: 100%:
+        height: 350px;
+      }
+      .m-sld li{ position: absolute; width: 100%; height: 100%; }
+      .m-sld li:nth-of-type(1), .m-thub li:nth-of-type(1) {
+        background: url('./images/thumbnail/cat1.png') no-repeat center;
+      }
+      .m-sld li:nth-of-type(2), .m-thub li:nth-of-type(2) {
+        background: url('./images/thumbnail/cat2.png') no-repeat center;
+      }
+      .m-sld li:nth-of-type(3), .m-thub li:nth-of-type(3) {
+        background: url('./images/thumbnail/cat3.png') no-repeat center;
+      }
+      .m-sld li:nth-of-type(4), .m-thub li:nth-of-type(4) {
+        background: url('./images/thumbnail/cat4.png') no-repeat center;
+      }
+      .m-sld li:nth-of-type(5), .m-thub li:nth-of-type(5) {
+        background: url('./images/thumbnail/cat5.png') no-repeat center;
+      }
+      /* 缩略图 */
+      .m-thub{ 
+        position: absolute; 
+        bottom: 20px;
+        z-index: 2;
+      }
+      .u-thub{ 
+        float: left;
+        width: 100px;
+        height: 70px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      .u-thub-begin, .u-thub-end{ width: 70px; }
+      
+      /* 切换 */
+      .z-hide{ z-index: 1; }
+      .j-0{ z-index: 2; animation: toright .5s ease-out; }
+      .j-1{ z-index: 2; animation: tobottom .5s ease-out; }
+      .j-2{ z-index: 2; animation: tobig 1s ease-in; }
+      .j-3{ z-index: 2; animation: tosmall 1s ease-out; }
+      .j-4{ z-index: 2; animation: rotate .7s ease-in-out; }
+      @keyframes toright{
+        from{ left: -500px; }
+        to{ left: 0px; }
+      }
+      @keyframes tobottom{
+        from{ top: 350px; }
+        to{ top: 0px; }
+      }
+      @keyframes tobig{
+        from{ transform: scale(0.1); }
+        to{ transform: scale(1); }
+      }
+      @keyframes tosmall{
+        from{ transform: scale(2); }
+        to{ transform: scale(1); }
+      }
+      @keyframes rotate{
+        from{ transform: rotate(-360deg) scale(0.1); }
+        to{ transform: rotate(0deg) scale(1); }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- slider -->
+    <div class='g-sld'>
+      <ol class='m-sld'>
+        <li class=''></li>
+        <li class='j-1'></li>
+        <li class=''></li>
+        <li class=''></li>
+        <li class=''></li>
+      </ol>
+      <!-- 缩列图 -->
+      <ol class='m-thub'>
+        <li class='u-thub u-thub-begin' value='0'></li>
+        <li class='u-thub' value='1'></li>
+        <li class='u-thub' value='2'></li>
+        <li class='u-thub' value='3'></li>
+        <li class='u-thub u-thub-end' value='4'></li>
+      </ol>
+    </div>
+    <script>
+      window.onload = function(){
+        fullScreen();
+        slider();
+      }
+      
+      /**
+       *
+       * Set slider click event
+       *
+       */
+      function slider(){
+        var slds = document.getElementsByClassName('m-sld')[0].children, 
+            thubs = document.getElementsByClassName('m-thub')[0];
+        
+        thubs.addEventListener('click', handle, false);
+        
+        function handle(e){
+          var target = e.target || window.event.srcElement;
+          
+          if(target.tagName === 'LI'){
+            var index = target.value,
+                old_index;
+            
+            for(var i = 0, len = slds.length; i<len; i++){
+            
+              /j-\d{1}/.test(slds[i].className) ? old_index = i : void(0) ;
+              
+              /z-hide/.test(slds[i].className) ? slds[i].classList.remove('z-hide') : void(0) ;
+              
+            }
+            
+            slds[index].classList.add('j-'+index);
+            slds[old_index].classList.remove('j-'+old_index);
+            slds[old_index].classList.add('z-hide');
+          }
+        }
+        
+      }
+      
+    </script>
+  </body>
+</html>
