@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://jadyoap.bj.bcebos.com/ife%2Fmission7.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>卡片3D翻转动效</title>
+        <style type="text/css">
+            /* Task-4: 3D卡片 */
+            .m-card {
+                position: relative;
+                width: 250px;
+                height: 350px;
+                perspective: 300px;
+            }
+            /* 卡片二面公共样式 */
+            .m-card:before,
+            .m-card:after {
+                content: '';
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height: 100%;
+                -webkit-transform: rotateY(0deg);
+                -moz-transform: rotateY(0deg);
+                -ms-transform: rotateY(0deg);
+                -o-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+            /* 反面 */
+            .m-card:before {
+                background: url('./images/my/反面.jpg');
+                -webkit-transition: transform 0.4s linear;
+                -moz-transition: transform 0.4s linear;
+                -o-transition: transform 0.4s linear;
+                transition: transform 0.4s linear;
+            }
+            .m-card:hover:before {
+                -webkit-transform: rotateY(180deg);
+                -moz-transform: rotateY(180deg);
+                -ms-transform: rotateY(180deg);
+                -o-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+            }
+            /* 正面 */
+            .m-card:after {
+                background: url('./images/my/正面.jpg');
+                -webkit-transition: transform 0.2s linear 0.2s;
+                -moz-transition: transform 0.2s linear 0.2s;
+                -o-transition: transform 0.2s linear 0.2s;
+                transition: transform 0.2s linear 0.2s;
+            }
+            .m-card:hover:after {
+                -webkit-transform: rotateY(90deg);
+                -moz-transform: rotateY(90deg);
+                -ms-transform: rotateY(90deg);
+                -o-transform: rotateY(90deg);
+                transform: rotateY(90deg);
+                -webkit-transition: transform 0.2s linear;
+                -moz-transition: transform 0.2s linear;
+                -o-transition: transform 0.2s linear;
+                transition: transform 0.2s linear;
+            }
+        </style>
+    </head>
+    <body style="">
+        <section class='m-task-4'>
+            <div class='m-card'></div>
+        </section>
+    
+    <script>
+    </script>
+</body></html>

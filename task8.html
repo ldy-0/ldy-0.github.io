@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://jadyoap.bj.bcebos.com/ife%2Fmission7.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>AE动画转web原生动画</title>
+        <style type="text/css">
+            /* Task-8: AE动画 */
+            #bodymovin {
+                position: relative;
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body style="">
+        <section class='m-task-8'>
+            <div id='bodymovin'></div>
+        </section>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js' type='text/javascript'></script>
+    <script>
+        window.onload = function(){
+          
+          addAEAnimation();
+          
+        }
+        
+        /**
+         *
+         * add AE animation / 添加AE动画
+         *
+         */
+        function addAEAnimation(){
+        
+          var animation = bodymovin.loadAnimation({
+            // 动画载体
+            container: document.getElementById('bodymovin'),
+            // AE动画文件路径
+            path: './ae.json',
+            // 渲染方式
+            renderer: 'svg/canvas/html',
+            loop: true,
+            autoplay: true,
+            name: 'animation',
+          });
+          
+        }
+    </script>
+</body></html>
