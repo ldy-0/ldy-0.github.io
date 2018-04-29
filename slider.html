@@ -10,86 +10,172 @@
     <style>
       /* @reset style */
       html, body {
-        width: 100%;
-        height: 100%;
+          width: 100%;
+          height: 100%;
       }
       body { 
-        margin: 0; 
-        padding: 0; 
+          margin: 0; 
+          padding: 0; 
       }
       ol { 
-        margin: 0; 
-        padding: 0; 
-        list-style: none; 
+          margin: 0; 
+          padding: 0; 
+          list-style: none; 
       }
       /* 幻灯片 */
-      .g-sld{ 
-        position: relative; 
-        height: 100%;
-        overflow: hidden; 
+      .g-sld { 
+          position: relative; 
+          height: 100%;
+          overflow: hidden; 
       }
-      .m-sld{ 
-        width: 100%; 
-        height: 100%:
-        height: 350px;
+      .m-sld { 
+          width: 100%; 
+          height: 100%;
       }
-      .m-sld li{ position: absolute; width: 100%; height: 100%; }
+      .m-sld li { 
+          position: absolute; 
+          width: 100%; 
+          height: 100%;
+      }
+      .m-sld li, .m-thub li {
+          -webkit-background-size: 100% 100%;
+          -moz-background-size: 100% 100%;
+          background-size: 100% 100%;
+      }
       .m-sld li:nth-of-type(1), .m-thub li:nth-of-type(1) {
-        background: url('./images/thumbnail/cat1.png') no-repeat center;
+          background-image: url('/images/slider/cat1.png');
       }
       .m-sld li:nth-of-type(2), .m-thub li:nth-of-type(2) {
-        background: url('./images/thumbnail/cat2.png') no-repeat center;
+          background-image: url('/images/slider/cat2.png');
       }
       .m-sld li:nth-of-type(3), .m-thub li:nth-of-type(3) {
-        background: url('./images/thumbnail/cat3.png') no-repeat center;
+          background-image: url('/images/slider/cat3.png');
       }
       .m-sld li:nth-of-type(4), .m-thub li:nth-of-type(4) {
-        background: url('./images/thumbnail/cat4.png') no-repeat center;
+          background-image: url('/images/slider/cat4.png');
       }
       .m-sld li:nth-of-type(5), .m-thub li:nth-of-type(5) {
-        background: url('./images/thumbnail/cat5.png') no-repeat center;
+          background-image: url('/images/slider/cat5.png');
       }
       /* 缩略图 */
-      .m-thub{ 
-        position: absolute; 
-        bottom: 20px;
-        z-index: 2;
+      .m-thub { 
+          position: absolute; 
+          bottom: 20px;
+          z-index: 2;
+          width: 100%;
+          height: 16%;
       }
-      .u-thub{ 
-        float: left;
-        width: 100px;
-        height: 70px;
-        margin: 0 5px;
-        cursor: pointer;
+      .u-thub { 
+          float: left;
+          width: 16%;
+          height: 100%;
+          margin: 0 2%;
+          cursor: pointer;
       }
-      .u-thub-begin, .u-thub-end{ width: 70px; }
+      /*.u-thub-begin, .u-thub-end { width: 100px; } */
       
       /* 切换 */
-      .z-hide{ z-index: 1; }
-      .j-0{ z-index: 2; animation: toright .5s ease-out; }
-      .j-1{ z-index: 2; animation: tobottom .5s ease-out; }
-      .j-2{ z-index: 2; animation: tobig 1s ease-in; }
-      .j-3{ z-index: 2; animation: tosmall 1s ease-out; }
-      .j-4{ z-index: 2; animation: rotate .7s ease-in-out; }
+      /* 切换时的背景 */
+      .j-bg { z-index: 1; }
+      /* 缩略图-1 */
+      .j-0 { 
+          z-index: 2; 
+          -webkit-animation: toright .5s ease-out; 
+          -moz-animation: toright .5s ease-out; 
+          animation: toright .5s ease-out; 
+      }
+      /* 缩略图-2 */
+      .j-1 { 
+          z-index: 2; 
+          -webkit-animation: tobottom .5s ease-out; 
+          -moz-animation: tobottom .5s ease-out; 
+          animation: tobottom .5s ease-out; 
+      }
+      /* 缩略图-3 */
+      .j-2 { 
+          z-index: 2; 
+          -webkit-animation: tobig 1s ease-in; 
+          -moz-animation: tobig 1s ease-in; 
+          animation: tobig 1s ease-in; 
+      }
+      /* 缩略图-4 */
+      .j-3 { 
+          z-index: 2; 
+          -webkit-animation: tosmall 1s ease-out; 
+          -moz-animation: tosmall 1s ease-out; 
+          animation: tosmall 1s ease-out; 
+      }
+      /* 缩略图-5 */
+      .j-4 { 
+          z-index: 2; 
+          -webkit-animation: rotate .7s ease-in-out; 
+          -moz-animation: rotate .7s ease-in-out; 
+          animation: rotate .7s ease-in-out; 
+      }
+      /* 向右位移动画 */
+      @-webkit-keyframes toright{
+          from{ left: -500px; }
+          to{ left: 0px; }
+      }
+      @-moz-keyframes toright{
+          from{ left: -500px; }
+          to{ left: 0px; }
+      }
       @keyframes toright{
-        from{ left: -500px; }
-        to{ left: 0px; }
+          from{ left: -500px; }
+          to{ left: 0px; }
+      }
+      /* 向上位移动画 */
+      @-webkit-keyframes tobottom{
+          from{ top: 350px; }
+          to{ top: 0px; }
+      }
+      @-moz-keyframes tobottom{
+          from{ top: 350px; }
+          to{ top: 0px; }
       }
       @keyframes tobottom{
-        from{ top: 350px; }
-        to{ top: 0px; }
+          from{ top: 350px; }
+          to{ top: 0px; }
+      }
+      /* 放大动画 */
+      @-webkit-keyframes tobig{
+          from{ transform: scale(0.1); }
+          to{ transform: scale(1); }
+      }
+      @-moz-keyframes tobig{
+          from{ transform: scale(0.1); }
+          to{ transform: scale(1); }
       }
       @keyframes tobig{
-        from{ transform: scale(0.1); }
-        to{ transform: scale(1); }
+          from{ transform: scale(0.1); }
+          to{ transform: scale(1); }
+      }
+      /* 缩小动画 */
+      @-webkit-keyframes tosmall{
+          from{ transform: scale(2); }
+          to{ transform: scale(1); }
+      }
+      @-moz-keyframes tosmall{
+          from{ transform: scale(2); }
+          to{ transform: scale(1); }
       }
       @keyframes tosmall{
-        from{ transform: scale(2); }
-        to{ transform: scale(1); }
+          from{ transform: scale(2); }
+          to{ transform: scale(1); }
+      }
+      /* 旋转放大动画 */
+      @-webkit-keyframes rotate{
+          from{ transform: rotate(-360deg) scale(0.1); }
+          to{ transform: rotate(0deg) scale(1); }
+      }
+      @-moz-keyframes rotate{
+          from{ transform: rotate(-360deg) scale(0.1); }
+          to{ transform: rotate(0deg) scale(1); }
       }
       @keyframes rotate{
-        from{ transform: rotate(-360deg) scale(0.1); }
-        to{ transform: rotate(0deg) scale(1); }
+          from{ transform: rotate(-360deg) scale(0.1); }
+          to{ transform: rotate(0deg) scale(1); }
       }
     </style>
   </head>
@@ -105,17 +191,18 @@
       </ol>
       <!-- 缩列图 -->
       <ol class='m-thub'>
-        <li class='u-thub u-thub-begin' value='0'></li>
+        <li class='u-thub' value='0'></li>
         <li class='u-thub' value='1'></li>
         <li class='u-thub' value='2'></li>
         <li class='u-thub' value='3'></li>
-        <li class='u-thub u-thub-end' value='4'></li>
+        <li class='u-thub' value='4'></li>
       </ol>
     </div>
     <script>
       window.onload = function(){
-        fullScreen();
-        slider();
+        
+        addSliderEvent();
+        
       }
       
       /**
@@ -123,7 +210,7 @@
        * Set slider click event
        *
        */
-      function slider(){
+      function addSliderEvent(){
         var slds = document.getElementsByClassName('m-sld')[0].children, 
             thubs = document.getElementsByClassName('m-thub')[0];
         
@@ -134,20 +221,25 @@
           
           if(target.tagName === 'LI'){
             var index = target.value,
+                // 上一次点击的缩略图的索引
                 old_index;
             
             for(var i = 0, len = slds.length; i<len; i++){
             
               /j-\d{1}/.test(slds[i].className) ? old_index = i : void(0) ;
               
-              /z-hide/.test(slds[i].className) ? slds[i].classList.remove('z-hide') : void(0) ;
+              /j-bg/.test(slds[i].className) ? slds[i].classList.remove('j-bg') : void(0) ;
               
             }
             
             slds[index].classList.add('j-'+index);
+            
             slds[old_index].classList.remove('j-'+old_index);
-            slds[old_index].classList.add('z-hide');
+            // 设置上次点击显示的图片做动画背景
+            slds[old_index].classList.add('j-bg');
+            
           }
+          
         }
         
       }

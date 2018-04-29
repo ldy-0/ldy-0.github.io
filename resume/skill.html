@@ -13,13 +13,21 @@
     <link rel="stylesheet" type='text/css' href="./css/global.css" />
 		
     <style media="screen">
-    .chart-wrap{ margin-top: 80px; }
-		.z-sel1{ color: #111; }
-		.center{ 
-			display: -webkit-flex;
-			display: flex;
-			justify-content: center;
-		}
+      main{ padding: 0; }
+      .title{
+        margin: 80px 0 10px;
+        font: normal 24px sans-serif;
+        text-indent: 24px;
+      }
+      .z-sel1{ color: #111; }
+      .s-bg1{ background: #607d8b; }
+      .s-bg2{ background: #2c343c; }
+      .f-center{ 
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+      }
+      /*.chart-wrap{ margin-top: 80px; }*/
     </style>
   </head>
   <body>
@@ -46,10 +54,12 @@
 				<li><a class='goTop' href="">置顶</a></li>
 			</ul>
       <section>
-				<div class='center chart-wrap' style='background: #404a59;'>
+        <h2 class='title'>基础技能</h2>
+				<div class='f-center chart-wrap s-bg1'>
 					<canvas id='singleScatter' width='800' height='300'>浏览器不支持</canvas>
 				</div>
-        <div class="center chart-wrap" style='background: #2c343c;'>
+        <h2 class='title'>技能图</h2>
+        <div class="f-center chart-wrap s-bg2">
           <canvas id="graph" width="800" height="300">浏览器不支持</canvas>
         </div>
       </section>
@@ -89,16 +99,14 @@
 				drawFlag();
 				
 				chart.createSingleScatter(document.getElementById('singleScatter'), {
-					title: ['HTML', 'CSS', 'JavaScript', '网络通信'],
+					title: ['HTML', 'CSS', 'JavaScript'],
 					axis: [ ['html4.01', 'html5', 'svg', '动态模板'],
 									['css2.1', '布局', 'css3', 'less', '兼容性'],
-									['ES 5', 'DOM API', 'ES 6', 'webGL', '函数式'],
-									['http', 'Ajax', 'fetch', 'WebSocket'], ],
+									['ES 5', 'DOM API', 'ES 6', 'webGL', '函数式'] ],
 					data: [
-					[20, 10, 20, 10],
+					[20, 15, 15, 10],
 					[20, 15, 15, 10, 5],
 					[20, 20, 15, 5, 5],
-					[15, 10, 10, 0],
 					],
 				});
 				

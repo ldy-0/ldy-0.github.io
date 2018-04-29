@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=1.0">
+    <title>未来规划-简历</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+		<!--[if lt IE 9]>
+			<script src='./scripts/ie.js'></script>
+		<![endif]-->
+    <link rel="stylesheet" type='text/css' href="./css/global.css" />
+    <link rel="stylesheet" type='text/css' href="./css/future.css" />
+  </head>
+  <body>
+    <header class="f-cb">
+      <div class="col-xs-3">
+				<button type="button" class="f-dn nav-btn">菜单</button>
+			</div>
+      <div class="logo-wrap col-xs-9 col-sm-12 col-md-2 col-lg-2">
+        <img src="./images/logo.svg" width='40' height='40' alt="logo">
+      </div>
+      <nav class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+        <ul class="m-nav">
+          <li><a class='s-fc3' href="./index.html">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+					<li><a class='s-fc3' href='./introduce.html'>个人信息</a></li>
+					<li><a class='s-fc3' href='./skill.html'>个人技能</a></li>
+					<li><a class='s-fc3' href='./works.html'>个人作品</a></li>
+					<li><a class='s-fc3 z-sel z-sel1' href='#'>个人规划</a></li>
+          <li><a class='s-fc3' href='./about.html'>关&nbsp;&nbsp;&nbsp;&nbsp;于</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class='fill'>
+			<ul class="penel-wrap">
+				<li class="long penel">
+					<div class='mask'></div>
+					<ul class='blur'>
+						<li class='penel-title'>长期</li>
+						<li class='f-dn'>深入V8引擎</li>
+						<li class='f-dn'></li>
+					</ul>
+				</li>
+				<li class="middle penel">
+					<div class='mask'></div>
+					<ul class='blur'>
+						<li class='penel-title'>中期</li>
+						<li class='f-dn'>学习threejs及相关webGL标准</li>
+						<li class='f-dn'></li>
+					</ul>
+				</li>
+				<li class="short penel">
+					<div class='mask'></div>
+					<ul class='blur'>
+						<li class='penel-title'>短期</li>
+						<li class='f-dn'>熟练使用Less</li>
+						<li class='f-dn'>阅读JQuery源码</li>
+						<li class='f-dn'>阅读《JavaScript权威指南》</li>
+						<li class='f-dn'>阅读《精通css：高级Web标准解决方案》</li>
+						<li class='f-dn'></li>
+					</ul>
+				</li>
+			</ul>
+    </main>
+		<!-- footer -->
+    <footer class='m-ft'>
+			<div class='ft-menugroup'></div>
+			<div class='u-ft-lang col-xs-12 col-md-4 col-lg-4'>
+				<svg class='f-vam' xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewbox="0 0 240 160">
+					<rect x="0" y="0" width="240" height="160" fill="red"></rect>
+					<polyline class="flag-star" points="" fill="yellow"></polyline>
+					<polyline class="flag-star" points="" fill="yellow"></polyline>
+					<polyline class="flag-star" points="" fill="yellow"></polyline>
+					<polyline class="flag-star" points="" fill="yellow"></polyline>
+					<polyline class="flag-star" points="" fill="yellow"></polyline>
+				</svg>
+				<a class='f-fs1 s-fc1' href='#'>中文(简体中文)</a>
+			</div>
+			<ul class='u-ft-copy f-fs1 col-xs-12 col-md-8 col-lg-8'>
+				<li><a class='s-fc1' href='./copyright/contact.html'>联系我们</a></li>
+				<li><a class='s-fc1' href='./copyright/privacy.html'>隐私与cookie</a></li>
+				<li><a class='s-fc1' href='./copyright/legal.html'>使用条款</a></li>
+				<li><a class='s-fc1' title="京ICP备00000000号-0">京ICP备09000000号-6</a></li>
+				<li><a class='s-fc1' title="京公网安备 11010802000000">京公网安备 11010802000000</a></li>
+				<li class='s-fc1'>© 2017 Yuan</li>
+			</ul>
+		</footer>
+		<script src='./scripts/base.js'></script>
+		<script>
+
+			window.onload = function(){
+			
+				drawFlag();
+				
+				menuTrigger();
+				
+				hover();
+			}
+			
+			function hover(){
+				var proxy = document.getElementsByClassName('penel-wrap')[0];
+				proxy.addEventListener('mouseenter', handle, true);
+				proxy.addEventListener('mouseleave', leave_handle, true);
+				
+				function handle(e){
+					var target = e.target || event.srcElement;
+					
+					if(target.tagName === 'DIV'){
+						var list = target.nextElementSibling.children,
+								parent = target.parentElement,
+								len = list.length;
+						
+						while(parent.nextElementSibling){
+							parent = parent.nextElementSibling;
+							parent.classList.add('j-opacity');
+						}
+						for(var i = 1; i<len; list[i++].classList.remove('f-dn')){/*empty*/}
+					}
+				}
+				
+				function leave_handle(e){
+					var target = e.target || e.srcElement;
+					
+					if(target.tagName === 'DIV'){
+						var list = target.nextElementSibling.children,
+								parent = target.parentElement,
+								len = list.length;
+						
+						while(parent.nextElementSibling){
+							parent = parent.nextElementSibling;
+							parent.classList.remove('j-opacity');
+						}
+						for(var i = 1; i<len; list[i++].classList.add('f-dn')){/*empty*/}
+					}
+				}
+			}
+		</script>
+  </body>
+</html>

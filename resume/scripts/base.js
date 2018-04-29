@@ -11,7 +11,9 @@ function penel(){
 }
 
 /**
- * 设置菜单点击事件
+ *
+ * set menu click event/设置菜单点击事件
+ *
  */
 function menuTrigger(){
 	trigger();
@@ -59,9 +61,9 @@ function isMob(){
 	return /(Android|iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent);
 }
 
-
 /**
- * 发起get请求
+ *
+ * send get request
  *
  * @param {String} path
  * @param {Function} callback
@@ -86,8 +88,10 @@ function get(path, callback){
 
 
 /**
-*国旗绘制
-*/
+ *
+ * draw flag
+ *
+ */
 function drawFlag(){
 	var ps = document.getElementsByClassName('flag-star');
 	ps[0].setAttribute('points',draw(40,40,24));

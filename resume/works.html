@@ -32,103 +32,26 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main class='s-fc4'>
       <section class="works-wrap">
         <ol class="works-list">
-          <li value="0">
+          <li value="0" class='j-sel'>
             <i class="fa fa-server"></i>
-            <h3>静态资源服务器</h3>
+            <h3>GIS-空间自相关分析</h3>
 						<a class='fa' href=''></a>
           </li>
           <li value="1">
             <i class="fa fa-users"></i>
             <h3>math.js</h3>
-						<a class='fa fa-github' href='https://github.com/person-0/math'></a>
+						<a class='fa fa-github s-fc5' href='https://github.com/person-0/math'></a>
           </li>
 					<li value='2'>
 						<i class='fa fa-files-o'></i>
 						<h3>csv.js</h3>
-						<a class='fa fa-github' href='https://github.com/person-0/csv'></a>
+						<a class='fa fa-github s-fc5' href='https://github.com/person-0/csv'></a>
 					</li>
         </ol>
-        <ul class="m-works">
-          <li class="work j-active">静态资源服务器
-            <ul>
-              <li>主要功能
-                <ol type="I">
-                  <li>静态资源分发</li>
-									<li>动态页面渲染</li>
-                  <li>记录访问信息</li>
-                </ol>
-              </li>
-              <li>使用技术
-                <ol type="I">
-                  <li>Nodejs</li>
-									<li>PM2</li>
-                  <li>dot</li>
-                </ol>
-              </li>
-              <li>总结
-                <ul>
-                  <li>熟悉了http，path，fs等原生模块API</li>
-                  <li>了解了commonjs规范</li>
-                  <li>了解npm的使用</li>
-									<li>掌握了PM2的简单使用</li>
-                  <li>了解HTML模板dot的使用</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li class="work">math.js
-            <ul>
-              <li>已实现功能
-                <ol type="I">
-                  <li>数组/矩阵四则运算</li>
-                  <li>克隆数组/矩阵</li>
-                  <li>数组/矩阵格式化</li>
-									<li>批量修改数组/矩阵值</li>
-                  <li>计算数组/矩阵平均值</li>
-									<li>查找数值/矩阵指定数量的最值</li>
-                </ol>
-              </li>
-              <li>使用技术
-                <ol type="I">
-                  <li>Nodejs</li>
-									<li>Mocha</li>
-                </ol>
-              </li>
-              <li>总结
-                <ul>
-                  <li>学习了怎么编写Nodejs的包、模块</li>
-                  <li>学习了深拷贝、浮点数的准确度等问题的解决方法</li>
-                  <li>了解单元测试的含义和测试框架Mocha的一些基础用法</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-					<li class='work'>CSV
-						<ul>
-							<li>已实现功能
-								<ol type='I'>
-									<li>按行读取文件</li>
-									<li>文件内容转换为数组</li>
-									<li>文件/文件夹提取含指定关键字的内容至文件/文件夹</li>
-									<li>计算文件行/列平均值</li>
-									<li>批量修改文件内容</li>
-								</ol>
-							</li>
-							<li>使用技术
-								<ol type='I'>
-									<li>Nodejs</li>
-									<li>Mocha</li>
-								</ol>
-							</li>
-							<li>总结
-								<li>学习Mocha的异步测试</li>
-							</li>
-						</ul>
-					</li>
-        </ul>
+        <ul class="m-works"></ul>
       </section>
     </main>
 		<!-- footer -->
@@ -161,6 +84,33 @@
 				drawFlag();
         menuTrigger();
         worksClick();
+				
+				var data = [
+					{ name: 'spatial autocorrelation module', 
+						fs: ["全局Moran‘I指数", '局部Moran’I指数', '计算空间权重矩阵', '经纬度单位转换'], 
+						ts: ['Nodejs', 'PM2'], 
+						z: ['学习了Nodejs原生模块API', '了解了commonjs规范','了解npm的使用'], 
+					},
+					{
+						name: 'math.js',
+						fs: ['数组/矩阵四则运算', '克隆数组/矩阵', '数组/矩阵格式化', '批量修改数组/矩阵值', '计算数组/矩阵平均值','查找数值/矩阵指定数量的最值' ],
+						ts: ['Nodejs', 'Mocha' ],
+						z: ['学习了怎么编写Nodejs的包、模块',
+                  '学习了深拷贝、浮点数的准确度等问题的解决方法',
+                  '了解单元测试的含义和测试框架Mocha的一些基础用法' ],
+					},
+					{
+						name: 'csv.js',
+						fs: ['按行读取文件', '文件内容转换为数组', 
+									'文件/文件夹提取含指定关键字的内容至文件/文件夹',
+									'计算文件行/列平均值',
+									'批量修改文件内容' ],
+						ts: ['Nodejs', 'Mocha'],
+						z: ['学习Mocha的异步测试'],
+					}
+				];
+				
+				createWorks(data);
 			}
 
       function worksClick(){
@@ -176,16 +126,96 @@
 					  return ;
 					}
 					
-          //clear current active css
+          //clear current element class
+					ol.getElementsByClassName('j-sel')[0].classList.remove('j-sel');
           ul.getElementsByClassName('j-active')[0].classList.remove('j-active');
 
           if(target.tagName === 'LI'){
+					
+						target.classList.add('j-sel');
             ul.children[ target.value ].classList.add('j-active');
+						
           }else if(target.tagName === 'H3' || 'I'){
+					
+						target.parentElement.classList.add('j-sel');
             ul.children[ target.parentElement.value ].classList.add('j-active');
+						
           }
+					
         }
+				
       }
+			
+			function createWorks(arr){
+				var root = document.getElementsByClassName('m-works')[0];
+				
+				for(var i = 0, len = arr.length; i<len; i++){
+					var li = document.createElement('li'),
+							ul = createWork(),
+							item = arr[i];
+					
+					//add fs li
+					for(var fi = 0, flen = item.fs.length; fi<flen; fi++){
+						var f_li = document.createElement('li');
+						
+						f_li.appendChild(document.createTextNode( item.fs[fi] ));
+						ul.children[0].firstElementChild.appendChild(f_li);
+						
+					}
+					//add ts li
+					for(var ti = 0, tlen = item.ts.length; ti<tlen; ti++){
+						var t_li = document.createElement('li');
+						
+						t_li.appendChild(document.createTextNode( item.ts[ti] ));
+						ul.children[1].firstElementChild.appendChild(t_li);
+						
+					}
+					//add z li
+					for(var zi = 0, zlen = item.z.length; zi<zlen; zi++){
+						var z_li = document.createElement('li');
+						
+						z_li.appendChild(document.createTextNode( item.z[zi] ));
+						ul.children[2].firstElementChild.appendChild(z_li);
+						
+					}
+					
+					li.classList.add('work');
+					li.appendChild(document.createTextNode(item.name));
+					li.appendChild(ul);
+					
+					root.appendChild(li);
+				}
+				
+				root.children[0].classList.add('j-active');
+			}
+			//创建单个work
+			function createWork(){
+				var ul = document.createElement('ul');
+				
+				for(var i = 0; i<3; i++){
+					var li = document.createElement('li');
+					
+					if(i === 2){
+						
+						li.appendChild(document.createTextNode('总结'));
+						li.appendChild(document.createElement('ul'));
+						
+					}else{
+					
+						var ol = document.createElement('ol');
+						ol.setAttribute('type', 'I');
+						
+						li.appendChild(document.createTextNode(i === 0 ? '功能' : '技术'));
+						li.appendChild(ol);
+						
+					}
+					
+					ul.appendChild(li);
+					
+				}
+				
+				return ul;
+			}
 		</script>
   </body>
 </html>

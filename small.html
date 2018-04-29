@@ -163,26 +163,75 @@
             }
             /*鼠标hover样式 写在这里*/
             /* 眼球 */
-            .eye-core { transition: width 2s, margin-left 2s; }
+            .eye-core { 
+                -webkit-transition: width 2s, margin-left 2s;
+                -moz-transition: width 2s, margin-left 2s;
+                -o-transition: width 2s, margin-left 2s;
+                transition: width 2s, margin-left 2s;
+            }
             .face:hover .eye-core { 
                 width: 40px;
                 margin-left: -20px;
             }
             /* 眼皮 */
-            .eye-bottom { transition: margin-top 2s; }
+            .eye-bottom { 
+                -webkit-transition: margin-top 2s;
+                -moz-transition: margin-top 2s;
+                -o-transition: margin-top 2s;
+                transition: margin-top 2s;
+            }
             .face:hover .eye-bottom { margin-top: 35px; }
-            /* 绯红 */
-            .face-red { transition: opacity 1s .5s; }
+            /* 面部红晕 */
+            .face-red { 
+                -webkit-transition: opacity 1s .5s;
+                -moz-transition: opacity 1s .5s;
+                -o-transition: opacity 1s .5s;
+                transition: opacity 1s .5s;
+            }
             .face:hover .face-red { opacity: 1; }
             /* 嘴角 */
-            .mouth.left { transition: border-bottom-left-radius 2s; }
-            .mouth.right { transition: border-bottom-right-radius 2s; }
-            .face:hover .mouth.left { border-bottom-left-radius: 50%; }
-            .face:hover .mouth.right { border-bottom-right-radius: 50%; }
+            .mouth.left { 
+                -webkit-transition: border-bottom-left-radius 2s;
+                -moz-transition: border-bottom-left-radius 2s;
+                transition: border-bottom-left-radius 2s; 
+            }
+            .mouth.right { 
+                -webkit-transition: border-bottom-right-radius 2s;
+                -moz-transition: border-bottom-right-radius 2s;
+                -o-transition: border-bottom-right-radius 2s;
+                transition: border-bottom-right-radius 2s; 
+            }
+            .face:hover .mouth.left { 
+                -webkit-border-bottom-left-radius: 50%;
+                -moz-border-bottom-left-radius: 50%;
+                border-bottom-left-radius: 50%; 
+            }
+            .face:hover .mouth.right { 
+                -webkit-border-bottom-right-radius: 50%;
+                -moz-border-bottom-right-radius: 50%;
+                border-bottom-right-radius: 50%; 
+            }
             /* 耳朵 */
-            .ear.left, .ear.right { transition: transform 2s; }
-            .face:hover + .ear-wrap .left { transform: rotate(-15deg); }
-            .face:hover + .ear-wrap .right { transform: rotate(15deg); }
+            .ear.left, .ear.right { 
+                -webkit-transition: transform 2s;
+                -moz-transition: transform 2s;
+                -o-transition: transform 2s;
+                transition: transform 2s; 
+            }
+            .face:hover + .ear-wrap .left { 
+                -webkit-transform: rotate(-15deg);
+                -moz-transform: rotate(-15deg);
+                -ms-transform: rotate(-15deg);
+                -o-transform: rotate(-15deg);
+                transform: rotate(-15deg); 
+            }
+            .face:hover + .ear-wrap .right { 
+                -webkit-transform: rotate(15deg);
+                -moz-transform: rotate(15deg);
+                -ms-transform: rotate(15deg);
+                -o-transform: rotate(15deg);
+                transform: rotate(15deg); 
+            }
         </style>
     </head>
     <body>

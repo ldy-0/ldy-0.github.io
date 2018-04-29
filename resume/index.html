@@ -12,6 +12,13 @@
 		<![endif]-->
 		<link rel="stylesheet" type='text/css' href="./css/index.css">
 		<title>首页-简历</title>
+		<style>
+			@font-face{
+				font-family: ff;
+				src: url('./css/s.ttf');
+			}
+			.penel{ font-family: ff; }
+		</style>
 	</head>
 	<body>
 		<header class="f-cb">
@@ -38,15 +45,14 @@
 			</ul>
 			<section class="penel">
 				<div class='penel-title'>
-					<p class="opacity">不向前走,不知路远</p>
-					<p class="opacity"></p>
-					<p class="opacity">我承诺</p>
+					<p class="opacity">光勤奋是不够的</p>
+					<P class='opacity'>蚂蚁也十分勤奋</P>
+					<p class="opacity">你在勤奋些什么</p>
+					<p class='opacity'>有二种过错是基本的</p>
+					<p class='opacity'>其他一切过错都由此而生</p>
+					<P class='opacity'>急躁和懒惰</P>
 				</div>
-				<ol class="opacity" type="I">
-					<li>()</li>
-					<li>0-()</li>
-					<li>地点<li>
-				</ol>
+				<ol class="opacity" type="I"></ol>
 			</section>
 			<hr />
 			<div class="thumbnail-wrap">
@@ -125,24 +131,19 @@
 			</ul>
 		</footer>
 		<script type="text/javascript" src='./scripts/base.js'></script>
+		<script src='./scripts/three.min.js'></script>
+		<script src='./scripts/animation.js'></script>
 		<script type="text/javascript">
-			// register();
-
 			window.onload = function(){
 
 				menuTrigger();
+				
 				thumbnail();
 
 				drawFlag();
+				
 				penel();
 			}
-
-
-			// function register(){
-			// navigator.serviceWorker.register('./register.js').then(function(serviceWorkerRegistration){
-			// 		console.log('register success'+serviceWorkerRegistration.scope);
-			// 		}).catch(err=>alert('register false'));
-			// }
 		</script>
 	</body>
 </html>

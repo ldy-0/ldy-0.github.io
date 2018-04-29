@@ -167,9 +167,9 @@
 						 type: 'category', 
 						 axisLabel: color,
 						 axisLine: { lineStyle: color, },
-						 top: i*90/len+'%', 
+						 top: (i*100/len+5)+'%', 
 						 left: 100, 
-						 height: 100/len+'%',
+						 height: (100/len-16)+'%',
 						 data: obj.axis[i],
 					 });
 			 option.series.push({

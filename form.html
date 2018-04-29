@@ -112,32 +112,32 @@
             }
             /* 动画部分 */
             .form__input + .form__label:after { 
-              content: '';
-              position: absolute;
-              box-sizing: border-box;
-              width: 0;
-              height: 100%;
-              border-bottom: 2px solid #0d8aee;
-              -webkit-transition: width .5s;
-              -moz-transition: width .5s;
-              -o-transition: width .5s;
-              transition: width .5s;
+                content: '';
+                position: absolute;
+                box-sizing: border-box;
+                width: 0;
+                height: 100%;
+                border-bottom: 2px solid #0d8aee;
+                -webkit-transition: width .5s;
+                -moz-transition: width .5s;
+                -o-transition: width .5s;
+                transition: width .5s;
             }
             .form__input:focus + .form__label:after {
-              width: 100%;
-              -webkit-transition: width .1s;
-              -moz-transition: width .1s;
-              -o-transition: width .1s;
-              transition: width .1s;
+                width: 100%;
+                -webkit-transition: width .1s;
+                -moz-transition: width .1s;
+                -o-transition: width .1s;
+                transition: width .1s;
             }
             .j-label {
-              font-size: .85em;
-              font-weight: bold;
-              line-height: 1;
-              -webkit-transition: font-size .1s, line-height .3s ease .1s;
-              -moz-transition: font-size .1s, line-height .3s ease .1s;
-              -o-transition: font-size .1s, line-height .3s ease .1s;
-              transition: font-size .1s, line-height .3s ease .1s;
+                line-height: 1;
+                font-size: .85em;
+                font-weight: bold;
+                -webkit-transition: font-size .1s, line-height .3s ease .1s;
+                -moz-transition: font-size .1s, line-height .3s ease .1s;
+                -o-transition: font-size .1s, line-height .3s ease .1s;
+                transition: font-size .1s, line-height .3s ease .1s;
             }
         </style>
     </head>
@@ -170,12 +170,20 @@
     <script src="./使用 animate.css 制作流畅交互动效_files/jquery-1.10.2.min_65682a2.js.下载"></script>
     <script>
       window.onload = function(){
-        focus();
+      
+        addFormEvent();
+        
       }
      
+      /**
+       *
+       * Set form event / 设置表单事件
+       *
+       */
+      function addFormEvent(){
       
-      function focus(){
         var len = $('.form__input').length;
+        
         //添加标签动画
         for(var i = 0; i<len; i++){
         
@@ -183,12 +191,12 @@
           
         }
         
-        //输入框获取焦点回调函数
+        // 输入框获取焦点回调函数
         function focusHandle(){
           $(this).next().children(0).addClass('j-label');
         }
         
-        //输入框失去焦点回调函数
+        // 输入框失去焦点回调函数
         function blurHandle(){
           var count = 0;
           
@@ -202,6 +210,7 @@
             return ;
           }
           
+          // 按钮动画
           $('button[type="submit"]').addClass('animated infinite pulse');
           
           setTimeout(function(){
