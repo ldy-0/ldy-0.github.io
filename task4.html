@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)http://jadyoap.bj.bcebos.com/ife%2Fmission7.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <title>卡片3D翻转动效</title>
@@ -9,6 +8,12 @@
                 position: relative;
                 width: 250px;
                 height: 350px;
+                -webkit-transform: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -ms-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                -webkit-perspective: 300px;
+                -moz-perspective: 300px;
                 perspective: 300px;
             }
             /* 卡片二面公共样式 */

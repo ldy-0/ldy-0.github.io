@@ -117,6 +117,12 @@
   position: relative;
   width: 250px;
   height: 350px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
   perspective: 300px;
 }
 .m-card:before,
@@ -183,18 +189,12 @@
   position: relative;
   width: 200px;
   height: 200px;
-  -webkit-animation-duration: 4s;
-  -moz-animation-duration: 4s;
-  animation-duration: 4s;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 .box:hover {
-  -webkit-animation-name: box;
-  -moz-animation-name: box;
-  animation-name: box;
   -webkit-animation: box 4s linear infinite;
   -moz-animation: box 4s linear infinite;
   animation: box 4s linear infinite;
@@ -211,7 +211,6 @@
 }
 /* 立方体前表面 */
 .face:nth-of-type(1) {
-  z-index: 1;
   -webkit-transform: rotateY(0deg) translateZ(100px);
   -moz-transform: rotateY(0deg) translateZ(100px);
   -ms-transform: rotateY(0deg) translateZ(100px);
@@ -259,99 +258,114 @@
   transform: rotateX(270deg) translateZ(100px);
 }
 /* 前后左右表面动画 */
-.box 0% {
-  transform: rotateY(0deg);
-}
-.box 25% {
-  transform: rotateY(-90deg);
-}
-.box 50% {
-  transform: rotateY(-180deg);
-}
-.box 75% {
-  transform: rotateY(-270deg);
-}
-.box 100% {
-  transform: rotateY(-360deg);
-}
 @-webkit-keyframes box {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  -webkit-animation-duration: 4s;
-  -moz-animation-duration: 4s;
-  animation-duration: 4s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
   0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
   }
   25% {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
     transform: rotateY(-90deg);
   }
   50% {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
   }
   75% {
+    -webkit-transform: rotateY(-270deg);
+    -moz-transform: rotateY(-270deg);
+    -ms-transform: rotateY(-270deg);
+    -o-transform: rotateY(-270deg);
     transform: rotateY(-270deg);
   }
   100% {
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
     transform: rotateY(-360deg);
   }
 }
 @-moz-keyframes box {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  -webkit-animation-duration: 4s;
-  -moz-animation-duration: 4s;
-  animation-duration: 4s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
   0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
   }
   25% {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
     transform: rotateY(-90deg);
   }
   50% {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
   }
   75% {
+    -webkit-transform: rotateY(-270deg);
+    -moz-transform: rotateY(-270deg);
+    -ms-transform: rotateY(-270deg);
+    -o-transform: rotateY(-270deg);
     transform: rotateY(-270deg);
   }
   100% {
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
     transform: rotateY(-360deg);
   }
 }
 @keyframes box {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  -webkit-animation-duration: 4s;
-  -moz-animation-duration: 4s;
-  animation-duration: 4s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
   0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
   }
   25% {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
     transform: rotateY(-90deg);
   }
   50% {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
   }
   75% {
+    -webkit-transform: rotateY(-270deg);
+    -moz-transform: rotateY(-270deg);
+    -ms-transform: rotateY(-270deg);
+    -o-transform: rotateY(-270deg);
     transform: rotateY(-270deg);
   }
   100% {
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
     transform: rotateY(-360deg);
   }
 }
