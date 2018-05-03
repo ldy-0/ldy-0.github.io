@@ -1,0 +1,65 @@
+<template>
+  <form>
+    <!-- 绑定 -->
+    <input value="{= info.name =}" placeholder="姓名(String)"/>
+    <input value="{= info.age =}" placeholder="年龄(Number)" />
+    <input value="{= info.desc =}" placeholder="简介(String)" />
+    <!-- 清空 -->
+    <label class="f-db">信息:<button class='btn' on-click="clear">移除信息 </button></label>
+    <!-- 显示 -->
+    <p>姓名:<span class="row">{{ info.name }}</span></p>
+    <p>年龄:<span class="row">{{ info.age | isNumber() }}</span></p>
+    <p>简介:<span class="row">{{ info.desc }}</span></p>
+  </form>
+</template>
+
+<script>
+  import san, {DataTypes} from 'san';
+
+  export default {
+  
+    initData(){
+      return { 
+        info: { name: '', age: '', desc: '' }, 
+      };
+    },
+  
+    // 清空按钮点击事件回调函数
+    clear(){
+      this.data.set('info.name', '');
+      this.data.set('info.age', '');
+      this.data.set('info.desc', '');
+    },
+    
+    dataTypes: {
+      info: DataTypes.object,
+      "info.name": DataTypes.string,
+      "info.age": DataTypes.number,
+      "info.desc": DataTypes.string,
+    },
+    
+    filters: {
+      // 判断数字类型
+      isNumber(value, format){
+        return isNaN(Number(value)) ? '请输入数字' : value;
+      }
+    }
+    
+  };
+</script>
+
+<style>
+    .row {
+        display: inline-block;
+        width: 120px;
+        border-bottom: 1px solid gray;
+    }
+    .btn {
+        margin: 20px 10px;
+        border: none;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+    .f-db { display: block; }
+</style>
