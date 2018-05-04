@@ -1,0 +1,29 @@
+<template>
+  <section>
+    <!-- 向child组件传递tex数据,添加update事件监听 -->
+    <child val='{{tex}}' on-update='update($event)'></child>
+    <label class='s-fc'>我是父组件：<input class='border s-fc' value='{= tex =}' /></label>
+  </section>
+</template>
+
+<script>
+  import child from './child.san';  // 导入子组件
+  
+  export default {
+    
+    components: { 'child': child, },
+    
+    inited(){ this.data.set('tex', '静静等待用户输入'); },
+    
+    update(v){ 
+      this.data.set('tex', v);
+      this.fire('update', this.data.get('tex'));
+    },
+    
+  };
+</script>
+
+<style>
+  .s-fc { color: #63ef6e; }
+  .border { border: none; }
+</style>

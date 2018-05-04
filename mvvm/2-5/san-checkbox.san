@@ -1,0 +1,25 @@
+<template>
+    <label>
+        <slot></slot>
+        <input type='checkbox' 
+               checked='{{checked}}' 
+               disabled='{{disabled}}' 
+               trueValue='false' 
+               falseValue='false' 
+               indeterminate='{{indeterminate}}' 
+               on-change='change' />
+    </label>
+</template>
+
+<script>
+  export default {
+    
+    change(e){ 
+      this.fire('change', e); // 触发Change事件注册的回调函数
+    },
+    
+  };
+</script>
+
+<style>
+</style>

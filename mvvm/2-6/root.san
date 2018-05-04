@@ -1,0 +1,139 @@
+<template>
+    <div>
+         <task-menu title='{{test}}'>
+         <!-- <div slot='title'><p>test</p>{{test}}<p>test</p></div> -->
+         </task-menu>
+         <task-menu data='{{tasks}}' class='task-menu'>
+            <!-- 标题 -->
+            <div slot='title' class='menu-title'>
+              <p>test</p>{{test}}<p>test</p>
+            </div>
+            <!-- 单个任务 -->
+            <div class='task'>
+                <h2 class='task-title'>任务{{index}}</h2>
+                <div class='t'></div>
+                <div class='task-desc'>
+                    <p>标题：{{title}}</p>
+                    <p>内容：{{content}}</p>
+                    <p>日期：{{time}}</p>
+                </div>
+            </div>
+         </task-menu>
+    </div>
+</template>
+
+<script>
+  import task_menu from './task-menu.san';
+  
+  export default {
+    
+    components: { 
+      'task-menu': task_menu,
+    },
+    
+    initData(){ 
+      return { 
+        test: '任务栏',
+        tasks: [
+           { index: '一', title: '1', content: 'xxx', time: '2018', },
+           { index: '二', content: 'xxx', time: '2018', },
+           { index: '三', content: 'xxx', time: '2018', },
+        ],
+      }; 
+    },
+    
+  };
+</script>
+
+<style>
+    .task-menu { overflow: hidden; }
+    .menu-title {
+        font: 18px sans-serif;
+        color: #f7f6f6;
+    }
+    /* 单个任务 */
+    .task {
+        float: left;
+        position: relative;
+        width: 200px;
+        margin: 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        text-align: center;
+        background: #fcf1e3;
+    }
+    /* 内边框 */
+    .task:before {
+        content: '';
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        width: 90%;
+        height: 90%;
+        border: 1px solid #ffdeb8;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    /* 固定条 */
+    .t {
+        position: absolute;
+        left: 50%;
+        width: 40px;
+        height: 10px;
+        background: #fbe3cb;
+    }
+    /* 单个任务标题 */
+    .task-title {
+        display: inline-block;
+        padding: 5px 20px;
+        font: normal 14px sans-serif;
+        color: red;
+        background: #f2ba21;
+    }
+    /* 单个任务信息 */
+    .task-desc { 
+        position: relative;
+        z-index: 1;
+        margin: 20px;
+        -webkit-border-bottom-right-radius: 60px 10px;
+        -moz-border-bottom-right-radius: 60px 10px;
+        border-bottom-right-radius: 60px 10px;
+        font-size: 12px;
+        text-align: left;
+    }
+    .task-desc:before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        -webkit-border-bottom-right-radius: 60px 10px;
+        -moz-border-bottom-right-radius: 60px 10px;
+        border-bottom-right-radius: 60px 10px;
+        background: #ffe6a1;
+    }
+    .task-desc:after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 4px;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      -webit-border-bottom-right-radius: 50px 5px;
+      -moz-border-bottom-right-radius: 50px 5px;
+      border-bottom-right-radius: 50px 5px;
+      -webkit-transform: skew(0deg, 2deg) rotate(-6deg);
+      -moz-transform: skew(0deg, 2deg) rotate(-6deg);
+      -ms-transform: skew(0deg, 2deg) rotate(-6deg);
+      -o-transform: skew(0deg, 2deg) rotate(-6deg);
+      transform: skew(0deg, 2deg) rotate(-6deg);
+      background: #f8d988;
+    }
+    .task-desc p {
+        margin: 0 20px;
+        padding: 5px;
+    }
+</style>

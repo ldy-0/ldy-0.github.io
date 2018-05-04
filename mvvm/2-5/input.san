@@ -1,0 +1,53 @@
+<template>
+    <form>
+        <!-- default -->
+        <input type='text' placeholder='请输入文字' />
+        <!-- hover -->
+        <input class='{{isHover ? "hover" : "" }}' type='text' value='{= value =}' on-focus='focus($event)' placeholder='请输入文字' />
+        <!-- focus -->
+        <input type='text' class='{{isHover ? "hover" : ""}}' on-focus='focus($event)' value='{{focusValue}}' placeholder='{{focusText}}' />
+        <!-- blur -->
+        <input type='text' on-blur='blur($event)' placeholder='{{blurText}}' />
+        <!-- disable -->
+        <input type='text' disabled='disabled' placeholder='请输入文字' />
+    </form>
+</template>
+
+<script>
+  export default {
+    
+    initDate(){
+      return { 
+        isHover: false, 
+        focusText: '请输入文字',
+        focusValue: '',
+        blurText: '请输入文字',
+      };
+    },
+    
+    //this.data.set('isHover', true);
+    
+    focus(e){
+      this.data.set('isHover', true);
+      this.data.set('focusValue', '正在输入：');
+    },
+    
+    blur(e){
+      this.data.set('blurText', '失焦状态');
+    },
+  
+    input(e){
+      this.data.set('value', this.data.get('value'));
+    },
+    
+    
+    
+  };
+</script>
+
+<style>
+  .hover { 
+    border: 1px solid #666; 
+    outline: none;
+  }
+</style>

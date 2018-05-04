@@ -1,0 +1,77 @@
+<template>
+    <div>
+        <input type='text' 
+               value='{= value =}' 
+               class='{{isError ? "error" : "normal"}}' 
+               disabled='{{disabled}}' 
+               placeholder='{{placehold}}' 
+               on-focus='focus' on-blur='blur' on-input='input' />
+        <span class='error-tip {{isError ? "f-vbv" : "f-vbh"}}'>错误提示</span>
+    </div>
+</template>
+
+<script>
+  export default {
+    
+    initDate(){
+      return { 
+        value: '',
+        isError: false,
+      };
+    },
+    
+    inited(){ 
+      this.data.set('placehold', this.data.get('placehold') || '请输入文字'); 
+    },
+    
+    focus(e){
+      this.data.set('value', '正在输入：');
+      
+      this.fire('focus', e);
+    },
+    
+    blur(e){
+      this.data.set('value', '');
+      this.data.set('isError', false);
+      this.data.set('placehold', '失焦状态');
+      
+      this.fire('blur', e);
+    },
+  
+    input(e){
+      var text = this.data.get('value');
+      // 输入非法字符
+      if(/[!@#]/.test(text)){
+        return this.data.set('isError', true);
+      }
+      
+      this.data.set('isError', false);
+      this.data.set('value', text);
+      this.fire('input', e);
+      
+    },
+    
+    
+    
+  };
+</script>
+
+<style>
+  .normal:hover { 
+    border-color: #999; 
+    outline: none;
+  }
+  /* 输入错误 */
+  .error, .error:hover {
+    margin-bottom: 8px;
+    border-color: red;
+    outline: none;
+  }
+  /* 错误提示 */
+  .error-tip {
+    font-size: 12px;
+    color: red;
+  }
+  .f-vbv { visibility: visibed; }
+  .f-vbh { visibility: hidden; }
+</style>

@@ -1,0 +1,55 @@
+<template>
+    <section>
+        <div>
+            <san-input value='{{text}}' placehold='请输入用户名' on-input='input' />
+            <san-checkbox checked='{= checked =}'>是否开启</san-checkbox>
+            <san-checkbox on-change='change' checked='{= dynimicValueTrue =}'>是否同意协议</san-checkbox>
+        </div>
+        <div>
+            <s-input></s-input>
+            <s-input disabled='true'></s-input>
+            <s-checkbox></s-checkbox>
+            <s-checkbox checked='true'></s-checkbox>
+            <s-checkbox disabled='true'></s-checkbox>
+        </div>
+    </section>
+</template>
+
+<script>
+  import input from './san-input.san';
+  import checkbox from './san-checkbox.san';
+  import input2 from './s-input.san';
+  import checkbox2 from './s-checkbox.san';
+  
+  export default {
+    
+    components: { 
+      'san-input': input, 
+      'san-checkbox': checkbox,
+      's-input': input2,
+      's-checkbox': checkbox2,
+    },
+    
+    initData(){ 
+      return { 
+        text: '',
+        checked: false,
+        dynimicValueTrue: false,v: '123',
+      }; 
+    },
+    // Input事件回调函数
+    input(e){
+      alert('触发input事件');
+    },
+    
+    change(e){
+      this.data.set('dynimicValueTrue', !this.data.get('dynimicValueTrue'));
+      alert('触发change事件');
+    },
+    
+  };
+</script>
+
+<style>
+  .s-fc1 { color: #e777f0; }
+</style>

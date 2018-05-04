@@ -1,0 +1,30 @@
+<template>
+    <section>
+        <!-- 向parent组件传递tex数据,监听update事件 -->
+        <parent tex='{{text}}' on-update='update($event)'></parent>
+        <label class='s-fc1'>我是更高层父组件：<input class='border s-fc1' value='{= text =}' /></label>
+    </section>
+</template>
+
+<script>
+  // 导入parent组件
+  import parent from './parent.san';
+  
+  export default {
+    
+    components: { 'parent': parent, },
+    
+    initData(){ 
+      return { text: '我也静静等待用户输入', }; 
+    },
+    
+    update(v){ 
+      this.data.set('text', v); 
+    }
+    
+  };
+</script>
+
+<style>
+  .s-fc1 { color: #e777f0; }
+</style>

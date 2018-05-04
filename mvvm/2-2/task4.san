@@ -1,0 +1,69 @@
+<template>
+  <table>
+    <thead>
+      <!-- 标题行 -->
+      <tr>
+        <th>姓名</th>
+        <th>审核状态</th>
+        <th>操作</th>
+      </tr>
+      <tr>
+        <td>
+          <button on-click="add">添加</button>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 列表 -->
+      <tr s-for="item,index in list">
+        <!-- 姓名 -->
+        <td>{{item.name}}</td>
+        <!-- 状态 -->
+        <td s-if='item.isCheck'>{{item.status}}</td>
+        <td s-else>待审核</td>
+        <!-- 操作 -->
+        <td>
+          <button s-if="item.isCheck" on-click="delete(index)">删除</button>
+          <button s-else on-click="change(index)">审核</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>
+
+<script>
+  export default {
+    
+    initData: function(){
+      return {
+        list: [
+          {name: '张三', isCheck: true, status: '合格', },
+          {name: '李四', isCheck: true, status: '不合格' },
+          {name: '王五', isCheck: false, },
+          {name: '赵六', isCheck: false, },
+          {name: '孙七', isCheck: false, },
+        ],
+      };
+    },
+    
+    add(){
+      
+      this.data.push('list', { name: 'new', isCheck: false, });
+      
+    },
+    
+    delete(i){
+      
+      this.data.removeAt('list', i);
+      
+    },
+    // 改变状态
+    change(i){
+    
+      this.data.set('list['+i+'].isCheck', true);
+      this.data.set('list['+i+'].status', '合格');
+      
+    }
+    
+  };
+</script>

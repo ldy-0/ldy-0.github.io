@@ -1,0 +1,54 @@
+<template>
+    <div>
+        <input type='checkbox'
+               class='f-vbh'
+               checked='{{checked}}'
+               disabled='{{disabled}}' 
+               on-change='change' />
+        <span class='{{setClass}}' on-click='click'></span>
+    </div>
+</template>
+
+<script>
+  export default {
+    
+    initDate(){
+      return { };
+    },
+    
+    computed: {
+      // 设置checkbox样式
+      setClass(){
+            
+        if(this.data.get('disabled')){
+        
+          return 'disable fa fa-square-o';
+          
+        }else if(this.data.get('checked')){
+        
+          return 'checked fa fa-check-square-o';
+          
+        }
+        
+        return 'default fa fa-square-o';
+      }
+    },
+    
+    click(){
+      this.data.set('checked', !this.data.get('checked'));
+    },
+    
+   
+  };
+</script>
+
+<style>
+  .default, .checked, .disable { font-size: 18px; }
+  .default { color: #777; }
+  .default:hover { color: #333; }
+  /* 选中 */
+  .checked { color: #333; }
+  .disable { color: #ccc; }
+  .f-vbv { visibility: visibed; }
+  .f-vbh { visibility: hidden; }
+</style>

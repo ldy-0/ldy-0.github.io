@@ -1,0 +1,38 @@
+<template>
+  <div class='{{ isToggle | change }}' on-click='toggle'></div>
+</template>
+
+<script>
+  export default {
+    
+    initData(){
+    
+      return { isToggle: false, };
+      
+    },
+    
+    filters: {
+      // 切换样式
+      change(val){
+        return val ? 'theme2' : 'theme1';
+      }
+    },
+    
+    // 切换状态
+    toggle(){
+    
+      this.data.set('isToggle', !this.data.get('isToggle'));
+      
+    },
+    
+  };
+</script>
+
+<style>
+  .theme1, .theme2 {
+      width: 100px;
+      height: 100px;
+  }
+  .theme1 { background: red; }
+  .theme2 { background: blue; }
+</style>

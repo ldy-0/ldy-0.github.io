@@ -1,0 +1,85 @@
+<template>
+  <ul>
+    <li class='panel' s-for='item, index in infos'>
+      <div class='panel-head'>
+        <span class='panel-title'>{{item.name}}</span>
+        <span class='{{isShow[index] | icon}}' on-click='click(index)'></span>
+      </div>
+      <div class='panel-content' s-if='isShow[index]'>{{item.content}}</div>
+    </li>
+  </ul>
+</template>
+
+<script>
+
+export default {
+
+  initData() {
+    return {
+      infos: [
+        {name: '条目一', content: 'compiled - 组件视图模板编译完成 inited - 组件实例初始化完成 created - 组件元素创建完成 attached - 组件已被附加到页面中 detached - 组件从页面中移除 disposed - 组件卸载完成'},
+        {name: '条目二', content: '2'},
+        {name: '条目三', content: '3'},
+      ],
+      isShow: [],
+    };
+  },
+  
+  filters: {
+    // 切换图标
+    icon(val){
+      return val ? 'fa fa-chevron-up z-sel' : 'fa fa-chevron-down' ;
+    }
+    
+  },
+  
+  click(index) {
+  
+    this.data.set('isShow['+index+']', !this.data.get('isShow['+index+']'));
+    
+  },
+  
+}
+</script>
+
+<style>
+  html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
+  ul { 
+      margin: 0; 
+      padding: 0;
+      list-style: none;
+  }
+  .panel { 
+      position: relative;
+      margin: 20px 10%;
+      padding: 10px 20px;
+      border: 1px solid #e6e6e6; 
+      font-family: sans-serif;
+  }
+  .panel-head {
+  }
+  .panel-title { 
+      display: inline-block; 
+      width: 100%;
+      font-size: 14px;
+  }
+  .panel-title + span {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      padding: 10px;
+  }
+  .panel-content {
+      margin-top: 20px;
+  }
+  .z-sel {
+      -webkit-border-radius: 20px;
+      border-radius: 20px;
+      background: #eee;
+  }
+</style>

@@ -1,0 +1,31 @@
+<template>
+    <div class='menu'>
+      <!-- 总标题 -->
+      <slot name='title' />
+      <p class='menu_title' s-if='title'>{{title}}</p>
+      <!-- scoped插槽 -->
+      <slot s-for='item in data' 
+            var-index='item.index'
+            var-title='item.title'
+            var-content='item.content'
+            var-time='item.time'></slot>
+    </div>
+</template>
+
+<script>
+  export default {
+    
+  };
+</script>
+
+<style>
+    .menu {
+        width: 815px;
+        height: 100%;
+        background: #262525;
+    }
+    .menu_title {
+        font: 18px sans-serif;
+        color: #f7f6f6;
+    }
+</style>
