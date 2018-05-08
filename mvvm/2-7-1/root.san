@@ -1,0 +1,74 @@
+<template>
+<div>
+  <button on-click="toggle">TOGGLE</button>
+  <span s-if="show" s-transition="hook">
+    Transition Layer
+  </span>
+</div>
+</template>
+
+<script>
+export default {
+
+  initData() {
+    return {show: true};
+  },
+  
+  toggle() {
+    this.data.set('show', !this.data.get('show'));
+  },
+  
+  hook: {
+    /* your answer 缓入动画 */
+    enter(el, done){
+      var count = 10,
+          i = 0;
+      
+      function loop(){
+        if(i >= count){
+          return done(); // 结束动画
+        }
+        
+        el.style.opacity = 1*(i++)/10;
+        
+        setTimeout(loop, 50);
+      }
+      
+      loop();
+    },
+    /* 缓出动画 */
+    leave(el, done){
+      var end = 0,
+          i = 10;
+          
+      function loop(){
+         if(i <= end){
+          return done();
+         }
+         
+         el.style.opacity = 1*(i--)/10;
+         
+         setTimeout(loop, 50);
+         
+      }
+      
+      loop();
+    }
+  }
+  
+}
+</script>
+
+<style>
+.enter, .leave {
+  transition: all 4.5s;
+}
+
+.before-enter, .leave {
+  opacity: 0;
+}
+
+.enter, .before-leave {
+  opacity: 1;
+}
+</style>
